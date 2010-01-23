@@ -3,7 +3,7 @@ html {
 	height: 1000px;
 	margin-right: auto;
 	margin-left: auto;
-	background-image: url(images/fond.jpg);
+	background-image: url(../images/fond.jpg);
 }
 
 div#doc4.yui-t7 {
@@ -23,7 +23,7 @@ div#doc4.yui-t7 {
 
 #hd #menus {
 	height: 201px;
-	background: url(images/layout_06.png) no-repeat right;
+	background: url(../images/layout_06.png) no-repeat right;
 }
 
 #bd {
@@ -31,7 +31,7 @@ div#doc4.yui-t7 {
 }
 
 #bd div.yui-g.slider {
-	background: url(images/layout_07.png) no-repeat;
+	background: url(../images/layout_07.png) no-repeat;
 	width: 974px;
 	height: 251px;
 	padding-right: 40px;
@@ -39,7 +39,7 @@ div#doc4.yui-t7 {
 }
 
 #bd div.yui-gb.maincontent {
-	background: url(images/layout_09.png) no-repeat;
+	background: url(../images/layout_09.png) no-repeat;
 	height: 416px;
 	padding-right: 40px;
 	padding-left: 40px;
