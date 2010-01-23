@@ -38,12 +38,22 @@ div#doc4.yui-t7 {
 	padding-left: 40px;
 }
 
+#bd div.yui-g.sliderfalse {
+	background: url(../images/bgmain_03.png) no-repeat;
+	width: 974px;
+	height: 249px;
+	padding-right: 40px;
+	padding-left: 40px;
+	margin-left: 3px;
+}
+
 #bd div.yui-gb.maincontent {
 	background: url(../images/layout_09.png) no-repeat;
 	height: 416px;
 	padding-right: 40px;
 	padding-left: 40px;
 	width: 974px;
+	padding-top: 20px;
 }
 
 #ft {
