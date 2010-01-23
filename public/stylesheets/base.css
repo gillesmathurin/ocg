@@ -1,0 +1,53 @@
+html {
+	width: 994px;
+	height: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+	background-image: url(images/fond.jpg);
+}
+
+div#doc4.yui-t7 {
+	position: static;
+}
+
+#hd {
+	display: block;
+	width: 992px;
+}
+
+#hd #logo {
+	float: left;
+	height: 201px;
+	width: 478px;
+}
+
+#hd #menus {
+	height: 201px;
+	background: url(images/layout_06.png) no-repeat right;
+}
+
+#bd {
+	
+}
+
+#bd div.yui-g.slider {
+	background: url(images/layout_07.png) no-repeat;
+	width: 974px;
+	height: 251px;
+	padding-right: 40px;
+	padding-left: 40px;
+}
+
+#bd div.yui-gb.maincontent {
+	background: url(images/layout_09.png) no-repeat;
+	height: 416px;
+	padding-right: 40px;
+	padding-left: 40px;
+	width: 974px;
+}
+
+#ft {
+	padding-right: 40px;
+	padding-left: 40px;
+	margin-top: 20px;
+}
