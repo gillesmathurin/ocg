@@ -11,10 +11,10 @@ Rails::Initializer.run do |config|
   config.gem 'devise'
   config.gem 'warden'
   config.gem 'will_paginate', :lib => 'will_paginate', :version => '>= 2.3.12'
-  config.gem 'webrat', :lib => false, :version => '>=0.6.0'
-  config.gem 'cucumber', :lib => false, :version => '>=0.4.4'
-  config.gem 'rspec-rails', :lib => false, :version => '>=1.2.8'
-  config.gem 'rspec', :lib => false, :version => '>=1.2.8'
+  # config.gem 'webrat', :lib => false, :version => '>=0.6.0'
+  # config.gem 'cucumber', :lib => false, :version => '>=0.4.4'
+  # config.gem 'rspec-rails', :lib => false, :version => '>=1.2.8'
+  # config.gem 'rspec', :lib => false, :version => '>=1.2.8'
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
