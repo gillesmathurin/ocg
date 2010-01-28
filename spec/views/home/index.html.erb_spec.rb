@@ -1,12 +1,32 @@
 require 'spec_helper'
 
 describe "/home/index" do
-  before(:each) do
-    render 'home/index'
+
+  context "with existing articles and events" do
+    before(:each) do
+      assigns[:articles] = [ stub_model(Article, :title => "the title"),
+        stub_model(Article, :title => "the title"),
+        stub_model(Article, :title => "the title"),
+        stub_model(Article, :title => "the title") ]
+      assigns[:events] = [stub_model(Event, :title => "the title"),
+        stub_model(Event, :title => "the title"),
+        stub_model(Event, :title => "the title"),
+        stub_model(Event, :title => "the title")]
+    end
+    
+    it "renders recent articles" do
+      render
+      response.should have_selector(".recent_articles") do |list|
+        list.should have_selector("li.article", :content => "the title")
+      end
+    end
+
+    it "renders next events" do
+      render
+      response.should have_selector(".next_events") do |list|
+        list.should have_selector("li.event", :content => "the title")
+      end
+    end
   end
 
-  #Delete this example and add some real ones or delete this file
-  it "should tell you where to find the file" do
-    response.should have_tag('p', %r[Find me in app/views/home/index])
-  end
 end

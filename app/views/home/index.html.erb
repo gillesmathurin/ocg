@@ -1,2 +1,38 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="yui-g slider"> 
+  	<div id="slider">
+  		jQuery Slider
+  	</div>
+  </div> 
+<div class="yui-gb maincontent"> 
+      <div class="yui-u first">
+		<ul class="recent_articles">
+			<% unless @articles.empty? %>
+		 		<% @articles.each do |article| %>
+					<li class="article">
+						<%=h article.title %> : <%= truncate(article.content, :length => 50) %>
+					</li>
+				<% end %>
+			<% else %>
+				<li class="article">Pas d'articles pour le moment</li>
+			<% end %>
+		</ul>
+			
+  		
+      </div> 
+      <div class="yui-u">
+	 	<ul class="next_events">
+	 		<%- unless @events.empty? -%>
+				<%- @events.each do |event| -%>
+					<li class="event">
+						<%=h event.title %> - <%= event.start_date %> / <%= event.end_date %> :	 <%= truncate(event.description, :length => 50) %>
+					</li>
+				<%- end -%>
+			<%- else -%>
+				<li class="event">Pas d'événements à venir pour le moment</li>
+			<%- end -%>
+	 	</ul>
+  		
+      </div> 
+      <div class="yui-u"> 
+      </div> 
+  </div>

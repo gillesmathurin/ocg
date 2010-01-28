@@ -21,22 +21,7 @@
 		 	<%- flash.each do |name, msg| -%>
 			  <%= content_tag :div, msg, :id => "flash_#{name}" %>
 			<%- end -%>
-	      	<div class="yui-g slider"> 
-		      	<div id="slider">
-		      		jQuery Slider
-		      	</div>
-		      </div> 
-	      	<div class="yui-gb maincontent"> 
-		          <div class="yui-u first"> 
-		      <!-- YOUR DATA GOES HERE --> Data
-		              </div> 
-		          <div class="yui-u"> 
-		      <!-- YOUR DATA GOES HERE --> Data
-		              </div> 
-		          <div class="yui-u"> 
-		      <!-- YOUR DATA GOES HERE --> Data
-		              </div> 
-		      </div>    
+ 			<%= yield %>
 	      </div> 
 	     <div id="ft" role="contentinfo"><p>Footer</p></div> 
 	 </div>
