@@ -6,6 +6,10 @@
 	<link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
     <%= stylesheet_link_tag 'base' %>
     <%= yield(:head) %>
+	<%= javascript_include_tag 'jquery.lavalamp.js' %>
+	<script type="text/javascript">
+	    $(function() { $(".lavaLamp").lavaLamp({ fx: "backout", speed: 700 })});
+	</script>
   </head>
   <body>
 	<div id="doc4" class="yui-t7"> 
@@ -14,7 +18,13 @@
 				<img id="layout_05" src="images/layout_05.png" alt="" />
 			</div>
 			<div id="menus">
-				<!-- <img id="layout_06" src="images/layout_06.png" alt="" /> -->
+				<ul class="lavaLamp">
+					<li><a href="#">Accueil</a></li>
+					<li><a href="#">Missions</a></li>
+					<li><a href="#">Articles</a></li>
+					<li><a href="#">Galleries</a></li>
+					<li><a href="#">Liens</a></li>
+				</ul>
 			</div>
 		</div> 
 	     <div id="bd" role="main">
