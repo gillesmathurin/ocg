@@ -6,6 +6,10 @@
 	<link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
     <%= stylesheet_link_tag 'base' %>
     <%= yield(:head) %>
+	<%= javascript_include_tag 'jquery-1.4', 'jquery.lavalamp.js' %>
+	<script type="text/javascript">
+	    $(function() { $(".lavaLamp").lavaLamp({ fx: "linear", speed: 300 })});
+	</script>
   </head>
   <body>
 	<div id="doc4" class="yui-t7"> 
