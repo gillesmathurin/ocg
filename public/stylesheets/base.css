@@ -30,27 +30,28 @@ div#doc4.yui-t7 {
 }
 
 #hd #menus ul.lavaLamp {
-	padding-top: 112px;
-	padding-left: 55px;
-	height: 40px;
 	position: relative;
 	overflow: hidden;
+	padding-left: 8px;
+	line-height: 60px;
+	padding-top: 80px;
 }
 
 #hd #menus ul.lavaLamp li {
 	text-align: left;
 	color: white;
-	margin-right: 20px;
 	float: left;
 	list-style: none;
+	height: 76px;
+	margin-right: -30px;
 }
 
 .lavaLamp li.back {
 	width: 9px;
-	height: 30px;
+	height: 76px;
 	z-index: 8;
 	position: absolute;
-	background: url(../images/activenav.png) no-repeat right -30px;
+	background: url(../images/activenav.png) no-repeat right;
 }
 
 .lavaLamp li.back .left {
@@ -63,16 +64,23 @@ div#doc4.yui-t7 {
 	position: relative;
 	overflow: hidden;
 	text-decoration: none;
-	font-size: 1.1em;
 	font-weight: bold;
 	z-index: 10;
 	display: block;
 	float: left;
 	letter-spacing: 0;
-	height: 30px;
+	height: 76px;
 	top: 7px;
 	text-align: center;
-	margin: auto 10px;
+	width: 116px;
+	margin-top: auto;
+	margin-bottom: auto;
+	font-size: 1.1em;
+	color: white;
+}
+
+.lavaLamp li a:hover {
+	color: #786753;
 }
 
 #bd {
