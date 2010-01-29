@@ -14,18 +14,23 @@ describe "/home/index" do
         stub_model(Event, :title => "the title")]
     end
     
-    it "renders recent articles" do
+    it "renders some recent articles" do
       render
       response.should have_selector(".recent_articles") do |list|
         list.should have_selector("li.article", :content => "the title")
       end
     end
 
-    it "renders next events" do
+    it "renders some next events" do
       render
       response.should have_selector(".next_events") do |list|
         list.should have_selector("li.event", :content => "the title")
       end
+    end
+    
+    it "renders the login link" do
+      render
+      response.should have_tag("a", "Identifiez-vous")
     end
   end
   

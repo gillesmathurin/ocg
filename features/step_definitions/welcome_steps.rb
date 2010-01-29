@@ -20,6 +20,11 @@ Then /^I should see a "([^\"]*)" second message$/ do |text|
   response.should contain(text)
 end
 
+Then /^I shouls see "([^\"]*)"$/ do |text|
+  visit root_path
+  response.should contain(text)
+end
+
 Given /^the site has contents$/ do
   @articles = []
   @events = []
