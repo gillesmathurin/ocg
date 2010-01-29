@@ -10,7 +10,7 @@
 			<% unless @articles.empty? %>
 		 		<% @articles.each do |article| %>
 					<li class="article">
-						<%=h article.title %> : <%= truncate(article.content, :length => 50) %>
+						<%=h article.title %> : <%= truncate(article.content, :length => 50) %> … <%= link_to "Lire …", article_path(article.id) %>
 					</li>
 				<% end %>
 			<% else %>
@@ -26,7 +26,7 @@
 	 		<%- unless @events.empty? -%>
 				<%- @events.each do |event| -%>
 					<li class="event">
-						<%=h event.title %> - <%= event.start_date %> / <%= event.end_date %> :	 <%= truncate(event.description, :length => 50) %>
+						<%=h event.title %> - <%= event.start_date %> / <%= event.end_date %> :	 <%= truncate(event.description, :length => 50) %> <%= link_to "+ d'infos …", event_path(event.id) %>
 					</li>
 				<%- end -%>
 			<%- else -%>

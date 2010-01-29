@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'home'
-
+  map.resources :articles
+  map.resources :events
   map.devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.

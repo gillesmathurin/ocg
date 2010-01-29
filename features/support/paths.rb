@@ -12,6 +12,10 @@ module NavigationHelpers
       '/'
     when /root page/
       '/'
+    when /the article page/
+      article_path()
+    when /the event page/
+      event_path()
     
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

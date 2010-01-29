@@ -40,10 +40,13 @@ Then /^I should see the next 4 events$/ do
 end
 
 When /^I follow a recent article link$/ do
-  pending # express the regexp above with the code you wish you had
+  visit root_path
+  click_link("Lire …")
 end
 
-Then /^I should go to the article show page$/ do
-  pending # express the regexp above with the code you wish you had
+When /^I follow a next event link$/ do
+  visit root_path
+  click_link("+ d'infos …")
 end
+
 

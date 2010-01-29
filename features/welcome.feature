@@ -17,16 +17,15 @@ Feature: Welcome
 		And the site has contents
 		Then I should see the 4 most recent articles
 		And I should see the next 4 events
-		And I should have 4 articles
 	
 	Scenario: Recent articles list
 		Given I am on the root page
 		And the site has contents
 		When I follow a recent article link
-		Then I should be on the article show page
+		Then I should be on the article page
 		
-	# Scenario: Next event list
-	# 	Given I am "root_url" page
-	# 	And the site has contents
-	# 	When I click on a next event link
-	# 	Then I should go to the event show page
+	Scenario: Next event list
+		Given I am on the root page
+		And the site has contents
+		When I follow a next event link
+		Then I should be on the event page
