@@ -1,11 +1,6 @@
 require 'spec_helper'
 
 describe "/home/index" do
-  
-  it "displays the menu bar with the home link selected" do
-    render
-    response.should have_selector("li.selected", :content => "Accueil")
-  end
 
   context "with existing articles and events" do
     before(:each) do

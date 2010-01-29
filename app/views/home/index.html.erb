@@ -5,6 +5,7 @@
   </div> 
 <div class="yui-gb maincontent"> 
       <div class="yui-u first">
+		<h1 class="entete1">Dernières Publications</h1>
 		<ul class="recent_articles">
 			<% unless @articles.empty? %>
 		 		<% @articles.each do |article| %>
@@ -20,6 +21,7 @@
   		
       </div> 
       <div class="yui-u">
+		<h1 class="entete1">Prochains Evenements</h1>
 	 	<ul class="next_events">
 	 		<%- unless @events.empty? -%>
 				<%- @events.each do |event| -%>

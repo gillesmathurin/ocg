@@ -10,6 +10,8 @@ div#doc4.yui-t7 {
 	position: static;
 }
 
+/* @group Header */
+
 #hd {
 	display: block;
 	width: 992px;
@@ -80,7 +82,40 @@ div#doc4.yui-t7 {
 }
 
 .lavaLamp li a:hover {
-	color: #786753;
+	color: #41291b;
+}
+
+/* @end */
+
+/* @group Body */
+
+#bd h1.entete1 {
+	font-size: 1.2em;
+	color: #1c6791;
+	text-align: center;
+	margin-bottom: 20px;
+	font-weight: bold;
+	background: url(../images/bgh1-entete1.gif) no-repeat center top;
+	height: 55px;
+	line-height: 55px;
+}
+
+div.yui-gb.maincontent ul.next_events li {
+	list-style-type: none;
+	list-style-position: inside;
+	list-style-image: url(../images/bullet.png);
+	margin-top: 20px;
+	padding-left: 40px;
+	width: 245px;
+}
+
+div.yui-gb.maincontent ul.recent_articles li {
+	list-style-type: none;
+	list-style-position: inside;
+	list-style-image: url(../images/bullet.png);
+	margin-top: 20px;
+	padding-left: 40px;
+	width: 245px;
 }
 
 #bd {
@@ -111,10 +146,19 @@ div#doc4.yui-t7 {
 	padding-left: 40px;
 	width: 974px;
 	padding-top: 20px;
+	color: #1b5791;
 }
+
+/* @end */
+
+/* @group Footer */
 
 #ft {
 	padding-right: 40px;
 	padding-left: 40px;
 	margin-top: 20px;
 }
+
+
+
+/* @end */
