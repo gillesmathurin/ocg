@@ -38,3 +38,12 @@ Then /^I should see the next 4 events$/ do
   visit root_path
   response.should have_selector("li.event", :content => "the title")
 end
+
+When /^I follow a recent article link$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^I should go to the article show page$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
