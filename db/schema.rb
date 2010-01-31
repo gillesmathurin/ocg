@@ -9,13 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100128163408) do
+ActiveRecord::Schema.define(:version => 20100129185437) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo"
   end
 
   create_table "events", :force => true do |t|
@@ -26,6 +27,24 @@ ActiveRecord::Schema.define(:version => 20100128163408) do
     t.datetime "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo"
+  end
+
+  create_table "galleries", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "photos", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "photo"
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "gallery_id"
   end
 
   create_table "users", :force => true do |t|

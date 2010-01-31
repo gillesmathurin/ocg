@@ -21,7 +21,7 @@
   		
       </div> 
       <div class="yui-u">
-		<h1 class="entete1">Prochains Evenements</h1>
+		<h1 class="entete1">Prochains Evénements</h1>
 	 	<ul class="next_events">
 	 		<%- unless @events.empty? -%>
 				<%- @events.each do |event| -%>
@@ -36,5 +36,9 @@
   		
       </div> 
       <div class="yui-u"> 
+		<h1 class="entete1">Dashboard</h1>
+		<p>
+			<%= link_to "Identifiez-vous", "" %>
+		</p>
       </div> 
   </div>
