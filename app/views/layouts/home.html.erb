@@ -4,7 +4,7 @@
   <head>
     <title><%= h(yield(:title) || "Office du Carnaval de la Guadeloupe") %></title>
 	<link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
-    <%= stylesheet_link_tag 'base' %>
+    <%= stylesheet_link_tag 'base', 'slider' %>
     <%= yield(:head) %>
 	<%= javascript_include_tag 'jquery-1.4', 'jquery.lavalamp.js', 'jquery.easing.1.2.js', 'jquery.anythingslider.js' %>
 	<script type="text/javascript">
@@ -25,7 +25,7 @@
                 startStopped: false,            // If autoPlay is on, this can force it to start stopped
                 animationTime: 600,             // How long the slide transition takes
                 hashTags: true,                 // Should links change the hashtag in the URL?
-                buildNavigation: true,          // If true, builds and list of anchor links to link to each slide
+                buildNavigation: false,          // If true, builds and list of anchor links to link to each slide
         		pauseOnHover: true,             // If true, and autoPlay is enabled, the show will pause on hover
         		startText: "Go",             // Start text
 		        stopText: "Stop",               // Stop text
