@@ -1,16 +1,17 @@
 require 'spec_helper'
 
-describe Photo do
+describe Image do
   before(:each) do
     @valid_attributes = {
       :name => "value for name",
       :description => "value for description",
       :photo => "value for photo",
-      :date => Date.today
+      :date => Date.today,
+      :gallery_id => 1
     }
   end
 
   it "should create a new instance given valid attributes" do
-    Photo.create!(@valid_attributes)
+    Image.create!(@valid_attributes)
   end
 end

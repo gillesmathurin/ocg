@@ -64,8 +64,22 @@ describe EventsController do
   
   describe "PUT 'update'" do
     context "with valid params" do
-      it "does something" do
-        
+      it "updates the requested event" do
+        Event.should_receive(:find).with("1").and_return(mock_event)
+        mock_event.should_receive(:update_attributes).with('these' => 'params')
+        put :update, :id => "1", :event => {:these => 'params'}
+      end
+      
+      it "assigns the requested article as @article" do
+        Event.stub(:find).and_return(mock_event(:update_attributes => true))
+        put :update, :id => "1"
+        assigns[:event].should equal(mock_event)
+      end
+      
+      it "redirects to the article" do
+        Event.stub(:find).and_return(mock_event(:update_attributes => true))
+        put :update, :id => "1"
+        response.should redirect_to(event_url(mock_event))
       end
     end
     
@@ -75,6 +89,15 @@ describe EventsController do
         put :update, :id => "37"
         response.should render_template('edit')
       end
+    end
+  end
+  
+  describe "DELETE destroy" do
+    it "destroy the requested event and redirect_to the events page" do
+      Event.should_receive(:find).with("1").and_return(mock_event)
+      mock_event.should_receive(:destroy)
+      delete :destroy, :id => "1"
+      response.should redirect_to(events_url)
     end
   end
 end
