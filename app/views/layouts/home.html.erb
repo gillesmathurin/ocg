@@ -2,6 +2,10 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
   <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Author" name="Author" content="GM WebAgency" lang="fr">
+	<meta http-equiv="keywords" name="keywords" lang="fr" content="Office du Carnaval de la Guadeloupe, Carnaval, Patrimoine, Culture, DOM-TOM , Guadeloupe, Martinique, Musique">
+	<meta http-equiv="Decription" name="Description" content="L'office du carnaval de la Guadeloupe oeuvre à la promotion culturelle du Carnaval Guadeloupéen">
     <title><%= h(yield(:title) || "Office du Carnaval de la Guadeloupe") %></title>
 	<link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
     <%= stylesheet_link_tag 'base', 'slider' %>
@@ -61,7 +65,12 @@
 			<%- end -%>
  			<%= yield %>
 	      </div> 
-	     <div id="ft" role="contentinfo"><p>Footer</p></div> 
+	     <div id="ft" role="contentinfo">
+			<p>
+				Copyright © 2009-<%= Date.today.year if Date.today.year > 2009 %>
+				Conception : <%= link_to "GMWebAgency", "http://www.gmwebagency.com" %>
+			</p>
+		</div> 
 	 </div>
   </body>
 </html>
