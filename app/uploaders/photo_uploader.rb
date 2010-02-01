@@ -3,7 +3,7 @@
 class PhotoUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or ImageScience support
-  #     include CarrierWave::RMagick
+  include CarrierWave::RMagick
   #     include CarrierWave::ImageScience
 
   # Choose what kind of storage to use for this uploader
@@ -22,22 +22,22 @@ class PhotoUploader < CarrierWave::Uploader::Base
   #     end
 
   # Process files as they are uploaded.
-  #     process :scale => [200, 300]
-  #
-  #     def scale(width, height)
-  #       # do something
-  #     end
+  process :scale => [800, 800]
+
+  def scale(width, height)
+    process :resize_to_fill => [width, height]
+  end
 
   # Create different versions of your uploaded files
-  #     version :thumb do
-  #       process :scale => [50, 50]
-  #     end
+  version :thumb do
+    process :scale => [200, 200]
+  end
 
   # Add a white list of extensions which are allowed to be uploaded,
   # for images you might use something like this:
-  #     def extension_white_list
-  #       %w(jpg jpeg gif png)
-  #     end
+  def extension_white_list
+    %w(jpg jpeg gif png)
+  end
 
   # Override the filename of the uploaded files
   #     def filename
