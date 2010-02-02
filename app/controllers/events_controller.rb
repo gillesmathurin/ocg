@@ -1,7 +1,9 @@
 class EventsController < ApplicationController
   
   def index
-    @events = Event.paginate(:page => params[:page], :per_page => 10, :order => "start_date desc")
+    @events_fcfg = Event.fcfg
+    @events_gccrp = Event.gccrp
+    @events_fcg = Event.fcg
   end
 
   def show

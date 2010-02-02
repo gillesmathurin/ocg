@@ -138,6 +138,39 @@ div.yui-gb.maincontent ul.recent_articles li {
 	margin-left: 3px;
 }
 
+#bd div.yui-g.sliderfalse>div.form {
+	position: relative;
+	text-align: center;
+}
+
+#bd div.yui-g.sliderfalse>div.form p {
+	margin-bottom: 15px;
+}
+
+#bd div.yui-g.sliderfalse>div.form label {
+	font-weight: bold;
+	color: #176d90;
+	font-size: 1.1em;
+}
+
+#bd div.yui-gb.sliderfalse {
+	background: url(../images/bgmain_03.png) no-repeat;
+	width: 974px;
+	height: 249px;
+	padding-right: 40px;
+	padding-left: 10px;
+	margin-left: 3px;
+}
+
+div.yui-gb.sliderfalse ul.next_events li {
+	list-style-type: none;
+	list-style-position: inside;
+	list-style-image: url(../images/bullet.png);
+	margin-top: 20px;
+	padding-left: 40px;
+	width: 245px;
+}
+
 #bd div.yui-gb.maincontent {
 	background: url(../images/layout_09.png) no-repeat;
 	height: 416px;

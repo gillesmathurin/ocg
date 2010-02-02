@@ -23,6 +23,7 @@ Event.create(:title => "Défilé à Pointe-à-Pitre", :place => "Pointe-à-Pitre
 Event.create(:title => "Parade électrique", :place =>"", :start_date => "2010-02-15", :end_date => "2010-02-15", :description => "")
 Event.create(:title => "Winner 2010 Grande Parade", :place => "", :description => "Char de la Gauloise avec NRJ, Bal de la FEDE au swing-club avec TIPICAL ABIDOS", :start_date => "2010-02-16", :end_date => "2010-02-16")
 Event.create(:title => "Mercredi des cendres à Basse-Terre", :place => "Basse-Terre", :start_date => "2010-02-17", :end_date => "2010-02-17")
-Event.create(:title => "Mi Careme", :start_date => "2010-03-11", :end_date => "2010-03-11"  )
+Event.create(:title => "Mi Careme", :start_date => "2010-03-11", :end_date => "2010-03-11")
 
 # TODO : Updater les evenements ci-dessus avec le champ Federation = "Federation du carnaval et des fetes de la Guadeloupe"
+Event.update_all("federation = 'Fédération du Carnaval et des Fêtes de la Guadeloupe'")

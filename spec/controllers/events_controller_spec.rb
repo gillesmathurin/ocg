@@ -7,10 +7,25 @@ describe EventsController do
   end
 
   describe "GET 'index'" do
-    it "assigns the 10 most recent events as @events" do
-      Event.stub(:paginate).and_return([mock_event])
+    it "assigns the FCFG events @events_fcfg" do
+      Event.stub!(:fcfg).
+        and_return([mock_event(:federation => "Fédération du Carnaval et des Fêtes de la Guadeloupe")])
       get :index
-      assigns[:events].should == ([mock_event])
+      assigns[:events_fcfg].should == ([mock_event])
+    end
+    
+    it "assigns the GCCRP events @events_gccrp" do
+      Event.stub!(:gccrp).
+        and_return([mock_event(:federation => "Groupement pour le Carnaval et la Culture Région Pointoise")])
+      get :index
+      assigns[:events_gccrp].should == ([mock_event])
+    end
+    
+    it "assigns the FCG events @events_fcg" do
+      Event.stub!(:fcg).
+        and_return([mock_event(:federation => "Fédération Guadeloupéenne de Carnaval")])
+      get :index
+      assigns[:events_fcg].should == ([mock_event])
     end
   end
 
