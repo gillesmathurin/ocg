@@ -19,7 +19,7 @@ Event.create(:title => "Village TAMBOU VAPEUR", :place => "Bouillante", :descrip
 Event.create(:title => "Défilé des écoles + Les ainés de Bouillante", :place => "Bouillante", :description => "", :start_date => "02-07-2010", :end_date => "02-07-2010")
 Event.create(:title => "Défilé des écoles", :place => "Trois Rivières", :start_date => "02-13-2010", :end_date => "02-13-2010", :description => "")
 Event.create(:title => "Défilé à Pointe-à-Pitre", :place => "Pointe-à-Pitre", :start_date => "02-14-2010", :end_date => "02-14-2010")
-Event.create(:title => "Parade électrique", :place "", :start_date => "02-15-2010", :end_date => "02-15-2010", :description => "")
+Event.create(:title => "Parade électrique", :place =>"", :start_date => "02-15-2010", :end_date => "02-15-2010", :description => "")
 Event.create(:title => "Winner 2010 Grande Parade", :place => "", :description => "Char de la Gauloise avec NRJ, Bal de la FEDE au swing-club avec TIPICAL ABIDOS")
 Event.create(:title => "Mercredi des cendres à Basse-Terre", :place => "Basse-Terre", :start_date => "02-15-2010", :end_date => "02-15-2010")
 Event.create(:title => "Mi Careme", :start_date => "03-11-2010",:end_date => "03-11-2010")
