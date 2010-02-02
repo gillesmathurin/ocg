@@ -19,7 +19,7 @@
 	<div id="doc4" class="yui-t7"> 
 	     <div id="hd" role="banner">
 			<div id="logo">
-				<img id="layout_05" src="images/layout_05.png" alt="" />
+				<img id="layout_05" src="/images/layout_05.png" alt="" />
 			</div>
 			<div id="menus">
 				<ul class="lavaLamp">
@@ -35,24 +35,14 @@
 		 	<%- flash.each do |name, msg| -%>
 			  <%= content_tag :div, msg, :id => "flash_#{name}" %>
 			<%- end -%>
-	      	<div class="yui-g sliderfalse"> 
-		      	<div id="slider">
-		      		jQuery Slider
-		      	</div>
-		      </div> 
-	      	<div class="yui-gb maincontent"> 
-		          <div class="yui-u first"> 
-		      <!-- YOUR DATA GOES HERE --> Data
-		              </div> 
-		          <div class="yui-u"> 
-		      <!-- YOUR DATA GOES HERE --> Data
-		              </div> 
-		          <div class="yui-u"> 
-		      <!-- YOUR DATA GOES HERE --> Data
-		              </div> 
-		      </div>    
-	      </div> 
-	     <div id="ft" role="contentinfo"><p>Footer</p></div> 
+	 		<%= yield %>
+		  </div> 
+		     <div id="ft" role="contentinfo">
+				<p>
+					Copyright © 2009-<%= Date.today.year if Date.today.year > 2009 %>
+					Conception : <%= link_to "GMWebAgency", "http://www.gmwebagency.com" %>
+				</p>
+			</div>
 	 </div>
   </body>
 </html>
