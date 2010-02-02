@@ -146,6 +146,10 @@ div.yui-gb.maincontent ul.recent_articles li {
 	color: #1b5791;
 }
 
+#bd span.date {
+	color: maroon;
+}
+
 /* @end */
 
 /* @group Footer */
