@@ -1,0 +1,28 @@
+fr:
+  devise:
+    sessions:
+      link: 'Connexion'
+      signed_in: 'Connexion réussie.'
+      signed_out: 'Déconnexion réussie.'
+      unauthenticated: 'Vous devez vous authentifier ou vous enregistrez avant de continuer.'
+      unconfirmed: 'Vous devez confirmer votre compte avant de continuer.'
+      locked: 'Votre compte est bloqué.'
+      invalid: 'Email ou Mot de passe invalide.'
+      timeout: 'Votre session a expiré, veuillez vous authentifier de nouveau pour continuer.'
+      inactive: 'Your account was not activated yet.'
+    passwords:
+      link: 'Mot de passe oublié ?'
+      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
+      updated: 'Your password was changed successfully. You are now signed in.'
+    confirmations:
+      link: "Didn't receive confirmation instructions?"
+      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
+      confirmed: 'Your account was successfully confirmed. You are now signed in.'
+    unlocks:
+      link: "Didn't receive unlock instructions?"
+      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
+      unlocked: 'Your account was successfully unlocked. You are now signed in.'
+    mailer:
+      confirmation_instructions: 'Confirmation instructions'
+      reset_password_instructions: 'Reset password instructions'
+      unlock_instructions: 'Unlock Instructions'
