@@ -1,4 +1,6 @@
 class Article < ActiveRecord::Base
-  # mount_uploader :photo, PhotoUploader
+  
+  has_attached_file :photo, :styles => { :thumb => "200x200>" }
+  
   named_scope :recent_articles, :order => "created_at desc", :limit => 4  
 end

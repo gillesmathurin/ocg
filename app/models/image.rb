@@ -1,3 +1,3 @@
 class Image < ActiveRecord::Base
-  # mount_uploader :photo, PhotoUploader
+  has_attached_file :photo, :styles => { :thumb => "200x200>" }
 end
