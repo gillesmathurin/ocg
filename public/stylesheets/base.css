@@ -162,6 +162,13 @@ div.yui-gb.maincontent ul.recent_articles li {
 	margin-left: 3px;
 }
 
+#bd div.yui-gb.sliderfalse div.programme {
+	width: 250px;
+	height: 450px;
+	float: left;
+	margin-right: 15px;
+}
+
 div.yui-gb.sliderfalse ul.next_events li {
 	list-style-type: none;
 	list-style-position: inside;

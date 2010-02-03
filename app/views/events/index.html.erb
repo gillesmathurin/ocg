@@ -1,53 +1,86 @@
 <%- content_for(:head) do -%>
-	<%= javascript_include_tag 'jquery.easing.1.2.js', 'jquery.anythingslider.js' %>
-	<script type="text/javascript">
-    
-        function formatText(index, panel) {
-		  return index + "";
-	    }
-    
-        $(function () {
-        
-            $('.anythingSlider').anythingSlider({
-                easing: "easeInOutExpo",        // Anything other than "linear" or "swing" requires the easing plugin
-                autoPlay: false,                 // This turns off the entire FUNCTIONALY, not just if it starts running or not.
-                delay: 3000,                    // How long between slide transitions in AutoPlay mode
-                startStopped: false,            // If autoPlay is on, this can force it to start stopped
-                animationTime: 600,             // How long the slide transition takes
-                hashTags: true,                 // Should links change the hashtag in the URL?
-                buildNavigation: false,          // If true, builds and list of anchor links to link to each slide
-        		pauseOnHover: true,             // If true, and autoPlay is enabled, the show will pause on hover
-        		// startText: "Go",             // Start text
-        		// 		        stopText: "Stop",               // Stop text
-		        navigationFormatter: formatText       // Details at the top of the file on this use (advanced use)
-            });
-            
-            $("#slide-jump").click(function(){
-                $('.anythingSlider').anythingSlider(6);
-            });
-            
-        });
-    </script>
+	<%= stylesheet_link_tag 'coda-slider-2.0' %>
+	<%= javascript_include_tag 'jquery.easing.1.3', 'jquery.coda-slider-2.0' %>
+	 <script type="text/javascript">
+		$().ready(function() {
+			$('#coda-slider-1').codaSlider({
+				dynamicArrows: false,
+				dynamicTabs: false
+			});
+		});
+	 </script>
 <%- end -%>
 
 <div class="yui-gb sliderfalse">
 	<h1 class="entete1">Programme du Carnaval</h1>
-	<div class="yui-u">
-		<h1 class="entete1">FCFG</h1>
-		<ul class="next_events">
-	 		<%- unless @events_fcfg.empty? -%>
-				<%- @events_fcfg.in_groups_of(7, false) do |event_groupe| -%>
-					<% event_groupe.each do |event| %>
-					<li class="event">
-						<span class="date"><%= event.start_date.strftime("%d/%m/%Y") %></span> :<b> <%=h event.title %></b> - <%= truncate(event.description, :length => 50) %><br/> <%= link_to "+ d'infos …", event_path(event.id) %>
-					</li>
-					<% end %>
-				<%- end -%>
-			<%- else -%>
-				<li class="event">Pas d'événements à venir pour le moment</li>
-			<%- end -%>
-		</ul>
+	
+	<div class="coda-slider-wrapper">
+		<!-- <div id="coda-nav-left-1" class="coda-nav-left"><a href="#" title="Slide left">&#171;</a></div> -->
+		<div id="coda-nav-1" class="coda-nav">
+			<ul>
+				<li class="tab1"><a href="#">FCFG</a></li>
+				<li class="tab2"><a href="#">GCCRP</a></li>
+				<li class="tab3"><a href="#">FCG</a></li>
+			</ul>
+		</div>
+		<!-- <div id="coda-nav-right-1" class="coda-nav-right"><a href="#" title="Slide right">&#187;</a></div> -->
+		<div class="coda-slider preload" id="coda-slider-1">
+			<div class="panel">
+				<div class="panel-wrapper">
+					<%- unless @events_fcfg.empty? -%>
+					<%- @events_fcfg.in_groups_of(6, false) do |event_groupe| -%>
+					<div class="programme">
+						<ul class="next_events">
+								<% event_groupe.each do |event| %>
+								<li class="event">
+									<span class="date"><%= event.start_date.strftime("%d/%m/%Y") %></span> :<b> <%=h event.title %></b> - <%= truncate(event.description, :length => 50) %><br/> <%= link_to "+ d'infos …", event_path(event.id) %>
+								</li>
+								<% end %>
+						</ul>
+					</div>
+					<%- end -%>					
+					<%- end -%>
+				</div>
+			</div>
+			
+			<div class="panel">
+				<div class="panel-wrapper">
+					<%- unless @events_gccrp.empty? -%>
+					<%- @events_gccrp.in_groups_of(6, false) do |event_groupe| -%>
+					<div class="programme">
+						<ul class="next_events">
+								<% event_groupe.each do |event| %>
+								<li class="event">
+									<span class="date"><%= event.start_date.strftime("%d/%m/%Y") %></span> :<b> <%=h event.title %></b> - <%= truncate(event.description, :length => 50) %><br/> <%= link_to "+ d'infos …", event_path(event.id) %>
+								</li>
+								<% end %>
+						</ul>
+					</div>
+					<%- end -%>					
+					<%- end -%>
+				</div>
+			</div>
+
+			<div class="panel">
+				<div class="panel-wrapper">
+					<%- unless @events_fcg.empty? -%>
+					<%- @events_fcg.in_groups_of(6, false) do |event_groupe| -%>
+					<div class="programme">
+						<ul class="next_events">
+								<% event_groupe.each do |event| %>
+								<li class="event">
+									<span class="date"><%= event.start_date.strftime("%d/%m/%Y") %></span> :<b> <%=h event.title %></b> - <%= truncate(event.description, :length => 50) %><br/> <%= link_to "+ d'infos …", event_path(event.id) %>
+								</li>
+								<% end %>
+						</ul>
+					</div>
+					<%- end -%>					
+					<%- end -%>
+				</div>
+			</div>
+		</div>
 	</div>
+	
 </div>
 <div class="yui-gb maincontent">
 
