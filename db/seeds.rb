@@ -25,5 +25,29 @@ Event.create(:title => "Winner 2010 Grande Parade", :place => "", :description =
 Event.create(:title => "Mercredi des cendres à Basse-Terre", :place => "Basse-Terre", :start_date => "2010-02-17", :end_date => "2010-02-17")
 Event.create(:title => "Mi Careme", :start_date => "2010-03-11", :end_date => "2010-03-11")
 
-# TODO : Updater les evenements ci-dessus avec le champ Federation = "Federation du carnaval et des fetes de la Guadeloupe"
 Event.update_all("federation = 'Fédération du Carnaval et des Fêtes de la Guadeloupe'")
+
+# Creation du programme du GCCRP
+Event.create(:title => "Election Prince et Princesse", :place => "Pointe-à-Pitre", :start_date => "2010-02-03", :end_date => "2010-02-03", :federation => 'Groupement pour le Carnaval et la Culture Région Pointoise')
+Event.create(:title => "Défilé des enfants", :place => "Pointe-à-Pitre", :start_date => "2010-02-06", :end_date => "2010-02-06", :federation => 'Groupement pour le Carnaval et la Culture Région Pointoise')
+Event.create(:title => "Election de la Reine du Carnaval", :place => "Pointe-à-Pitre", :start_date => "2010-02-13", :end_date => "2010-02-13", :federation => 'Groupement pour le Carnaval et la Culture Région Pointoise')
+Event.create(:title => "Dimanche gras à Pointe-à-Pitre", :place => "Pointe-à-Pitre", :start_date => "2010-02-14", :end_date => "2010-02-14", :federation => 'Groupement pour le Carnaval et la Culture Région Pointoise')
+Event.create(:title => "Mardi gras à Basse-Terre", :place => "Basse-Terre", :start_date => "2010-02-14", :end_date => "2010-02-14", :federation => 'Groupement pour le Carnaval et la Culture Région Pointoise')
+Event.create(:title => "Mercredi des cendres", :place => "Pointe-à-Pitre", :start_date => "2010-02-16", :end_date => "2010-02-16", :federation => 'Groupement pour le Carnaval et la Culture Région Pointoise')
+
+# Programme de la Fédération Guadeloupéenne de Carnaval
+Event.create(:title => "Défilé de mise en jambe dans toutes les communes", :place => "", :start_date => "2010-01-03", :end_date => "2010-01-03", :federation => 'Fédération Guadeloupéenne de Carnaval')
+Event.create(:title => "Présentation de la saison 2009", :place => "Cité des Métiers du Raizet ou CCI de Basse-Terre", :start_date => "2010-01-08", :end_date => "2010-01-08", :federation => 'Fédération Guadeloupéenne de Carnaval')
+Event.create(:title => "Grande Parade de Petit-Bourg", :place => "Petit-Bourg", :start_date => "2010-01-17 15:00", :end_date => "2010-01-17", :federation => 'Fédération Guadeloupéenne de Carnaval')
+Event.create(:title => "Nocturne du Lamentin", :place => "Lamentin", :start_date => "2010-01-23 20:00", :end_date => "2010-01-23", :federation => 'Fédération Guadeloupéenne de Carnaval')
+Event.create(:title => "Sortie de Pointe-Noire", :place => "GRAND-BOURG", :start_date => "2010-01-24 15:00", :end_date => "2010-01-24", :federation => 'Fédération Guadeloupéenne de Carnaval')
+Event.create(:title => "Doubout pou an gran vidé", :place => "Abymes", :start_date => "2010-01-31 15:00", :end_date => "2010-01-31", :federation => 'Fédération Guadeloupéenne de Carnaval')
+Event.create(:title => "Bémao mi mas", :place => "BAIE-MAHAULT", :start_date => "2010-02-07 15:00", :end_date => "2010-02-07", :federation => 'Fédération Guadeloupéenne de Carnaval')
+Event.create(:title => "La Grande parade de nuit", :place => "Capesterre B/E", :start_date => "2010-02-12 18:30", :end_date => "2010-02-12", :federation => 'Fédération Guadeloupéenne de Carnaval')
+Event.create(:title => "Village des Sponsors", :place => "Capesterre B/E", :start_date => "2010-02-13 09:00", :end_date => "2010-02-13 13:00", :federation => 'Fédération Guadeloupéenne de Carnaval')
+Event.create(:title => "Défilé intergénération les écoles et la fédération du 3ème age", :place => "Capesterre B/E", :start_date => "2010-02-13 14:30", :end_date => "2010-02-13", :federation => 'Fédération Guadeloupéenne de Carnaval')
+Event.create(:title => "Dimanche gras", :place => "POINTE-A-PITRE", :start_date => "2010-02-14 14:00", :end_date => "2010-02-14", :federation => 'Fédération Guadeloupéenne de Carnaval')
+Event.create(:title => "Lundi gras avec MATAMBA", :place => "Saint-François", :start_date => "2010-02-15 19:00", :end_date => "2010-02-15", :federation => 'Fédération Guadeloupéenne de Carnaval')
+Event.create(:title => "Mardi-gras Grande Parade du Moule", :place => "Le Moule", :start_date => "2010-02-16", :end_date => "2010-02-16", :federation => 'Fédération Guadeloupéenne de Carnaval')
+Event.create(:title => "Sortie des Cendres", :description => "Brilé vaval - Char Arios et Petay cho", :place => "Capesterre B/E", :start_date => "2010-02-16", :end_date => "2010-02-16", :federation => 'Fédération Guadeloupéenne de Carnaval')
+Event.create(:title => "Remise des Prix", :place => "Le Moule", :start_date => "2010-03-10", :end_date => "2010-03-10", :federation => 'Fédération Guadeloupéenne de Carnaval')

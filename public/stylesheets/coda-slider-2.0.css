@@ -21,12 +21,12 @@
 	.coda-slider-no-js .coda-slider { height: 200px; overflow: auto !important; padding-right: 20px }
 	
 	/* Change the width of the entire slider (without dynamic arrows) */
-	.coda-slider, .coda-slider .panel { width: 900px;
-	margin-left: 20px;
+	.coda-slider, .coda-slider .panel { width: 850px;
+	margin-left: 10px;
 } 
 	
 	/* Change margin and width of the slider (with dynamic arrows) */
-	.coda-slider-wrapper.arrows .coda-slider, .coda-slider-wrapper.arrows .coda-slider .panel { width: 600px }
+	.coda-slider-wrapper.arrows .coda-slider, .coda-slider-wrapper.arrows .coda-slider .panel { width: 900px }
 	.coda-slider-wrapper.arrows .coda-slider { margin: 0 10px }
 	
 	/* Arrow styling */
@@ -51,7 +51,9 @@
 	/* Miscellaneous */
 	.coda-slider-wrapper { clear: both; overflow: auto }
 	.coda-slider { float: left; overflow: hidden; position: relative }
-	.coda-slider .panel { display: block; float: left }
+	.coda-slider .panel { display: block;
+	float: left;
+}
 	.coda-slider .panel-container { position: relative }
 	.coda-nav-left, .coda-nav-right { float: left }
 	.coda-nav-left a, .coda-nav-right a { display: block; text-align: center; text-decoration: none }
