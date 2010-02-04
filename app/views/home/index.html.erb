@@ -41,7 +41,7 @@
 	 		<%- unless @events.empty? -%>
 				<%- @events.each do |event| -%>
 					<li class="event">
-						<span class="date"><%= event.start_date.strftime("%d/%m/%Y") %> au <%= event.end_date.strftime("%d/%m/%Y") %></span> :<b> <%=h event.title %></b> - <%= truncate(event.description, :length => 50) %><br/> <%# link_to "+ d'infos …", event_path(event.id) %>
+						<span class="date"><%= formatted_date(event.start_date) %></span> :<b> <%=h event.title %></b>  <%= truncate(event.description, :length => 50) %><br/> <%# link_to "+ d'infos …", event_path(event.id) %>
 					</li>
 				<%- end -%>
 			<%- else -%>
