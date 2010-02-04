@@ -162,11 +162,12 @@ div.yui-gb.maincontent ul.recent_articles li {
 	margin-left: 3px;
 }
 
-#bd div.yui-gb.sliderfalse div.programme {
-	width: 250px;
-	height: 500px;
-	float: left;
-	margin-right: 15px;
+#bd div.yui-gb.sliderfalse div#slider {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	text-align: center;
 }
 
 div.yui-gb.sliderfalse ul.next_events li {
@@ -188,6 +189,7 @@ div.yui-gb.sliderfalse ul.next_events li {
 
 #bd span.date {
 	color: maroon;
+	font-weight: bold;
 }
 
 /* @end */

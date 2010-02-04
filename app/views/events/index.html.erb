@@ -1,11 +1,13 @@
 <%- content_for(:head) do -%>
-	<%= stylesheet_link_tag 'coda-slider-2.0' %>
-	<%= javascript_include_tag 'jquery.easing.1.3', 'jquery.coda-slider-2.0' %>
+	<%= stylesheet_link_tag 'screen' %>
+	<%= javascript_include_tag 'easySlider1.7.js' %>
 	 <script type="text/javascript">
-		$().ready(function() {
-			$('#coda-slider-1').codaSlider({
-				dynamicArrows: false,
-				dynamicTabs: false
+		$(document).ready(function(){	
+			$("#slider").easySlider({
+				auto: false, 
+				continuous: true,
+				prevText: 'Previous',
+				nextText: 'Next'
 			});
 		});
 	 </script>
@@ -14,72 +16,43 @@
 <div class="yui-gb sliderfalse">
 	<h1 class="entete1">Programme du Carnaval</h1>
 	
-	<div class="coda-slider-wrapper">
-		<!-- <div id="coda-nav-left-1" class="coda-nav-left"><a href="#" title="Slide left">&#171;</a></div> -->
-		<div id="coda-nav-1" class="coda-nav">
-			<ul>
-				<li class="tab1"><a href="#">FCFG</a></li>
-				<li class="tab2"><a href="#">GCCRP</a></li>
-				<li class="tab3"><a href="#">FCG</a></li>
-			</ul>
-		</div>
-		<!-- <div id="coda-nav-right-1" class="coda-nav-right"><a href="#" title="Slide right">&#187;</a></div> -->
-		<div class="coda-slider preload" id="coda-slider-1">
-			<div class="panel">
-				<div class="panel-wrapper">
-					<%- unless @events_fcfg.empty? -%>
-					<%- @events_fcfg.in_groups_of(7, false) do |event_groupe| -%>
-					<div class="programme">
-						<ul class="next_events">
-								<% event_groupe.each do |event| %>
-								<li class="event">
-									<span class="date"><%= event.start_date.strftime("%d/%m/%Y") %></span> :<b><br/> <%=h event.title %></b> <%= event.description %><br/> <%# link_to "+ d'infos …", event_path(event.id) %>
-								</li>
-								<% end %>
-						</ul>
-					</div>
-					<%- end -%>					
-					<%- end -%>
-				</div>
-			</div>
-						<div class="panel">
-				<div class="panel-wrapper">
-					<%- unless @events_fcg.empty? -%>
-					<%- @events_fcg.in_groups_of(6, false) do |event_groupe| -%>
-					<div class="programme">
-						<ul class="next_events">
-								<% event_groupe.each do |event| %>
-								<li class="event">
-									<span class="date"><%= event.start_date.strftime("%d/%m/%Y") %></span> :<b><br/> <%=h event.title %></b> <%= event.description %><br/> <%# link_to "+ d'infos …", event_path(event.id) %>
-								</li>
-								<% end %>
-						</ul>
-					</div>
-					<%- end -%>					
-					<%- end -%>
-				</div>
-			</div>
-			<div class="panel">
-				<div class="panel-wrapper">
-					<%- unless @events_gccrp.empty? -%>
-					<%- @events_gccrp.in_groups_of(6, false) do |event_groupe| -%>
-					<div class="programme">
-						<ul class="next_events">
-								<% event_groupe.each do |event| %>
-								<li class="event">
-									<span class="date"><%= event.start_date.strftime("%d/%m/%Y") %></span> :<b><br/> <%=h event.title %></b> <%= event.description %><br/> <%# link_to "+ d'infos …", event_path(event.id) %>
-								</li>
-								<% end %>
-						</ul>
-					</div>
-					<%- end -%>					
-					<%- end -%>
-				</div>
-			</div>
-
-
-		</div>
+	<div id="slider">
+		<ul>
+			<li>
+				<%- unless @events_fcfg.empty? -%>
+				<%- @events_fcfg.each do |event| -%>
+					<p>
+						<span class="date"><%= formatted_date(event.start_date) %></span> :<b> <%=h event.title %></b> <%= event.description %><br/> <%# link_to "+ d'infos …", event_path(event.id) %>
+					</p>
+					<hr>
+				<%- end -%>					
+				<%- end -%>
+			</li>
+			
+			<li>
+				<%- unless @events_fcg.empty? -%>
+				<%- @events_fcg.each do |event| -%>
+					<p>
+						<span class="date"><%= formatted_date(event.start_date) %></span> :<b> <%=h event.title %></b> <%= event.description %><br/> <%# link_to "+ d'infos …", event_path(event.id) %>
+					</p>
+					<hr>
+				<%- end -%>					
+				<%- end -%>
+			</li>
+			
+			<li>
+				<%- unless @events_gccrp.empty? -%>
+				<%- @events_gccrp.each do |event| -%>
+					<p>
+						<span class="date"><%= event.start_date.strftime("%d/%m/%Y") %></span> :<b> <%=h event.title %></b> <%= event.description %><br/> <%# link_to "+ d'infos …", event_path(event.id) %>
+					</p>
+					<hr>
+				<%- end -%>					
+				<%- end -%>
+			</li>
+		</ul>
 	</div>
+	
 	
 </div>
 <div class="yui-gb maincontent">
