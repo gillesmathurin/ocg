@@ -19,10 +19,11 @@
 	<div id="slider">
 		<ul>
 			<li>
+					<p class="fede">FCFG</p>
 				<%- unless @events_fcfg.empty? -%>
 				<%- @events_fcfg.each do |event| -%>
 					<p>
-						<span class="date"><%= formatted_date(event.start_date) %></span> :<b> <%=h event.title %></b> <%= event.description %><br/> <%# link_to "+ d'infos …", event_path(event.id) %>
+						<span class="date"><%= formatted_date(event.start_date) %></span> :<b> <%=h event.title %></b> <%= event.description %> à <%= event.place %> <%# link_to "+ d'infos …", event_path(event.id) %>
 					</p>
 					<hr>
 				<%- end -%>					
@@ -30,10 +31,11 @@
 			</li>
 			
 			<li>
+					<p class="fede">FCG</p>
 				<%- unless @events_fcg.empty? -%>
 				<%- @events_fcg.each do |event| -%>
 					<p>
-						<span class="date"><%= formatted_date(event.start_date) %></span> :<b> <%=h event.title %></b> <%= event.description %><br/> <%# link_to "+ d'infos …", event_path(event.id) %>
+						<span class="date"><%= formatted_date(event.start_date) %></span> :<b> <%=h event.title %></b> <%= event.description %> à <%= event.place %><br/> <%# link_to "+ d'infos …", event_path(event.id) %>
 					</p>
 					<hr>
 				<%- end -%>					
@@ -41,10 +43,11 @@
 			</li>
 			
 			<li>
+					<p class="fede">GCCRP</p>
 				<%- unless @events_gccrp.empty? -%>
 				<%- @events_gccrp.each do |event| -%>
 					<p>
-						<span class="date"><%= formatted_date(event.start_date) %></span> :<b> <%=h event.title %></b> <%= event.description %><br/> <%# link_to "+ d'infos …", event_path(event.id) %>
+						<span class="date"><%= formatted_date(event.start_date) %></span> :<b> <%=h event.title %></b> <%= event.description %> à <%= event.place %><br/> <%# link_to "+ d'infos …", event_path(event.id) %>
 					</p>
 					<hr>
 				<%- end -%>					

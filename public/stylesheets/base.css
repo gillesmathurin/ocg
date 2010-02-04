@@ -170,6 +170,12 @@ div.yui-gb.maincontent ul.recent_articles li {
 	text-align: center;
 }
 
+#bd div.yui-gb.sliderfalse div#slider p.fede {
+	font-weight: bold;
+	margin-bottom: 10px;
+	font-size: 1.1em;
+}
+
 div.yui-gb.sliderfalse ul.next_events li {
 	list-style-type: none;
 	list-style-position: inside;
