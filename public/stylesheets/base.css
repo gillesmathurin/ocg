@@ -198,6 +198,20 @@ div.yui-gb.sliderfalse ul.next_events li {
 	font-weight: bold;
 }
 
+#bd p.admin-login {
+	text-align: center;
+	font-weight: bold;
+	background-color: #f13f37;
+	padding: 5px;
+	width: 80%;
+	margin-left: 30px;
+	border: 1px solid black;
+}
+
+#bd p.admin-login a {
+	color: #faf21d;
+}
+
 /* @end */
 
 /* @group Footer */

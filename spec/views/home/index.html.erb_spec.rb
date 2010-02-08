@@ -9,9 +9,9 @@ describe "/home/index" do
         stub_model(Article, :title => "the title"),
         stub_model(Article, :title => "the title") ]
       assigns[:events] = [stub_model(Event, :title => "the title"),
-        stub_model(Event, :title => "the title"),
-        stub_model(Event, :title => "the title"),
-        stub_model(Event, :title => "the title")]
+        stub_model(Event, :title => "the title", :start_date => Time.parse("2010-02-08 00:00:00")),
+        stub_model(Event, :title => "the title", :start_date => Time.parse("2010-02-08 00:00:00")),
+        stub_model(Event, :title => "the title", :start_date => Time.parse("2010-02-08 00:00:00"))]
     end
     
     it "renders some recent articles" do
