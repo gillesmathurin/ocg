@@ -1,7 +1,9 @@
 require 'spec_helper'
-include Devise::TestHelpers
 
 describe ArticlesController do
+  before(:each) do
+    @user = create_default_user
+  end
   
   def mock_article(stubs={})
     @mock_article ||= mock_model(Article, stubs)
@@ -25,6 +27,9 @@ describe ArticlesController do
   end
 
   describe "GET 'new'" do
+    before(:each) do
+      sign_in(@user)
+    end
     it "assigns a new article as @article" do
       Article.should_receive(:new).and_return(@article)
       get 'new'
@@ -34,6 +39,9 @@ describe ArticlesController do
   end
 
   describe "GET 'edit'" do
+    before(:each) do
+      sign_in(@user)
+    end
     it "assigns the requested article as @article" do
       Article.should_receive(:find).with("1").and_return(@article)
       get 'edit', :id => "1"
@@ -43,6 +51,9 @@ describe ArticlesController do
   end
   
   describe "POST 'create'" do
+    before(:each) do
+      sign_in(@user)
+    end
     context "with valid params" do
       it "assigns a newly created article as @article" do
         Article.stub(:new).with({'these' => "params"}).and_return(mock_article)
@@ -74,6 +85,9 @@ describe ArticlesController do
   end
   
   describe "PUT update" do
+    before(:each) do
+      sign_in(@user)
+    end
     context "with valid params" do
       it "updates the requested article" do
         Article.should_receive(:find).with("1").and_return(mock_article)
@@ -96,6 +110,9 @@ describe ArticlesController do
   end
   
   describe "DELETE destroy" do
+    before(:each) do
+      sign_in(@user)
+    end
     it "destroys the requested article" do
       Article.should_receive(:find).with("1").and_return(mock_article)
       mock_article.should_receive(:destroy)
