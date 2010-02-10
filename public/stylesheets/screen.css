@@ -12,7 +12,7 @@
 
 	#slider ul, #slider li,
 	#slider2 ul, #slider2 li{
-		margin:0;
+		margin: 10px 0 0;
 		padding:0;
 		list-style:none;
 		}
@@ -29,28 +29,28 @@
 	#prevBtn, #nextBtn,
 	#slider1next, #slider1prev{ 
 		display:block;
-		width:30px;
-		height:77px;
+		width: 40px;
+		height: 110px;
 		position:absolute;
-		top: 400px;
+		top: 200px;
 		z-index:1000;
 		}	
 	#nextBtn, #slider1next{ 
-		left: 870px;
+		left: 692px;
 		}
 	#prevBtn {
-	left: 200px;
+	left: 370px;
 }														
 	#prevBtn a, #nextBtn a,
 	#slider1next a, #slider1prev a{  
 		display:block;
 		position:relative;
-		width:30px;
-		height:77px;
-		background: url(../images/btn_prev.gif) no-repeat 0 0;	
+		width: 40px;
+		height: 110px;
+		background: url(../images/btn_prev.png) no-repeat 0 0;	
 		}	
 	#nextBtn a, #slider1next a{ 
-		background:url(../images/btn_next.gif) no-repeat 0 0;	
+		background: url(../images/btn_next.png) no-repeat 0 0;	
 		}	
 		
 	/* numeric controls */	
