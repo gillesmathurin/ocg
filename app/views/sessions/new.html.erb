@@ -1,22 +1,25 @@
 <div class="yui-g sliderfalse">
 	<h1 class="entete1">Connectez vous</h1>
 		<%- if devise_mapping.authenticatable? %>
-		  <% form_for resource_name, resource, :url => session_path(resource_name) do |f| -%>
-		    <p><%= f.label :email %></p>
-		    <p><%= f.text_field :email %></p>
+		<div class="form">
+			  <% form_for resource_name, resource, :url => session_path(resource_name) do |f| -%>
+			    <p><%= f.label :email %></p>
+			    <p><%= f.text_field :email %></p>
 
-		    <p><%= f.label :password %></p>
-		    <p><%= f.password_field :password %></p>
+			    <p><%= f.label :password %></p>
+			    <p><%= f.password_field :password %></p>
 
-		    <% if devise_mapping.rememberable? -%>
-		      <p><%= f.check_box :remember_me %> <%= f.label "Se souvenir de moi" %></p>
-		    <% end -%>
+			    <% if devise_mapping.rememberable? -%>
+			      <p><%= f.check_box :remember_me %> <%= f.label "Se souvenir de moi" %></p>
+			    <% end -%>
 
-		    <p><%= f.submit "Connexion" %></p>
-		  <% end -%>
-		<% end%>
-		
-		<%= render :partial => "shared/devise_links" %>
+			    <p><%= f.submit "Connexion" %></p>
+			  <% end -%>
+			<% end%>
+
+			<%= render :partial => "shared/devise_links" %>
+		</div>
+
 </div>
 
 <div class="yui-gb maincontent">

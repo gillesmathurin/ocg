@@ -1,6 +1,10 @@
 require 'spec_helper'
+include Devise::TestHelpers
 
 describe EventsController do
+  before(:each) do
+    @user = create_default_user
+  end
 
   def mock_event(stubs = {})
     @mock_event ||= mock_model(Event, stubs)
@@ -38,19 +42,47 @@ describe EventsController do
   end
 
   describe "GET 'new'" do
-    it "assigns a newly created but unsaved event as @event" do
-      Event.should_receive(:new).and_return(mock_event)
-      get :new
-      assigns[:event].should == mock_event
+
+    context "with a logged_in user" do      
+      before(:each) do
+        sign_in(@user)
+      end
+      
+      it "assigns a newly created but unsaved event as @event" do
+        Event.should_receive(:new).and_return(mock_event)
+        get :new
+        assigns[:event].should == mock_event
+        response.should render_template('new')
+      end
+      
+      after(:each) do
+        sign_out(@user)
+      end
     end
+    
+    context "with a unlogged_user" do
+      it "redirect_to the sign_in page" do
+        Event.should_not_receive(:new)
+        get :new
+        response.should redirect_to("http://test.host/users/sign_in?unauthenticated=true")
+      end
+    end
+
   end
 
   describe "GET 'edit'" do
-    it "assigns the requested event as @event" do
-      Event.should_receive(:find).with("37").and_return(mock_event)
-      get :edit, :id => "37"
-      assigns[:event].should == mock_event
+    context "with a logged_in user" do
+      before(:each) do
+        sign_in(@user)
+      end
+      it "assigns the requested event as @event" do
+        Event.should_receive(:find).with("37").and_return(mock_event)
+        get :edit, :id => "37"
+        assigns[:event].should == mock_event
+        response.should render_template('edit')
+      end
     end
+
   end
   
   describe "POST 'create'" do
