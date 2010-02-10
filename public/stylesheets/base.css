@@ -153,6 +153,12 @@ div.yui-gb.maincontent ul.recent_articles li {
 	font-size: 1.1em;
 }
 
+div.form span.mceEditor.defaultSimpleSkin {
+	text-align: center;
+	display: block;
+	margin-left: 340px;
+}
+
 #bd div.yui-gb.sliderfalse {
 	background: url(../images/bgmain_03.png) no-repeat;
 	width: 974px;
