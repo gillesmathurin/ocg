@@ -1,2 +1,14 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<div class="yui-g sliderfalse">
+	<h1 class="entete1"><%= @article.title %></h1>
+	<div class="article">
+		<%= @article.content %>		
+	</div>
+	<%- if user_signed_in? -%>
+		<p>
+			<%= link_to "Modifier", edit_article_path(@article) %> | <%= link_to "Supprimer", article_path(@article), :method => :delete %> | <%= link_to "Tous les articles", articles_path() %>
+		</p>
+	<%- end -%>
+</div>
+<div class="yui-gb maincontent">
+
+</div>

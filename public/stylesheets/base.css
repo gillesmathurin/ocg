@@ -138,6 +138,17 @@ div.yui-gb.maincontent ul.recent_articles li {
 	margin-left: 3px;
 }
 
+#bd div.yui-g.sliderfalse div.article {
+	width: 904px;
+	margin-bottom: 20px;
+}
+
+		#bd div.yui-g.sliderfalse div.article strong
+ {
+	font-weight: bold;
+	text-align: center;
+}
+
 #bd div.yui-g.sliderfalse>div.form {
 	position: relative;
 	text-align: center;
