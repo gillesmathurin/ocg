@@ -1,17 +1,12 @@
 require 'spec_helper'
 
 describe "/home/index" do
+  include ApplicationHelper
 
   context "with existing articles and events" do
     before(:each) do
-      assigns[:articles] = [ stub_model(Article, :title => "the title"),
-        stub_model(Article, :title => "the title"),
-        stub_model(Article, :title => "the title"),
-        stub_model(Article, :title => "the title") ]
-      assigns[:events] = [stub_model(Event, :title => "the title"),
-        stub_model(Event, :title => "the title", :start_date => Time.parse("2010-02-08 00:00:00")),
-        stub_model(Event, :title => "the title", :start_date => Time.parse("2010-02-08 00:00:00")),
-        stub_model(Event, :title => "the title", :start_date => Time.parse("2010-02-08 00:00:00"))]
+      assigns[:articles] = [ stub_model(Article, :title => "the title", :start_date => Time.parse("2010-02-10 15:00:00", :content => "")) ]
+      assigns[:events] = [stub_model(Event, :title => "the title", :start_date => Time.parse("2010-02-10 15:00:00", :description => ""))]
     end
     
     it "renders some recent articles" do
@@ -30,7 +25,7 @@ describe "/home/index" do
     
     it "renders the login link" do
       render
-      response.should have_tag("a", "Identifiez-vous")
+      response.should have_tag("a", "Accès réservé")
     end
   end
   
