@@ -1,2 +1,23 @@
-<h1>Articles#index</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
+<div class="yui-gb sliderfalse">
+	<h1 class="entete1">Nos articles</h1>
+	<div class="articles">
+		<% if !@articles.blank? %>
+		<ul>
+			<% for article in @articles %>
+				<li class="article">
+				<%= article.title %> : <%= truncate(article.content, :length => 60) %><br/>
+				<%= link_to "Lire", article_path(article) %>
+				<%# if user_signed_in? %>
+				 | <%= link_to "Modifier", edit_article_path(article) %> | <%= link_to "Supprimer", article_path(article), :method => :delete %>
+				<%# end %>
+				</li>
+			<% end %>
+			<% else %>
+
+			<% end %>
+		</ul>		
+	</div>
+</div>
+<div class="yui-gb maincontent">
+
+</div>

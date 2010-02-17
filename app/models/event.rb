@@ -9,4 +9,7 @@ class Event < ActiveRecord::Base
   named_scope :gccrp, :conditions => ['federation = ?', "Groupement pour le Carnaval et la Culture Région Pointoise"]
   named_scope :fcg, :conditions => ['federation = ?', "Fédération Guadeloupéenne de Carnaval"]
   
+  def to_param
+    "#{id}-#{title.parameterize}"
+  end
 end
