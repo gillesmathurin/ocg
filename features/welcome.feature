@@ -4,16 +4,14 @@ Feature: Welcome
   As a visitor
   I want to see a welcome page containing general information about the site
 
-	Scenario: Welcome new visitors with no contents
-	
+	Scenario: Welcome new visitors with no contents	
   	Given I have not visited the site
   	When I enter the welcome page
   	Then I should see a "Pas d'articles pour le moment" message
 		Then I should see a "Pas d'événements à venir pour le moment" second message
 		And I shouls see "Accès réservé"
 		
-	Scenario: Welcome new visitors with contents
-	
+	Scenario: Welcome new visitors with contents	
 		Given I have not visited the site
 		And the site has contents
 		Then I should see the 4 most recent articles

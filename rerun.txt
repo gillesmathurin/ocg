@@ -1,1 +1,1 @@
-features/welcome.feature:28
+features/welcome.feature:26
