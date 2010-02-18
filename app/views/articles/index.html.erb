@@ -7,9 +7,10 @@
 				<li class="article">
 				<%= article.title %> : <%= truncate(article.content, :length => 60) %><br/>
 				<%= link_to "Lire", article_path(article) %>
-				<%# if user_signed_in? %>
-				 | <%= link_to "Modifier", edit_article_path(article) %> | <%= link_to "Supprimer", article_path(article), :method => :delete %>
-				<%# end %>
+				<%- if user_signed_in? -%>
+				 | <%= link_to "Modifier", edit_article_path(article) %>
+				 | <%= link_to "Supprimer", article_path(article), :method => :delete %>
+				<%- end -%>
 				</li>
 			<% end %>
 			<% else %>
