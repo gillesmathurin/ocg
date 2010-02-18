@@ -1,0 +1,42 @@
+<% form_for(partenaire, :html => { :multipart => true }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :adresse %><br />
+    <%= f.text_field :adresse %>
+  </p>
+  <p>
+    <%= f.label :cp %><br />
+    <%= f.text_field :cp %>
+  </p>
+  <p>
+    <%= f.label :ville %><br />
+    <%= f.text_field :ville %>
+  </p>
+  <p>
+    <%= f.label :telephone %><br />
+    <%= f.text_field :telephone %>
+  </p>
+  <p>
+    <%= f.label :fax %><br />
+    <%= f.text_field :fax %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :weburl %><br />
+    <%= f.text_field :weburl %>
+  </p>
+  <p>
+  	<%= f.label :logo, "Logo" %> : <%= f.file_field :logo %>
+  </p>
+  <p>
+    <%= f.submit 'Enregistrer' %>
+  </p>
+<% end %>
