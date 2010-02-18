@@ -1,8 +1,9 @@
 class PartenairesController < ApplicationController
+  before_filter :authenticate_user!, :only => [:new, :edit, :create, :destroy, :update]
   # GET /partenaires
   # GET /partenaires.xml
   def index
-    @partenaires = Partenaire.all
+    @partenaires = Partenaire.paginate(:page => params[:page], :per_page => 12, :order => "created_at desc")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -45,7 +46,7 @@ class PartenairesController < ApplicationController
     respond_to do |format|
       if @partenaire.save
         flash[:notice] = 'Partenaire was successfully created.'
-        format.html { redirect_to(@partenaire) }
+        format.html { redirect_to(partenaires_path()) }
         format.xml  { render :xml => @partenaire, :status => :created, :location => @partenaire }
       else
         format.html { render :action => "new" }
@@ -62,7 +63,7 @@ class PartenairesController < ApplicationController
     respond_to do |format|
       if @partenaire.update_attributes(params[:partenaire])
         flash[:notice] = 'Partenaire was successfully updated.'
-        format.html { redirect_to(@partenaire) }
+        format.html { redirect_to(partenaires_path()) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
