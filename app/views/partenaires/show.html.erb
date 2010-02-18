@@ -1,0 +1,63 @@
+<p>
+  <b>Name:</b>
+  <%=h @partenaire.name %>
+</p>
+
+<p>
+  <b>Adresse:</b>
+  <%=h @partenaire.adresse %>
+</p>
+
+<p>
+  <b>Cp:</b>
+  <%=h @partenaire.cp %>
+</p>
+
+<p>
+  <b>Ville:</b>
+  <%=h @partenaire.ville %>
+</p>
+
+<p>
+  <b>Telephone:</b>
+  <%=h @partenaire.telephone %>
+</p>
+
+<p>
+  <b>Fax:</b>
+  <%=h @partenaire.fax %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @partenaire.email %>
+</p>
+
+<p>
+  <b>Weburl:</b>
+  <%=h @partenaire.weburl %>
+</p>
+
+<p>
+  <b>Logo file name:</b>
+  <%=h @partenaire.logo_file_name %>
+</p>
+
+<p>
+  <b>Logo file size:</b>
+  <%=h @partenaire.logo_file_size %>
+</p>
+
+<p>
+  <b>Logo content type:</b>
+  <%=h @partenaire.logo_content_type %>
+</p>
+
+<p>
+  <b>Logo updated at:</b>
+  <%=h @partenaire.logo_updated_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_partenaire_path(@partenaire) %> |
+<%= link_to 'Back', partenaires_path %>

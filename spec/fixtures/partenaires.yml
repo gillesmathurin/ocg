@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  adresse: MyString
+  cp: MyString
+  ville: MyString
+  telephone: MyString
+  fax: MyString
+  email: MyString
+  weburl: MyString
+  logo_file_name: MyString
+  logo_file_size: 1
+  logo_content_type: MyString
+  logo_updated_at: 2010-02-18 15:40:47
+
+two:
+  name: MyString
+  adresse: MyString
+  cp: MyString
+  ville: MyString
+  telephone: MyString
+  fax: MyString
+  email: MyString
+  weburl: MyString
+  logo_file_name: MyString
+  logo_file_size: 1
+  logo_content_type: MyString
+  logo_updated_at: 2010-02-18 15:40:47

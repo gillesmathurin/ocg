@@ -1,0 +1,59 @@
+<h1>New partenaire</h1>
+
+<% form_for(@partenaire) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :adresse %><br />
+    <%= f.text_field :adresse %>
+  </p>
+  <p>
+    <%= f.label :cp %><br />
+    <%= f.text_field :cp %>
+  </p>
+  <p>
+    <%= f.label :ville %><br />
+    <%= f.text_field :ville %>
+  </p>
+  <p>
+    <%= f.label :telephone %><br />
+    <%= f.text_field :telephone %>
+  </p>
+  <p>
+    <%= f.label :fax %><br />
+    <%= f.text_field :fax %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :weburl %><br />
+    <%= f.text_field :weburl %>
+  </p>
+  <p>
+    <%= f.label :logo_file_name %><br />
+    <%= f.text_field :logo_file_name %>
+  </p>
+  <p>
+    <%= f.label :logo_file_size %><br />
+    <%= f.text_field :logo_file_size %>
+  </p>
+  <p>
+    <%= f.label :logo_content_type %><br />
+    <%= f.text_field :logo_content_type %>
+  </p>
+  <p>
+    <%= f.label :logo_updated_at %><br />
+    <%= f.datetime_select :logo_updated_at %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', partenaires_path %>
