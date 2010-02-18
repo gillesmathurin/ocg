@@ -3,7 +3,7 @@
 	<div class="articles">
 		<% if !@articles.blank? %>
 		<ul>
-			<% for article in @articles %>
+			<% @articles.each do |article| %>
 				<li class="article">
 				<%= article.title %> : <%= truncate(article.content, :length => 60) %><br/>
 				<%= link_to "Lire", article_path(article) %>
@@ -14,9 +14,12 @@
 				</li>
 			<% end %>
 			<% else %>
-
+				<li class="article">
+					Pas d'article pour l'instant
+				</li>
 			<% end %>
-		</ul>		
+		</ul>
+		<%= will_paginate @articles, :previous_label => "Précédent", :next_label => "Suivant" %>		
 	</div>
 </div>
 <div class="yui-gb maincontent">

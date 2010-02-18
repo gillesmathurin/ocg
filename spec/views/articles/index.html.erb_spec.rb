@@ -6,7 +6,8 @@ describe "/articles/index" do
   context "with existing articles" do
     before(:each) do
       @article = mock_model(Article, :title => "a title", :start_date =>Time.parse("2010-02-10 15:00:00"), :content => "")
-      assigns[:articles] = [ @article ]
+      @articles = [ @article ].paginate
+      assigns[:articles] = @articles
       @user = create_default_user
     end
     
@@ -45,6 +46,24 @@ describe "/articles/index" do
         sign_out(@user)
       end
     end
+    
   end
-
+  
+  context "with 20 existing articles" do
+    before(:each) do
+      @articles = []
+      12.times do
+        @articles << mock_model(Article, :title => "a title", :start_date =>Time.parse("2010-02-10 15:00:00"), :content => "")
+      end
+      assigns[:articles] = @articles.paginate(:per_page => 10)
+    end
+    
+    it "renders the will paginate links" do
+      render
+      response.should have_selector("div.pagination")
+      response.should contain("Précédent")
+      response.should contain("Suivant")
+    end
+  end
+  
 end
