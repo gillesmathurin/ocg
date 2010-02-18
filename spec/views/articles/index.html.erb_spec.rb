@@ -13,15 +13,15 @@ describe "/articles/index" do
     
     it "renders some articles summary" do
       render
-      response.should have_selector(".articles") do |list|
-        list.should have_selector("li.article", :content => "a title")
+      response.should have_selector(".article") do |list|
+        list.should have_selector("li", :content => "a title")
       end
     end
     
     it "renders the Lire link" do
       render
       response do |list|
-        list.should have_selector("li.article", :content => "a title")
+        list.should have_selector("li", :content => "a title")
         list.should contain("Lire")
         list.should_not contain("Modifier")
         list.should_not contain("Supprimer")
@@ -35,7 +35,7 @@ describe "/articles/index" do
       
       it "renders links with each article" do
         render
-        response.should have_selector(".articles") do |list|
+        response.should have_selector(".article") do |list|
           list.should have_selector("a", :href => edit_article_path(@article))
           list.should contain("Modifier")
           list.should contain("Supprimer")

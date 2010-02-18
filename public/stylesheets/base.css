@@ -119,7 +119,7 @@ div.yui-gb.maincontent ul.recent_articles li {
 }
 
 #bd {
-	
+	line-height: 1.4em;
 }
 
 #bd div.yui-g.slider {
@@ -143,7 +143,23 @@ div.yui-gb.maincontent ul.recent_articles li {
 	margin-bottom: 20px;
 }
 
-		#bd div.yui-g.sliderfalse div.article strong
+div.yui-gb.sliderfalse>div.article>ul.articles {
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+ul.articles>li {
+	list-style-image: url(../images/bullet.png);
+	list-style-position: inside;
+}
+
+div.yui-gb.sliderfalse>div.article>ul.articles span.titre {
+	color: maroon;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+#bd div.yui-g.sliderfalse div.article strong
  {
 	font-weight: bold;
 	text-align: center;

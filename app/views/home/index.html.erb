@@ -25,7 +25,7 @@
 			<% unless @articles.empty? %>
 		 		<% @articles.each do |article| %>
 					<li class="article">
-						<%=h article.title %> : <%= truncate(article.content, :length => 50) %> … <%= link_to "Lire …", article_path(article.id) %>
+						<span class="date"><%=h article.title %></span> : <%= truncate(article.content, :length => 50) %> … <%= link_to "Lire …", article_path(article.id) %>
 					</li>
 				<% end %>
 			<% else %>
