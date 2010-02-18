@@ -259,3 +259,12 @@ div.yui-gb.sliderfalse ul.next_events li {
 
 
 /* @end */
+
+div.yui-g.sliderfalse>table.partenaires>tbody>tr>td {
+	margin-right: 10px;
+	padding-left: 20px;
+}
+
+div.yui-g.sliderfalse>table.partenaires {
+	margin-bottom: 20px;
+}

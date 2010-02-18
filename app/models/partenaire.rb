@@ -1,5 +1,5 @@
 class Partenaire < ActiveRecord::Base
-  has_attached_file :logo, :styles => {:medium => "200x200>"}
+  has_attached_file :logo, :styles => {:medium => "150x150>"}
   
   def adresse_complete
     "#{adresse} #{cp} #{ville}"

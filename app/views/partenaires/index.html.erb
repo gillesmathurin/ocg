@@ -1,10 +1,13 @@
 <div class="yui-g sliderfalse">
 	<h1 class="entete1">Nos partenaires</h1>
+	
 	<% unless @partenaires.empty? %>
-	<% @partenaires.in_groups_of(3, false) do |group| %>
-		<% group.each do |p| %>
-			<div class="partenaire">
-				<p class="logo"><%= image_tag(p.logo.url(:medium)) %></p>
+	<table class="partenaires">
+	<% @partenaires.in_groups_of(5, false) do |group| %>
+		<tr>
+			<% group.each do |p| %>
+			<td>
+				<p class="logo"><%= image_tag(p.logo.url(:medium))  if logo_present?(p)%></p>
 				<p>
 					<%= p.name %><br/>
 					<%= p.adresse_complete %><br/>
@@ -13,10 +16,12 @@
 					<% if user_signed_in? %>
 					<%= link_to "Modifier", edit_partenaire_path(p) %> | <%= link_to "Supprimer", partenaire_path(p), :method => :delete %>
 					<% end %>
-				</p>
-			</div>
-		<% end %>
+				</p>				
+			</td>
+			<% end %>
+		</tr>
 	<% end %>
+	</table>
 	<%- end -%>
 	
 	<p>
