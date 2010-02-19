@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe PartenairesController do
+  before(:each) do
+    @user = create_default_user
+  end
 
   def mock_partenaire(stubs={})
     @mock_partenaire ||= mock_model(Partenaire, stubs)
@@ -8,7 +11,7 @@ describe PartenairesController do
 
   describe "GET index" do
     it "assigns all partenaires as @partenaires" do
-      Partenaire.stub(:find).with(:all).and_return([mock_partenaire])
+      Partenaire.stub(:paginate).and_return([mock_partenaire])
       get :index
       assigns[:partenaires].should == [mock_partenaire]
     end
@@ -23,6 +26,9 @@ describe PartenairesController do
   end
 
   describe "GET new" do
+    before(:each) do
+      sign_in(@user)
+    end
     it "assigns a new partenaire as @partenaire" do
       Partenaire.stub(:new).and_return(mock_partenaire)
       get :new
@@ -31,6 +37,10 @@ describe PartenairesController do
   end
 
   describe "GET edit" do
+    before(:each) do
+      sign_in(@user)
+    end
+    
     it "assigns the requested partenaire as @partenaire" do
       Partenaire.stub(:find).with("37").and_return(mock_partenaire)
       get :edit, :id => "37"
@@ -39,7 +49,10 @@ describe PartenairesController do
   end
 
   describe "POST create" do
-
+    before(:each) do
+      sign_in(@user)
+    end
+    
     describe "with valid params" do
       it "assigns a newly created partenaire as @partenaire" do
         Partenaire.stub(:new).with({'these' => 'params'}).and_return(mock_partenaire(:save => true))
@@ -50,7 +63,7 @@ describe PartenairesController do
       it "redirects to the created partenaire" do
         Partenaire.stub(:new).and_return(mock_partenaire(:save => true))
         post :create, :partenaire => {}
-        response.should redirect_to(partenaire_url(mock_partenaire))
+        response.should redirect_to(partenaires_url)
       end
     end
 
@@ -71,7 +84,10 @@ describe PartenairesController do
   end
 
   describe "PUT update" do
-
+    before(:each) do
+      sign_in(@user)
+    end
+    
     describe "with valid params" do
       it "updates the requested partenaire" do
         Partenaire.should_receive(:find).with("37").and_return(mock_partenaire)
@@ -85,10 +101,10 @@ describe PartenairesController do
         assigns[:partenaire].should equal(mock_partenaire)
       end
 
-      it "redirects to the partenaire" do
+      it "redirects to the partenaires list" do
         Partenaire.stub(:find).and_return(mock_partenaire(:update_attributes => true))
         put :update, :id => "1"
-        response.should redirect_to(partenaire_url(mock_partenaire))
+        response.should redirect_to(partenaires_url)
       end
     end
 
@@ -115,6 +131,10 @@ describe PartenairesController do
   end
 
   describe "DELETE destroy" do
+    before(:each) do
+      sign_in(@user)
+    end
+    
     it "destroys the requested partenaire" do
       Partenaire.should_receive(:find).with("37").and_return(mock_partenaire)
       mock_partenaire.should_receive(:destroy)

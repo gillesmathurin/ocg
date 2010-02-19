@@ -32,9 +32,6 @@ describe "/partenaires/new.html.erb" do
       with_tag("input#partenaire_fax[name=?]", "partenaire[fax]")
       with_tag("input#partenaire_email[name=?]", "partenaire[email]")
       with_tag("input#partenaire_weburl[name=?]", "partenaire[weburl]")
-      with_tag("input#partenaire_logo_file_name[name=?]", "partenaire[logo_file_name]")
-      with_tag("input#partenaire_logo_file_size[name=?]", "partenaire[logo_file_size]")
-      with_tag("input#partenaire_logo_content_type[name=?]", "partenaire[logo_content_type]")
     end
   end
 end
