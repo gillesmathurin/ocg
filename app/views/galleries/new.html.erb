@@ -1,2 +1,54 @@
-<h1>Galleries#new</h1>
-<p>Find me in app/views/galleries/new.html.erb</p>
+<div class="yui-g sliderfalse">
+	<h1 class="entete1">Créer une Gallerie</h1>
+	<div class="tableform">
+		<% form_for @gallery, :html => {:multipart => true} do |f| -%>
+			<%= f.error_messages %>		  
+			<table cellpadding="10">
+				<tr>
+					<td valign="top">
+						<p>
+					  		<%= f.label :name, "Nom" %> : <%= f.text_field :name %><br/>
+					  	</p>
+						<p>
+							<%= f.label :description, "Description" %> :<br/>
+							 <%= f.text_area :description, :rows =>5 %>
+						</p>
+					</td>
+					<td>
+					<% f.fields_for :images do |image_form| %>
+						<p>
+							<%= image_form.label :name , "Nom" %> :
+							<%= image_form.text_field :name %>
+						</p>
+						<p>
+							<%= image_form.label :description, "Description" %> :<br/>
+							<%= image_form.text_area :description, :rows => 2 %>
+						</p>
+						<!-- <p>
+							<%# image_form.label :date, "Date" %>
+							<%# image_form.date_select :date, :order => [:day, :month, :year] %>
+						</p> -->
+						<p>
+							<%= image_form.label :Photo %> : <%= image_form.file_field :photo %>
+						</p>
+
+
+					<% end %>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<p class="button">
+							<%= f.submit "Enregistrer" %>
+						</p>
+					</td>
+				</tr>
+			</table>
+			
+
+		<% end -%>
+	</div>
+</div>
+<div class="yui-gb maincontent">
+	
+</div>

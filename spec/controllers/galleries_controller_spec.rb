@@ -34,7 +34,7 @@ describe GalleriesController do
     
     it "assigns a newly created but unsaved gallery as @gallery and build" do
       Gallery.should_receive(:new).and_return(mock_gallery)
-      6.times {
+      5.times {
         mock_gallery.should_receive(:images).and_return(@images)
         @images.should_receive(:build)
       }
@@ -44,7 +44,7 @@ describe GalleriesController do
     
     it "renders the new template" do
       Gallery.should_receive(:new).and_return(mock_gallery)
-      6.times {
+      5.times {
         mock_gallery.should_receive(:images).and_return(@images)
         @images.should_receive(:build)
       }

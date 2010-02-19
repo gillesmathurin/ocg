@@ -11,7 +11,7 @@ class GalleriesController < ApplicationController
 
   def new
     @gallery = Gallery.new
-    6.times { @gallery.images.build }
+    5.times { @gallery.images.build }
   end
 
   def edit

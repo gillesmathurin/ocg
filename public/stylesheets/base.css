@@ -268,3 +268,20 @@ div.yui-g.sliderfalse>table.partenaires>tbody>tr>td {
 div.yui-g.sliderfalse>table.partenaires {
 	margin-bottom: 20px;
 }
+
+div.yui-g.sliderfalse>div.tableform table {
+	width: 90%;
+}
+
+div.yui-g.sliderfalse>div.tableform table p {
+	margin-bottom: 5px;
+	text-align: left;
+}
+
+div.yui-g.sliderfalse>div.tableform table p.button {
+	text-align: center;
+}
+
+div.yui-g.sliderfalse>div.tableform table p>label {
+	font-weight: bold;
+}
