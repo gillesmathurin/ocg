@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :events
   map.resource :user
   map.devise_for :users
+  map.resources :galleries, :has_many => :images
 
   # The priority is based upon order of creation: first created -> highest priority.
 

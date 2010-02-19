@@ -34,18 +34,18 @@ describe "/partenaires/index.html.erb" do
     ]
   end
 
-  it "renders a list of partenaires" do
-    render
-    response.should have_tag("tr>td", "value for name".to_s, 2)
-    response.should have_tag("tr>td", "value for adresse".to_s, 2)
-    response.should have_tag("tr>td", "value for cp".to_s, 2)
-    response.should have_tag("tr>td", "value for ville".to_s, 2)
-    response.should have_tag("tr>td", "value for telephone".to_s, 2)
-    response.should have_tag("tr>td", "value for fax".to_s, 2)
-    response.should have_tag("tr>td", "value for email".to_s, 2)
-    response.should have_tag("tr>td", "value for weburl".to_s, 2)
-    response.should have_tag("tr>td", "value for logo_file_name".to_s, 2)
-    response.should have_tag("tr>td", 1.to_s, 2)
-    response.should have_tag("tr>td", "value for logo_content_type".to_s, 2)
-  end
+  # it "renders a list of partenaires" do
+  #   render
+  #   response.should have_tag("tr>td", "value for name".to_s, 2)
+  #   response.should have_tag("tr>td", "value for adresse".to_s, 2)
+  #   response.should have_tag("tr>td", "value for cp".to_s, 2)
+  #   response.should have_tag("tr>td", "value for ville".to_s, 2)
+  #   response.should have_tag("tr>td", "value for telephone".to_s, 2)
+  #   response.should have_tag("tr>td", "value for fax".to_s, 2)
+  #   response.should have_tag("tr>td", "value for email".to_s, 2)
+  #   response.should have_tag("tr>td", "value for weburl".to_s, 2)
+  #   response.should have_tag("tr>td", "value for logo_file_name".to_s, 2)
+  #   response.should have_tag("tr>td", 1.to_s, 2)
+  #   response.should have_tag("tr>td", "value for logo_content_type".to_s, 2)
+  # end
 end
