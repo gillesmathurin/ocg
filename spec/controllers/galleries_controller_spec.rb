@@ -6,6 +6,10 @@ describe GalleriesController do
     @gallery ||= mock_model(Gallery, stubs)
   end
   
+  before(:each) do
+    @user = create_default_user
+  end
+  
   describe "GET 'index'" do
     it "finds all the galleries as @galleries" do
       Gallery.should_receive(:all).and_return([mock_gallery])
@@ -23,20 +27,37 @@ describe GalleriesController do
   end
 
   describe "GET 'new'" do
-    it "assigns a newly created but unsaved gallery as @gallery" do
+    before(:each) do
+      sign_in(@user)
+      @images = mock("images")
+    end
+    
+    it "assigns a newly created but unsaved gallery as @gallery and build" do
       Gallery.should_receive(:new).and_return(mock_gallery)
+      6.times {
+        mock_gallery.should_receive(:images).and_return(@images)
+        @images.should_receive(:build)
+      }
       get :new
       assigns[:gallery].should == mock_gallery
     end
     
     it "renders the new template" do
       Gallery.should_receive(:new).and_return(mock_gallery)
+      6.times {
+        mock_gallery.should_receive(:images).and_return(@images)
+        @images.should_receive(:build)
+      }
       get :new
       response.should render_template('new')
     end
   end
 
   describe "GET 'edit'" do
+    before(:each) do
+      sign_in(@user)
+    end
+    
     it "assigns the requested gallery as @gallery" do
       Gallery.should_receive(:find).with("37").and_return(mock_gallery)
       get :show, :id => "37"
@@ -51,6 +72,10 @@ describe GalleriesController do
   end
   
   describe "POST 'create'" do
+    before(:each) do
+      sign_in(@user)
+    end
+    
     context "with valid params" do
       it "assigns a newly created gallery as @gallery" do
         Gallery.should_receive(:new).with({'these' => 'params'}).and_return(mock_gallery(:save => true))
@@ -75,6 +100,10 @@ describe GalleriesController do
   end
   
   describe "PUT 'update'" do
+    before(:each) do
+      sign_in(@user)
+    end
+    
     context "with valid params" do
       it "updates the requested gallery" do
         Gallery.should_receive(:find).with("37").and_return(mock_gallery)
@@ -102,6 +131,18 @@ describe GalleriesController do
         put :update, :id => "37"
         response.should render_template(:edit)        
       end
+    end
+  end
+  
+  describe "DELETE (destroy)" do
+    before(:each) do
+      sign_in(@user)
+    end
+    it "find the requested gallery, delete it and redirect to the index page" do
+      Gallery.should_receive(:find).with("37").and_return(mock_gallery)
+      mock_gallery.should_receive(:destroy)
+      delete :destroy, :id => "37"
+      response.should redirect_to(galleries_path())      
     end
   end
 end

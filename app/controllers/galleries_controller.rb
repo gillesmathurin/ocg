@@ -1,4 +1,6 @@
 class GalleriesController < ApplicationController
+  before_filter :authenticate_user!, :only => [:new, :edit, :create, :destroy, :update]
+  
   def index
     @galleries = Gallery.all
   end
@@ -9,6 +11,7 @@ class GalleriesController < ApplicationController
 
   def new
     @gallery = Gallery.new
+    6.times { @gallery.images.build }
   end
 
   def edit
@@ -43,7 +46,7 @@ class GalleriesController < ApplicationController
     end
   end
   
-  def delete
+  def destroy
     @gallery = Gallery.find(params[:id])
     @gallery.destroy
     redirect_to galleries_path()
