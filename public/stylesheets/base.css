@@ -203,6 +203,16 @@ div.form span.mceEditor.defaultSimpleSkin {
 	text-align: center;
 }
 
+#bd div.yui-g.sliderfalse div#slider.gallery {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	text-align: center;
+	height: 500px;
+	width: 500px;
+}
+
 #bd div.yui-gb.sliderfalse div#slider p.fede {
 	font-weight: bold;
 	margin-bottom: 10px;
@@ -216,6 +226,32 @@ div.yui-gb.sliderfalse ul.next_events li {
 	margin-top: 20px;
 	padding-left: 40px;
 	width: 245px;
+}
+
+div.yui-g.sliderfalse>table.partenaires>tbody>tr>td {
+	margin-right: 10px;
+	padding-left: 20px;
+}
+
+div.yui-g.sliderfalse>table.partenaires {
+	margin-bottom: 20px;
+}
+
+div.yui-g.sliderfalse>div.tableform table {
+	width: 90%;
+}
+
+div.yui-g.sliderfalse>div.tableform table p {
+	margin-bottom: 5px;
+	text-align: left;
+}
+
+div.yui-g.sliderfalse>div.tableform table p.button {
+	text-align: center;
+}
+
+div.yui-g.sliderfalse>div.tableform table p>label {
+	font-weight: bold;
 }
 
 #bd div.yui-gb.maincontent {
@@ -245,6 +281,14 @@ div.yui-gb.sliderfalse ul.next_events li {
 	color: #faf21d;
 }
 
+#bd div.yui-g.sliderfalse>table.galleryindex>tbody>tr>td {
+	padding: 5px;
+}
+
+#bd div.yui-g.sliderfalse>table.galleryindex>tbody>tr>td>img {
+	border: 4px double black;
+}
+
 /* @end */
 
 /* @group Footer */
@@ -259,29 +303,3 @@ div.yui-gb.sliderfalse ul.next_events li {
 
 
 /* @end */
-
-div.yui-g.sliderfalse>table.partenaires>tbody>tr>td {
-	margin-right: 10px;
-	padding-left: 20px;
-}
-
-div.yui-g.sliderfalse>table.partenaires {
-	margin-bottom: 20px;
-}
-
-div.yui-g.sliderfalse>div.tableform table {
-	width: 90%;
-}
-
-div.yui-g.sliderfalse>div.tableform table p {
-	margin-bottom: 5px;
-	text-align: left;
-}
-
-div.yui-g.sliderfalse>div.tableform table p.button {
-	text-align: center;
-}
-
-div.yui-g.sliderfalse>div.tableform table p>label {
-	font-weight: bold;
-}

@@ -1,2 +1,41 @@
-<h1>Galleries#index</h1>
-<p>Find me in app/views/galleries/index.html.erb</p>
+<div class="yui-g sliderfalse">
+	<h1 class="entete1">Galleries de Photos</h1>
+	<% if !@galleries.blank? %>
+	  <% for gallery in @galleries %>
+		    <p>
+		    	<b><%= gallery.name %></b>
+		    </p>
+			<p>
+				<%= gallery.description %>			
+			</p>
+			<table class="galleryindex">
+				<%- gallery.images.in_groups_of(5, false) do |groups| -%>
+				<tr>
+					<%- groups.each do |image| -%>
+					<td><%= image_tag(image.photo.url(:thumb)) %></td>
+					<%- end -%>
+				</tr>
+				<%- end -%>
+			</table>
+			<p>
+				<%= link_to "Voir diaporama", gallery_path(gallery) %>
+				<% if user_signed_in? %>
+				| <%= link_to "Modifier", edit_gallery_path(gallery) %> | <%= link_to "Supprimer", gallery_path(gallery), :method => :delete %>
+				<% end %>
+			</p>
+	  <% end %>
+	<% else %>
+	  <p>Pas de galleries de photos enregistrer pour le moment</p>
+	<% end %>
+	<p>
+		<%= will_paginate @galleries %>
+	</p>
+	<p>
+		<%- if user_signed_in? -%>
+			<%= link_to "Ajouter une gallerie de photos", new_gallery_path() %>
+		<%- end -%>
+	</p>
+</div>
+<div class="yui-gb maincontent">
+	
+</div>

@@ -1,2 +1,40 @@
-<h1>Galleries#show</h1>
-<p>Find me in app/views/galleries/show.html.erb</p>
+<%- content_for(:head) do -%>
+	<%= stylesheet_link_tag 'screen' %>
+	<%= javascript_include_tag 'easySlider1.7.js' %>
+	 <script type="text/javascript">
+		$(document).ready(function(){	
+			$("#slider").easySlider({
+				auto: true, 
+				continuous: true,
+				prevText: 'Précédent',
+				nextText: 'Suivant',
+				pause: 5000
+			});
+		});
+	 </script>
+<%- end -%>
+
+<div class="yui-g sliderfalse">
+	<h1 class="entete1"><%= @gallery.name %></h1>
+
+	<p class="gallery-description">
+		<%= @gallery.description %>
+	</p>
+	<div id="slider" class="gallery">
+		<ul>
+			<% @gallery.images.each do |image| %>
+				<li>
+					<%= image_tag(image.photo.url(:large)) %>
+				</li>
+			<%- end -%>
+		</ul>
+	</div>
+	
+	<p align="center">
+		<%= link_to "Retour", galleries_path() %>
+	</p>
+</div>
+
+<div class="yui-gb maincontent">
+	
+</div>

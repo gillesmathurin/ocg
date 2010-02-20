@@ -12,7 +12,7 @@ describe GalleriesController do
   
   describe "GET 'index'" do
     it "finds all the galleries as @galleries" do
-      Gallery.should_receive(:all).and_return([mock_gallery])
+      Gallery.should_receive(:paginate).and_return([mock_gallery])
       get :index
       assigns[:galleries].should == [mock_gallery]
     end

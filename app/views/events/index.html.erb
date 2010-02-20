@@ -3,12 +3,14 @@
 	<%= javascript_include_tag 'easySlider1.7.js' %>
 	 <script type="text/javascript">
 		$(document).ready(function(){	
-			$("#slider").easySlider({
+			$("#slider").easySlider(
+				{
 				auto: false, 
 				continuous: true,
-				prevText: 'Previous',
-				nextText: 'Next'
-			});
+				prevText: '< Précédent',
+				nextText: 'Suivant >' 
+				}
+			);
 		});
 	 </script>
 <%- end -%>
@@ -23,7 +25,7 @@
 				<%- unless @events_fcfg.empty? -%>
 				<%- @events_fcfg.each do |event| -%>
 					<p>
-						<span class="date"><%= formatted_date(event.start_date) %></span> :<b> <%=h event.title %></b> <%= event.description %> <%= event.place %> <%# link_to "+ d'infos …", event_path(event.id) %>
+						<span class="date"><%= formatted_date(event.start_date) %></span> :<b> <%=h event.title %></b> <%= event.description %> <%= event.place %> 
 					</p>
 					<hr>
 				<%- end -%>					
@@ -35,7 +37,7 @@
 				<%- unless @events_fcg.empty? -%>
 				<%- @events_fcg.each do |event| -%>
 					<p>
-						<span class="date"><%= formatted_date(event.start_date) %></span> :<b> <%=h event.title %></b> <%= event.description %> <%= event.place %><br/> <%# link_to "+ d'infos …", event_path(event.id) %>
+						<span class="date"><%= formatted_date(event.start_date) %></span> :<b> <%=h event.title %></b> <%= event.description %> <%= event.place %><br/> 
 					</p>
 					<hr>
 				<%- end -%>					
@@ -47,7 +49,7 @@
 				<%- unless @events_gccrp.empty? -%>
 				<%- @events_gccrp.each do |event| -%>
 					<p>
-						<span class="date"><%= formatted_date(event.start_date) %></span> :<b> <%=h event.title %></b> <%= event.description %> <%= event.place %><br/> <%# link_to "+ d'infos …", event_path(event.id) %>
+						<span class="date"><%= formatted_date(event.start_date) %></span> :<b> <%=h event.title %></b> <%= event.description %> <%= event.place %><br/> 
 					</p>
 					<hr>
 				<%- end -%>					

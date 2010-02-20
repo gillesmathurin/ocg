@@ -1,11 +1,11 @@
 /* image replacement */
-        .graphic, #prevBtn, #nextBtn, #slider1prev, #slider1next{
+        /*.graphic, #prevBtn, #nextBtn, #slider1prev, #slider1next{
             margin:0;
             padding:0;
             display:block;
             overflow:hidden;
             text-indent:-8000px;
-            }
+            }*/
     /* // image replacement */			
 
 /* Easy Slider */
@@ -23,35 +23,35 @@
 			entire slider area will adjust according to the parameters provided here
 		*/ 
 		width: 600px;
-		height: 550px;
+		height: 600px;
 		overflow:hidden; 
 		}	
 	#prevBtn, #nextBtn,
 	#slider1next, #slider1prev{ 
 		display:block;
 		width: 40px;
-		height: 110px;
+		height: 30px;
 		position:absolute;
-		top: 200px;
+		top: 270px;
 		z-index:1000;
 		}	
 	#nextBtn, #slider1next{ 
-		left: 692px;
+		left: 750px;
 		}
 	#prevBtn {
-	left: 370px;
+	left: 350px;
 }														
 	#prevBtn a, #nextBtn a,
 	#slider1next a, #slider1prev a{  
 		display:block;
 		position:relative;
-		width: 40px;
-		height: 110px;
-		background: url(../images/btn_prev.png) no-repeat 0 0;	
+		width: 100px;
+		height: 30px;
+		/*background: url(../images/btn_prev.png) no-repeat 0 0;*/	
 		}	
-	#nextBtn a, #slider1next a{ 
+	/*#nextBtn a, #slider1next a{ 
 		background: url(../images/btn_next.png) no-repeat 0 0;	
-		}	
+		}*/	
 		
 	/* numeric controls */	
 

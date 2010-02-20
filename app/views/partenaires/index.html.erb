@@ -25,7 +25,9 @@
 	<%- end -%>
 	
 	<p>
-		<%= link_to 'Ajouter un partenaire', new_partenaire_path %>		
+		<%- if user_signed_in? -%>
+			<%= link_to 'Ajouter un partenaire', new_partenaire_path %>		
+		<%- end -%>
 	</p>
 </div>
 <div class="yui-gb maincontent">
