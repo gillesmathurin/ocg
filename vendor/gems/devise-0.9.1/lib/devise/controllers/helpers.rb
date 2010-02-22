@@ -140,7 +140,13 @@ module Devise
         scope      = Devise::Mapping.find_scope!(resource_or_scope)
         resource ||= resource_or_scope
         sign_in(scope, resource) unless skip
-        redirect_to stored_location_for(scope) || after_sign_in_path_for(resource)
+        redirect_to after_sign_in_path_for(resource) || stored_location_for(scope)
+      end
+      
+      def simple_sign_in_and_redirect(resource=nil, skip=false)
+        resource ||= resource
+        sign_in(resource)
+        redirect_to root_path
       end
 
       # Sign out an user and tries to redirect to the url specified by

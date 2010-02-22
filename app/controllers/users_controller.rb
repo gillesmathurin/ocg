@@ -15,7 +15,9 @@ class UsersController < ApplicationController
     if @user.save
       if @user.respond_to?(:confirm!)
         flash[:notice] = t('devise.confirmations.send_instructions')
-        sign_in_and_redirect @user if @user.class.confirm_within > 0
+        redirect_to root_path
+        # CHANGED and FIXED
+        # sign_in_and_redirect @user if @user.class.confirm_within > 0
       else
         flash[:notice] = t('flash.users.create.notice', :default => 'User was successfully created.')
         redirect_to root_path
