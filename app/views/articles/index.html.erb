@@ -19,7 +19,13 @@
 				</li>
 			<% end %>
 		</ul>
-		<%= will_paginate @articles, :previous_label => "Précédent", :next_label => "Suivant" %>		
+		<%= will_paginate @articles, :previous_label => "Précédent", :next_label => "Suivant" %>
+		
+		<p>
+			<% if user_signed_in? %>
+			<%= link_to "Ajouter un article", new_article_path() %>
+			<%- end -%>
+		</p>		
 	</div>
 </div>
 <div class="yui-gb maincontent">
