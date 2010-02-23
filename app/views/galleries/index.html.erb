@@ -27,7 +27,7 @@
 	<% else %>
 	  <p>Pas de galleries de photos enregistrer pour le moment</p>
 	<% end %>
-	<p>
+	<p class="gallery-name">
 		<%= will_paginate @galleries, :previous_label => "Précédent", :next_label => "Suivant"  %>
 	</p>
 	<p>

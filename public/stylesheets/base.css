@@ -324,3 +324,18 @@ div.yui-g.sliderfalse>p.gallery-name {
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
+
+#bd div#flashmessages {
+	z-index: 1000;
+	background-color: yellow;
+	color: red;
+	font-weight: bold;
+	text-align: center;
+	display: block;
+	visibility: visible;
+	overflow: hidden;
+	position: absolute;
+	left: 500px;
+	font-size: 1.2em;
+	padding: 5px;
+}

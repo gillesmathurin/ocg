@@ -58,12 +58,19 @@
 					<li><%= link_to "Galleries", galleries_path() %> </li>
 					<li><%= link_to "Liens", partenaires_path() %></li>
 				</ul>
+				<%- if user_signed_in? -%>
+					 <p class="logoutpanel">
+					 	<%= link_to "Logout", destroy_user_session_path() %>
+					 </p>
+				<%- end -%>				
 			</div>
 		</div> 
 	     <div id="bd" role="main">
-		 	<%- flash.each do |name, msg| -%>
-			  <%= content_tag :div, msg, :id => "flash_#{name}" %>
-			<%- end -%>
+			<div id="flashmessages">
+				<% if flash[:notice] %>
+					<%= flash[:notice] %>
+				<%- end -%>
+			</div>
  			<%= yield %>
 	      </div> 
 	     <div id="ft" role="contentinfo">
