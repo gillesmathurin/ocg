@@ -66,11 +66,11 @@
 			</div>
 		</div> 
 	     <div id="bd" role="main">
-			<div id="flashmessages">
-				<% if flash[:notice] %>
-					<%= flash[:notice] %>
-				<%- end -%>
-			</div>
+			<% if flash[:notice] %>
+				<div id="flashmessages">
+						<%= flash[:notice] %>
+				</div>
+			<%- end -%>
  			<%= yield %>
 	      </div> 
 	     <div id="ft" role="contentinfo">

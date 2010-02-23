@@ -55,6 +55,11 @@
 		<p class="admin-login">
 			<%= link_to "Accès réservé", new_user_session_path() %>
 		</p>
+		<ul class="next_events">
+			<li>
+				<%= @galleries_count %> galleries de photos, <%= link_to "à découvrir", galleries_path() %>
+			</li>
+		</ul>
 
       </div> 
   </div>
