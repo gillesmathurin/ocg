@@ -30,7 +30,13 @@
 					<li><%= link_to "Galleries", galleries_path() %> </li>
 					<li><%= link_to "Liens", partenaires_path() %></li>
 				</ul>
+				<%- if user_signed_in? -%>
+					 <p class="logoutpanel">
+					 	<%= link_to "Logout", destroy_user_session_path() %>
+					 </p>
+				<%- end -%>
 			</div>
+
 		</div> 
 	     <div id="bd" role="main">
 		 	<%- flash.each do |name, msg| -%>

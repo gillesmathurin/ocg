@@ -85,6 +85,22 @@ div#doc4.yui-t7 {
 	color: #41291b;
 }
 
+#menus p.logoutpanel {
+	display: block;
+	margin-left: 370px;
+	width: 75px;
+	height: 20px;
+	background-color: navy;
+	text-align: center;
+	font-weight: bold;
+	line-height: 20px;
+	margin-top: -5px;
+}
+
+#menus p.logoutpanel a {
+	color: white;
+}
+
 /* @end */
 
 /* @group Body */
