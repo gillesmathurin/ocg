@@ -23,7 +23,7 @@
 			entire slider area will adjust according to the parameters provided here
 		*/ 
 		width: 600px;
-		height: 600px;
+		height: 550px;
 		overflow:hidden; 
 		}	
 	#prevBtn, #nextBtn,

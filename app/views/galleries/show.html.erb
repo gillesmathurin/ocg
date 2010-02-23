@@ -6,8 +6,8 @@
 			$("#slider").easySlider({
 				auto: true, 
 				continuous: true,
-				prevText: 'Précédent',
-				nextText: 'Suivant',
+				prevText: '< Précédent',
+				nextText: 'Suivant >',
 				pause: 5000
 			});
 		});
@@ -17,9 +17,6 @@
 <div class="yui-g sliderfalse">
 	<h1 class="entete1"><%= @gallery.name %></h1>
 
-	<p class="gallery-description">
-		<%= @gallery.description %>
-	</p>
 	<div id="slider" class="gallery">
 		<ul>
 			<% @gallery.images.each do |image| %>
@@ -29,7 +26,9 @@
 			<%- end -%>
 		</ul>
 	</div>
-	
+	<p class="gallery-description">
+		<%= @gallery.description %>
+	</p>
 	<p align="center">
 		<%= link_to "Retour", galleries_path() %>
 	</p>

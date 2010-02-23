@@ -303,3 +303,8 @@ div.yui-g.sliderfalse>div.tableform table p>label {
 
 
 /* @end */
+
+div.yui-g.sliderfalse>p.gallery-name {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}

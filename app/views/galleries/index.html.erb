@@ -2,7 +2,7 @@
 	<h1 class="entete1">Galleries de Photos</h1>
 	<% if !@galleries.blank? %>
 	  <% for gallery in @galleries %>
-		    <p>
+		    <p class="gallery-name">
 		    	<b><%= gallery.name %></b>
 		    </p>
 			<p>
@@ -28,7 +28,7 @@
 	  <p>Pas de galleries de photos enregistrer pour le moment</p>
 	<% end %>
 	<p>
-		<%= will_paginate @galleries %>
+		<%= will_paginate @galleries, :previous_label => "Précédent", :next_label => "Suivant"  %>
 	</p>
 	<p>
 		<%- if user_signed_in? -%>
