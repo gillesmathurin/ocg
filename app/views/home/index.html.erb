@@ -18,14 +18,19 @@
   		</div> <!-- END AnythingSlider -->
   	</div>
   </div> 
+
 <div class="yui-gb maincontent"> 
       <div class="yui-u first">
 		<h1 class="entete1">Dernières Publications</h1>
 		<ul class="recent_articles">
 			<% if !@articles.blank? %>
 			  <% for article in @articles %>
-			    <li class="article">
-					<span class="date"><%=h article.title %></span> : <%= truncate(article.content, :length => 50) %> <br/><%= link_to "Lire …", article_path(article) %>
+			    <li>
+					<p>
+						<span class="date"><%=h article.title %></span> :
+						 <%= truncate(article.content, :length => 50) %>
+					</p>
+					<p><%= link_to "Voir …", article_path(article) %></p>
 				</li>
 			  <% end %>
 			<% else %>
@@ -36,6 +41,7 @@
 			
   		
       </div> 
+
       <div class="yui-u">
 		<h1 class="entete1">Prochains Evénements</h1>
 	 	<ul class="next_events">
@@ -51,6 +57,7 @@
 	 	</ul>
   		<ul class="next_events"><li><%= link_to "Voir tout le programme", events_path() %></li></ul>
       </div> 
+
       <div class="yui-u"> 
 		<h1 class="entete1">Dashboard</h1>
 		<p class="admin-login">
@@ -63,4 +70,4 @@
 		</ul>
 
       </div> 
-  </div>
+</div>
