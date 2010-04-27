@@ -25,12 +25,8 @@
 		<ul class="recent_articles">
 			<% if !@articles.blank? %>
 			  <% for article in @articles %>
-			    <li>
-					<p>
-						<span class="date"><%=h article.title %></span> :
-						 <%= truncate(article.content, :length => 50) %>
-					</p>
-					<p><%= link_to "Voir …", article_path(article) %></p>
+			    <li class>
+					<p><span class="date"><%=h article.title %></span> <%= link_to "Voir …", article_path(article) %></p>
 				</li>
 			  <% end %>
 			<% else %>

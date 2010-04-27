@@ -5,7 +5,7 @@
 		<ul class="articles">
 			<% @articles.each do |article| %>
 				<li>
-				<span class="titre"><%= article.title %></span> : <%= truncate(article.content, :length => 120) %><br/>
+				<span class="titre"><%= article.title %></span><br/>
 				<%= link_to "Voir", article_path(article) %>
 				<%- if user_signed_in? -%>
 				 | <%= link_to "Modifier", edit_article_path(article) %>
