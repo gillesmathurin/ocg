@@ -22,15 +22,16 @@
       <div class="yui-u first">
 		<h1 class="entete1">Dernières Publications</h1>
 		<ul class="recent_articles">
-			<% unless @articles.empty? %>
-		 		<% @articles.each do |article| %>
-					<li class="article">
-						<span class="date"><%=h article.title %></span> : <%= truncate(article.content, :length => 50) %> … <%= link_to "Lire …", article_path(article.id) %>
-					</li>
-				<% end %>
+			<% if !@articles.blank? %>
+			  <% for article in @articles %>
+			    <li class="article">
+					<span class="date"><%=h article.title %></span> : <%= truncate(article.content, :length => 50) %> <br/><%= link_to "Lire …", article_path(article) %>
+				</li>
+			  <% end %>
 			<% else %>
-				<li class="article">Pas d'articles pour le moment</li>
+			  	<li class="article">Pas d'articles pour le moment</li>
 			<% end %>
+			
 		</ul>
 			
   		
