@@ -5,6 +5,6 @@ class Article < ActiveRecord::Base
   named_scope :recent_articles, :order => "created_at desc", :limit => 4  
   
   def to_param
-    "#{id}-#{title.parameterize}"
+    "#{self.id}-#{self.title.parameterize}"
   end
 end
