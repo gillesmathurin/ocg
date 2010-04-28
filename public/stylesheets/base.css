@@ -3,7 +3,7 @@ html {
 	height: 1000px;
 	margin-right: auto;
 	margin-left: auto;
-	background-image: url(../images/fond.jpg);
+	background: #f6eb20 url(../images/fond.jpg) repeat-x;
 }
 
 div#doc4.yui-t7 {
@@ -146,12 +146,13 @@ div.yui-gb.maincontent ul.recent_articles li {
 }
 
 #bd div.yui-g.sliderfalse {
-	background: url(../images/bgmain_03.png) no-repeat;
+	background: url(../images/bg-body_03.png) repeat-y -4px;
 	width: 974px;
-	height: 249px;
 	padding-right: 40px;
 	padding-left: 40px;
 	margin-left: 3px;
+	min-height: 416px;
+	height: auto;
 }
 
 #bd div.yui-g.sliderfalse div.article {
@@ -179,6 +180,11 @@ div.yui-gb.sliderfalse>div.article>ul.articles span.titre {
  {
 	font-weight: bold;
 	text-align: center;
+}
+
+div.article p {
+	margin-left: 20px;
+	margin-top: 10px;
 }
 
 #bd div.yui-g.sliderfalse>div.form {
@@ -271,11 +277,18 @@ div.yui-g.sliderfalse>div.tableform table p>label {
 }
 
 #bd div.yui-gb.maincontent {
-	background: url(../images/layout_09.png) no-repeat;
-	height: 416px;
 	padding-right: 40px;
 	width: 974px;
 	color: #1b5791;
+	height: auto;
+	min-height: 300px;
+	background: url(../images/bg-body_03.png) repeat-y scroll -1px -1px;
+}
+
+#bd div#subcontent {
+	background: url(../images/bg-subcontent_06.png) no-repeat;
+	height: 50px;
+	width: 990px;
 }
 
 #bd span.date {
