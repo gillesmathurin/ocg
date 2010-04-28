@@ -25,8 +25,8 @@
 		<ul class="recent_articles">
 			<% if !@articles.blank? %>
 			  <% for article in @articles %>
-			    <li class>
-					<p><span class="date"><%=h article.title %></span> <%= link_to "Voir …", article_path(article) %></p>
+			    <li>
+					<span class="date"><%=h article.title %></span> <%= link_to "Lire …", article_path(article) %>
 				</li>
 			  <% end %>
 			<% else %>
