@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :edit, :create, :destroy, :update]
-  uses_tiny_mce
+  uses_tiny_mce# :options => { :theme => 'advanced' }
   
   def index
     @articles = Article.paginate(:page => params[:page], :per_page => 10, :order => "created_at desc")
