@@ -5,3 +5,4 @@ log/test.log
 tmp/*
 db/*.sqlite3
 config/database.yml
+config/initializers/mail.rb
