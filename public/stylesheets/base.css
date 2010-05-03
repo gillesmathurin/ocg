@@ -145,14 +145,15 @@ div.yui-gb.maincontent ul.recent_articles li {
 	padding-right: 40px;
 }
 
-#bd div.yui-g.sliderfalse {
+#bd>div.yui-g.sliderfalse {
 	background: url(../images/bg-body_03.png) repeat-y -4px;
 	width: 974px;
 	padding-right: 40px;
 	padding-left: 40px;
 	margin-left: 3px;
 	min-height: 416px;
-	height: auto;
+	height: 600px;
+	display: block;
 }
 
 #bd div.yui-g.sliderfalse div.article {
@@ -209,20 +210,31 @@ div.form span.mceEditor.defaultSimpleSkin {
 }
 
 #bd div.yui-gb.sliderfalse {
-	background: url(../images/bgmain_03.png) no-repeat;
+	background: url(../images/bgmain_03.png) repeat-y;
 	width: 974px;
-	height: 249px;
+	height: auto;
 	padding-right: 40px;
 	padding-left: 10px;
 	margin-left: 3px;
 }
 
 #bd div.yui-gb.sliderfalse div#slider {
-	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	position: relative;
 	text-align: center;
+	display: block;
+	padding-bottom: 15px;
+}
+
+#bd div.yui-gb.sliderfalse div#slider ul {
+	
+}
+
+#bd div.yui-gb.sliderfalse div#slider li {
+	
+}
+
+#bd div.yui-gb.sliderfalse div#slider li>div.text-block {
 }
 
 #bd div.yui-g.sliderfalse div#slider.gallery {
