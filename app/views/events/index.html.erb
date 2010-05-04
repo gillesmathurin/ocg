@@ -18,50 +18,50 @@
 <div class="yui-gb sliderfalse">
 	<h1 class="entete1">Evénements à venir</h1>
 	
-	<% unless @events_fcfg.empty? && @events_fcg.empty? && @events_gccrp.empty? %>
-	<div id="slider">
+	<%# unless @events_fcfg.empty? && @events_fcg.empty? && @events_gccrp.empty? %>
+	<!-- <div id="slider">
 		<ul>
 			<li>
-				<%- unless @events_fcfg.empty? -%>
+				<%# unless @events_fcfg.empty? %>
 					<p class="fede">FCFG</p>
-				<%- @events_fcfg.each do |event| -%>
+				<%# @events_fcfg.each do |event| %>
 					<p>
-						<span class="date"><%= formatted_date(event.start_date) %></span> :
-						<b> <%=h event.title %></b> <%= event.description %> <%= event.place %> 
+						<span class="date"><%# formatted_date(event.start_date) %></span> :
+						<b> <%#h event.title %></b> <%# event.description %> <%# event.place %> 
 					</p>
 					<hr>
-				<%- end -%>					
-				<%- end -%>
+				<%# end %>					
+				<%# end %>
 			</li>
 			
 			<li>
-				<%- unless @events_fcg.empty? -%>
+				<%# unless @events_fcg.empty? %>
 					<p class="fede">FCG</p>
-				<%- @events_fcg.each do |event| -%>
+				<%# @events_fcg.each do |event| %>
 					<p>
-						<span class="date"><%= formatted_date(event.start_date) %></span> :
-						<b><%=h event.title %></b> <%= event.description %> <%= event.place %><br/> 
+						<span class="date"><%# formatted_date(event.start_date) %></span> :
+						<b><%#h event.title %></b> <%# event.description %> <%# event.place %><br/> 
 					</p>
 					<hr>
-				<%- end -%>					
-				<%- end -%>
+				<%# end %>					
+				<%# end %>
 			</li>
 			
 			<li>
-				<%- unless @events_gccrp.empty? -%>
+				<%# unless @events_gccrp.empty? %>
 					<p class="fede">GCCRP</p>
-				<%- @events_gccrp.each do |event| -%>
+				<%# @events_gccrp.each do |event| %>
 					<p>
-						<span class="date"><%= formatted_date(event.start_date) %></span> :
-						<b><%=h event.title %></b> <%= event.description %> <%= event.place %><br/> 
+						<span class="date"><%# formatted_date(event.start_date) %></span> :
+						<b><%#h event.title %></b> <%# event.description %> <%# event.place %><br/> 
 					</p>
 					<hr>
-				<%- end -%>					
-				<%- end -%>
+				<%# end %>					
+				<%# end %>
 			</li>
 		</ul>
-	</div>
-	<% else %>
+	</div> -->
+	<%# else %>
 		<%- unless @events.empty? -%>
 			<%- @events.each do |event| -%>
 			<div class="article">
@@ -74,11 +74,12 @@
 					</p>
 				<% end %>
 			</div>
+			<hr/>
 			<%- end -%>
 		<%- else -%>
 			<p class="event">Pas d'événements à venir pour le moment</p>
 		<%- end -%>
-	<% end %>
+	<%# end %>
 </div>
 
 <div class="yui-gb maincontent">

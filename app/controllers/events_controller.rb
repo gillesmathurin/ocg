@@ -3,9 +3,9 @@ class EventsController < ApplicationController
   uses_tiny_mce
   
   def index
-    @events_fcfg = Event.fcfg
-    @events_gccrp = Event.gccrp
-    @events_fcg = Event.fcg
+    # @events_fcfg = Event.fcfg
+    # @events_gccrp = Event.gccrp
+    # @events_fcg = Event.fcg
     @events = Event.to_come
   end
 
