@@ -156,6 +156,10 @@ div.yui-gb.maincontent ul.recent_articles li {
 	display: block;
 }
 
+#bd>div.yui-g.sliderfalse p {
+	margin-left: 30px;
+}
+
 #bd div.yui-g.sliderfalse div.article {
 	width: 904px;
 	margin-bottom: 20px;
@@ -299,6 +303,7 @@ div.yui-g.sliderfalse>div.tableform table p>label {
 
 #bd div.yui-gb.maincontent p {
 	margin-left: 30px;
+	padding-top: 10px;
 }
 
 #bd div#subcontent {

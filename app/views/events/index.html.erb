@@ -40,7 +40,7 @@
 				<%- @events_fcg.each do |event| -%>
 					<p>
 						<span class="date"><%= formatted_date(event.start_date) %></span> :
-						<b> <%=h event.title %></b> <%= event.description %> <%= event.place %><br/> 
+						<b><%=h event.title %></b> <%= event.description %> <%= event.place %><br/> 
 					</p>
 					<hr>
 				<%- end -%>					
@@ -53,7 +53,7 @@
 				<%- @events_gccrp.each do |event| -%>
 					<p>
 						<span class="date"><%= formatted_date(event.start_date) %></span> :
-						<b> <%=h event.title %></b> <%= event.description %> <%= event.place %><br/> 
+						<b><%=h event.title %></b> <%= event.description %> <%= event.place %><br/> 
 					</p>
 					<hr>
 				<%- end -%>					
@@ -62,19 +62,22 @@
 		</ul>
 	</div>
 	<% else %>
-	<div class="yui-u">
 		<%- unless @events.empty? -%>
 			<%- @events.each do |event| -%>
-				<p class="event">
-					<span class="date"><%= formatted_date(event.start_date) %></span> :
-					<b> <%=h event.title %></b><br/>
-					<%= event.description %>
-				</p>
+			<div class="article">
+				<p><span class="date"><%= formatted_date(event.start_date) %></span> :
+				<b> <%=h event.title %></b><br/></p>
+				<%= event.description %>
+				<% if user_signed_in? %>
+					<p>
+						<%= link_to "Modifier", edit_event_path(event) %> | <%= link_to "Supprimer", event_path(event), :method => :delete, :confirm => "Certain ?" %>
+					</p>
+				<% end %>
+			</div>
 			<%- end -%>
 		<%- else -%>
 			<p class="event">Pas d'événements à venir pour le moment</p>
 		<%- end -%>
-	</div>
 	<% end %>
 </div>
 
