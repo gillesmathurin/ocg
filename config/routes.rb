@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :partenaires
   
-  map.resources :articles
+  map.resources :articles, :has_many => :paragraphs
   
   map.resources :events
   

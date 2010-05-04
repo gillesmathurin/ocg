@@ -1,5 +1,9 @@
 class ParagraphsController < ApplicationController
+  before_filter :authenticate_user!, :only => [:new, :edit, :create, :destroy, :update]
+  uses_tiny_mce# :options => { :theme => 'advanced' }
+  
   before_filter :find_article
+  
   def index
     @paragraphs = @articles.paragraphs
   end
