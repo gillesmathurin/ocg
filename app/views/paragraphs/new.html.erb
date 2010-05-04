@@ -1,2 +1,10 @@
-<h1>Paragraphs#new</h1>
-<p>Find me in app/views/paragraphs/new.html.erb</p>
+<div class="yui-g sliderfalse">
+	<h1 class="entete1">Enregistrez le paragraphe</h1>
+	<div class="form">
+		<%= render :partial => 'form', :locals => {:f => @paragraph} %>
+	</div>
+	<p>
+		<%= link_to "Retour à l'article", article_path(@article) %>
+	</p>
+</div>
+
