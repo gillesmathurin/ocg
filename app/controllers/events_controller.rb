@@ -6,6 +6,7 @@ class EventsController < ApplicationController
     @events_fcfg = Event.fcfg
     @events_gccrp = Event.gccrp
     @events_fcg = Event.fcg
+    @events = Event.to_come
   end
 
   def show
