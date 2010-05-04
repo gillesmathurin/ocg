@@ -5,9 +5,9 @@
 				<%= f.label :federation, "Federation" %> :<br/> <%= f.select :federation, Event::FEDERATIONS, :include_blank => true %>
 			</p>
 			<p><%= f.label :title, "Titre" %> :<br/> <%= f.text_field :title %></p>
-			<p><%= f.label :description, "Description" %> :<br/> <%= f.text_area :description, :rows => 10, :class => "mceEditor" %></p>
-			<p><%= f.label :start_date, "Du" %> :<br/> <%= f.date_select :start_date, :order => [:day, :month, :year]  %></p>
-			<p><%= f.label :end_date, "Au" %> :<br/> <%= f.date_select :end_date, :order => [:day, :month, :year]  %></p>
+			<p><%= f.label :description, "Description" %> :<br/> <%= f.text_area :description, :rows => 10, :cols => 60, :class => "mceEditor" %></p>
+			<p><%= f.label :start_date, "Du" %> :<br/> <%= f.datetime_select :start_date, :order => [:day, :month, :year] %></p>
+			<p><%= f.label :end_date, "Au" %> :<br/> <%= f.datetime_select :end_date, :order => [:day, :month, :year] %></p>
 			<p>
 				<%= f.label :Image, "Image" %> : <%= f.file_field :photo %>
 			</p>
