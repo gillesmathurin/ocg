@@ -32,6 +32,29 @@
 	<p align="center">
 		<%= link_to "Retour", galleries_path() %>
 	</p>
+	
+	<script type="text/javascript"> 
+	var clickmessage= "Image protégée" 
+	function disableclick(e) 
+	{if (document.all) 
+	{if (event.button==2||event.button==3) 
+	{if (event.srcElement.tagName=="IMG") 
+	{alert(clickmessage); 
+	return false;}}} 
+	if (document.layers) 
+	{if (e.which == 3) 
+	{alert(clickmessage); 
+	return false;}}} 
+
+	function associateimages() 
+	{for(i=0;i<document.images.length;i++) 
+	document.images[i].onmousedown=disableclick;} 
+	if (document.all) 
+	document.onmousedown=disableclick 
+	else if (document.layers) 
+	associateimages() 
+	</script>
+	
 </div>
 
 <div class="yui-gb maincontent">
