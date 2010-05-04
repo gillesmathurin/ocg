@@ -1,6 +1,7 @@
 class Article < ActiveRecord::Base
-  has_many :paragraphs, :class_name => "paragraph", :foreign_key => "reference_id"
+  has_many :paragraphs,:dependent => :destroy
   has_attached_file :photo, :styles => { :thumb => "200x200>" }
+  accepts_nested_attributes_for :paragraphs, :allow_destroy => true
   
   named_scope :recent_articles, :order => "created_at desc", :limit => 4  
   

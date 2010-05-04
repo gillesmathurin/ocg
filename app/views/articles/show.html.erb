@@ -1,7 +1,22 @@
 <div class="yui-g sliderfalse">
 	<h1 class="entete1"><%= @article.title %></h1>
 	<div class="article">
-		<%= @article.content %>		
+		<%= @article.content %>	
+		<% if !@article.paragraphs.blank? %>
+		  <% for paragraph in @article.paragraphs %>
+		    <div class="paragraph">				
+		    	<p class="images">
+		    		<%= image_tag(paragraph.photo1.url(:thumb)) if photo1_not_missing(paragraph) %>
+					<%= image_tag(paragraph.photo2.url(:thumb)) if photo2_not_missing(paragraph) %>
+					<%= image_tag(paragraph.photo3.url(:thumb)) if photo3_not_missing(paragraph)%>
+		    	</p>
+				<%= paragraph.content %>
+		    </div>
+		  <% end %>
+		<% else %>
+		  
+		<% end %>
+			
 	</div>
 	<%- if user_signed_in? -%>
 		<p>

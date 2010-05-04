@@ -7,6 +7,7 @@ class CreateParagraphs < ActiveRecord::Migration
       t.integer :photo1_file_size
       t.datetime :photo1_updated_at
       t.string :photo1_file_name
+      t.string :photo2_file_name
       t.string :photo2_content_type
       t.integer :photo2_file_size
       t.datetime :photo2_updated_at

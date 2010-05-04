@@ -138,7 +138,6 @@ div.yui-gb.maincontent ul.recent_articles li {
 	line-height: 1.4em;
 	height: 100%;
 	position: relative;
-	display: inline;
 }
 
 #bd div.yui-g.slider {
@@ -156,10 +155,12 @@ div.yui-gb.maincontent ul.recent_articles li {
 	margin-left: 3px;
 	min-height: 416px;
 	display: block;
+	padding-bottom: 10px;
 }
 
 #bd>div.yui-g.sliderfalse p {
 	margin-left: 30px;
+	padding-bottom: 10px;
 }
 
 #bd div.yui-g.sliderfalse hr {
@@ -308,9 +309,10 @@ div.yui-g.sliderfalse>div.tableform table p>label {
 }
 
 #bd div#subcontent {
-	background: url(../images/bg-subcontent_06.png) no-repeat;
+	background: url(../images/bg-subcontent_06.png) no-repeat -1px -1px;
 	height: 50px;
 	width: 990px;
+	position: relative;
 }
 
 #bd span.date {
@@ -338,6 +340,17 @@ div.yui-g.sliderfalse>div.tableform table p>label {
 
 #bd div.yui-g.sliderfalse>table.galleryindex>tbody>tr>td>img {
 	border: 4px double black;
+}
+
+div.paragraph p.images img {
+	float: left;
+	margin-right: 10px;
+	border: 2px solid fuchsia;
+}
+
+div.paragraph p.images {
+	height: auto;
+	display: inline-block;
 }
 
 /* @end */

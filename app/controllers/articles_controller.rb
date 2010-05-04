@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    5.times { @article.paragraphs.build }
   end
 
   def edit
