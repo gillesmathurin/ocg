@@ -15,7 +15,7 @@
 	 </script>
 <%- end -%>
 
-<div class="yui-gb sliderfalse">
+<div class="yui-g sliderfalse">
 	<h1 class="entete1">Evénements à venir</h1>
 	
 	<%# unless @events_fcfg.empty? && @events_fcg.empty? && @events_gccrp.empty? %>
@@ -80,9 +80,6 @@
 			<p class="event">Pas d'événements à venir pour le moment</p>
 		<%- end -%>
 	<%# end %>
-</div>
-
-<div class="yui-gb maincontent">
 	<% if user_signed_in? %>
 		<p><%= link_to "Ajouter un evenement", new_event_path() %></p>
 	<% end %>

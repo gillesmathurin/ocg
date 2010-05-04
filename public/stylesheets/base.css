@@ -136,6 +136,9 @@ div.yui-gb.maincontent ul.recent_articles li {
 
 #bd {
 	line-height: 1.4em;
+	height: 100%;
+	position: relative;
+	display: inline;
 }
 
 #bd div.yui-g.slider {
@@ -149,10 +152,9 @@ div.yui-gb.maincontent ul.recent_articles li {
 	background: url(../images/bg-body_03.png) repeat-y -4px;
 	width: 974px;
 	padding-right: 40px;
-	padding-left: 40px;
+	padding-left: 20px;
 	margin-left: 3px;
 	min-height: 416px;
-	height: 600px;
 	display: block;
 }
 
@@ -160,12 +162,16 @@ div.yui-gb.maincontent ul.recent_articles li {
 	margin-left: 30px;
 }
 
+#bd div.yui-g.sliderfalse hr {
+	width: 800px;
+}
+
 #bd div.yui-g.sliderfalse div.article {
 	width: 904px;
 	margin-bottom: 20px;
 }
 
-div.yui-gb.sliderfalse>div.article>ul.articles {
+div.yui-g.sliderfalse div.article ul.articles {
 	margin-left: 40px;
 	margin-right: 40px;
 }
@@ -175,7 +181,7 @@ ul.articles>li {
 	list-style-position: inside;
 }
 
-div.yui-gb.sliderfalse>div.article>ul.articles span.titre {
+div.yui-g.sliderfalse>div.article>ul.articles span.titre {
 	color: maroon;
 	font-weight: bold;
 	font-size: 1.1em;
@@ -190,6 +196,10 @@ div.yui-gb.sliderfalse>div.article>ul.articles span.titre {
 div.article p {
 	margin-left: 20px;
 	margin-top: 10px;
+}
+
+div.article li {
+	margin-left: 40px;
 }
 
 #bd div.yui-g.sliderfalse>div.form {
@@ -213,16 +223,7 @@ div.form span.mceEditor.defaultSimpleSkin {
 	margin-left: 250px;
 }
 
-#bd div.yui-gb.sliderfalse {
-	background: url(../images/bgmain_03.png) repeat-y;
-	width: 974px;
-	height: auto;
-	padding-right: 40px;
-	padding-left: 10px;
-	margin-left: 3px;
-}
-
-#bd div.yui-gb.sliderfalse div#slider {
+#bd div.yui-g.sliderfalse div#slider {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
@@ -230,15 +231,15 @@ div.form span.mceEditor.defaultSimpleSkin {
 	padding-bottom: 15px;
 }
 
-#bd div.yui-gb.sliderfalse div#slider ul {
+#bd div.yui-g.sliderfalse div#slider ul {
 	
 }
 
-#bd div.yui-gb.sliderfalse div#slider li {
+#bd div.yui-g.sliderfalse div#slider li {
 	
 }
 
-#bd div.yui-gb.sliderfalse div#slider li>div.text-block {
+#bd div.yui-g.sliderfalse div#slider li>div.text-block {
 }
 
 #bd div.yui-g.sliderfalse div#slider.gallery {
@@ -251,13 +252,13 @@ div.form span.mceEditor.defaultSimpleSkin {
 	width: 500px;
 }
 
-#bd div.yui-gb.sliderfalse div#slider p.fede {
+#bd div.yui-g.sliderfalse div#slider p.fede {
 	font-weight: bold;
 	margin-bottom: 10px;
 	font-size: 1.1em;
 }
 
-div.yui-gb.sliderfalse ul.next_events li {
+div.yui-g.sliderfalse ul.next_events li {
 	list-style-type: none;
 	list-style-position: inside;
 	list-style-image: url(../images/bullet.png);
