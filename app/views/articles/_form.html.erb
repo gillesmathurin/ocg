@@ -2,8 +2,20 @@
 			<%= f.error_messages %>
 			
 			<p>
-				<%= f.label :title, "Titre" %> :<br/>
+				<%= f.label :title, "Titre" %> :
 				<%= f.text_field :title %>
+			</p>
+			<p>
+				<%= f.label :auteur, "Auteur" %> :
+				<%= f.text_field :auteur %>
+			</p>
+			<p>
+				<%= f.label :provenance, "Tirée de" %> :
+				<%= f.text_field :provenance %>
+			</p>
+			<p>
+				<%= f.label :date_pub, "Date Publication" %>:
+				<%= f.date_select :date_pub %>
 			</p>
 			<p>
 				<%= f.label :content, "Contenu" %> :<br/>
