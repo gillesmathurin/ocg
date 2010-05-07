@@ -11,10 +11,10 @@ Rails::Initializer.run do |config|
   config.gem 'devise'
   config.gem 'warden'
   config.gem 'will_paginate', :lib => 'will_paginate', :version => '>= 2.3.12'
-  config.gem 'webrat', :lib => false
-  config.gem 'cucumber', :lib => false
-  config.gem 'rspec-rails', :lib => false
-  config.gem 'rspec', :lib => false
+  # config.gem 'webrat', :lib => false
+  # config.gem 'cucumber', :lib => false
+  # config.gem 'rspec-rails', :lib => false
+  # config.gem 'rspec', :lib => false
   config.gem 'whenever', :lib => false
   config.gem 'delayed_job'
   # Settings in config/environments/* take precedence over those specified here.
