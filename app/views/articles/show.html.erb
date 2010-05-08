@@ -2,7 +2,7 @@
 	<h1 class="entete1"><%= @article.title %></h1>
 	<div class="article">
 		<% if with_document?(@article) %>
-			<%= link_to "Téléchargez le document (clic droit)", @article.document.url %>
+			<%= link_to "Téléchargez le document associé (clic droit)", @article.document.url %>
 		<% end %>
 		<%= @article.content %>	
 		<% if !@article.paragraphs.blank? %>
