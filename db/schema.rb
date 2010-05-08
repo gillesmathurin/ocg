@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100507225339) do
+ActiveRecord::Schema.define(:version => 20100508053540) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -23,6 +23,10 @@ ActiveRecord::Schema.define(:version => 20100507225339) do
     t.string   "auteur"
     t.date     "date_pub"
     t.string   "provenance"
+    t.string   "document_file_name"
+    t.integer  "document_file_size"
+    t.string   "document_content_type"
+    t.datetime "document_updated_at"
   end
 
   create_table "events", :force => true do |t|
