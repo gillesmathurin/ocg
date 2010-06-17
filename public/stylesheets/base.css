@@ -105,6 +105,20 @@ div#doc4.yui-t7 {
 
 /* @group Body */
 
+table.videos {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+table.videos p {
+	text-align: center;
+}
+
+table.videos p.video-desc {
+	font-weight: bold;
+	font-style: italic;
+}
+
 #bd h1.entete1 {
 	font-size: 1.2em;
 	color: #1c6791;

@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :videos
+
   map.resources :partenaires
   
   map.resources :articles, :has_many => :paragraphs
