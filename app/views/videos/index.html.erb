@@ -20,8 +20,9 @@
 	</table>
 
 	<br />
-
-	<%= link_to 'Ajouter une video', new_video_path %>
+	<% if user_signed_in? %>
+		<%= link_to 'Ajouter une video', new_video_path %>
+	<% end %>
 </div>
 <div class="yui-gb maincontent">
 	
