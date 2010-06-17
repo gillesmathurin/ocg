@@ -1,15 +1,18 @@
 <div class="yui-g sliderfalse">
-	<h1>Ajouter video</h1>
+	<h1 class="entete1">Ajouter video</h1>
+	
+	<div class="form">
+		<% form_for(@video) do |f| %>
+		  <%= f.error_messages %>
+			<%= render :partial => 'form', :locals => {:f => f} %>
+		  <p>
+		    <%= f.submit 'Enregistrer' %>
+		  </p>
+		<% end %>
 
-	<% form_for(@video) do |f| %>
-	  <%= f.error_messages %>
-		<%= render :partial => 'form', :locals => {:f => f} %>
-	  <p>
-	    <%= f.submit 'Enregistrer' %>
-	  </p>
-	<% end %>
+		<%= link_to 'Retour', videos_path %>
+	</div>
 
-	<%= link_to 'Retour', videos_path %>
 </div>
 <div class="yui-gb maincontent">
 	
