@@ -2,14 +2,19 @@
 	<h1 class="entete1">Listing des videos</h1>
 	
 	
-	<table>
+	<table class="videos">
 	<% @videos.each do |video| %>
 	  <tr>
-	    <td><%= video.youtube_url %></td>
-		<% if user_signed_in? %>
-	    <td><%= link_to 'Modifier', edit_video_path(video) %></td>
-	    <td><%= link_to 'Supprimer', video, :confirm => 'En êtes vous sur?', :method => :delete %></td>
-		<% end %>
+	    <td>
+					<%= video.youtube_url %>
+					<p class="video-desc"><%= video.description %></p>
+					<p>
+						<% if user_signed_in? %>
+					    <%= link_to 'Modifier', edit_video_path(video) %> |
+					    <%= link_to 'Supprimer', video, :confirm => 'En êtes vous sur?', :method => :delete %>
+						<% end %>
+					</p>
+			</td>		
 	  </tr>
 	<% end %>	
 	</table>
