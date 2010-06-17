@@ -1,0 +1,17 @@
+<div class="yui-g sliderfalse">
+	<h1>Modifier une fiche video</h1>
+
+	<% form_for(@video) do |f| %>
+	  <%= f.error_messages %>
+		<%= render :partial => 'form', :locals => {:f => f} %>	  
+	  <p>
+	    <%= f.submit 'Mettre à jour' %>
+	  </p>
+	<% end %>
+
+	<%= link_to 'Voir', @video %> |
+	<%= link_to 'Retour', videos_path %>
+</div>
+<div class="yui-gb maincontent">
+	
+</div>

@@ -1,0 +1,27 @@
+<div class="yui-g sliderfalse">
+	<h1 class="entete1">Listing des videos</h1>
+
+	<table>
+	  <tr>
+	    <th>Youtube url</th>
+	    <th>Vimeo url</th>
+	  </tr>
+
+	<% @videos.each do |video| %>
+	  <tr>
+	    <td><%=h video.youtube_url %></td>
+	    <td><%=h video.vimeo_url %></td>
+	    <td><%= link_to 'Voir', video %></td>
+	    <td><%= link_to 'Modifier', edit_video_path(video) %></td>
+	    <td><%= link_to 'Supprimer', video, :confirm => 'En êtes vous sur?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+	</table>
+
+	<br />
+
+	<%= link_to 'Ajouter une video', new_video_path %>
+</div>
+<div class="yui-gb maincontent">
+	
+</div>

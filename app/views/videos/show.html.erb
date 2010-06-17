@@ -1,0 +1,18 @@
+<div class="yui-g sliderfalse">
+	<p>
+	  <b>Youtube url:</b>
+	  <%=h @video.youtube_url %>
+	</p>
+
+	<p>
+	  <b>Vimeo url:</b>
+	  <%=h @video.vimeo_url %>
+	</p>
+
+
+	<%= link_to 'Modifier', edit_video_path(@video) %> |
+	<%= link_to 'Retour', videos_path %>
+</div>
+<div class="yui-gb maincontent">
+	
+</div>
