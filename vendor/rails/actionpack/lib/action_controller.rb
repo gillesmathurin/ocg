@@ -31,8 +31,9 @@ rescue LoadError
   end
 end
 
-gem 'rack', '~> 1.0.1'
-require 'rack'
+# gem 'rack', '~> 1.0.1'
+# require 'rack'
+load "#{RAILS_ROOT}/vendor/gems/rack-1.0.1/lib/rack.rb"
 require 'action_controller/cgi_ext'
 
 module ActionController

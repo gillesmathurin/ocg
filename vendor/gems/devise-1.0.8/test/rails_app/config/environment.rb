@@ -2,27 +2,18 @@
 
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
+DEVISE_ORM = :active_record unless defined? DEVISE_ORM
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
-  # config.gem 'carrierwave'
-  config.gem 'devise', :version => '>= 1.0.1'
-  config.gem 'warden'
-  config.gem 'will_paginate', :lib => 'will_paginate', :version => '>= 2.3.12'
-  # config.gem 'webrat', :lib => false
-  # config.gem 'cucumber', :lib => false
-  # config.gem 'rspec-rails', :lib => false
-  # config.gem 'rspec', :lib => false
-  config.gem 'whenever', :lib => false
-  config.gem 'delayed_job'
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
 
   # Add additional load paths for your own custom dirs
-  # config.load_paths += %W( #{RAILS_ROOT}/extras )
+  config.load_paths += [ "#{RAILS_ROOT}/app/#{DEVISE_ORM}/" ]
 
   # Specify gems that this application depends on and have them installed with rake gems:install
   # config.gem "bj"
@@ -36,7 +27,7 @@ Rails::Initializer.run do |config|
 
   # Skip frameworks you're not going to use. To use Rails without a database,
   # you must remove the Active Record framework.
-  # config.frameworks -= [ :active_record, :active_resource, :action_mailer ]
+  config.frameworks -= [ :active_record ] unless DEVISE_ORM == :active_record
 
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
@@ -47,5 +38,5 @@ Rails::Initializer.run do |config|
 
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
-  config.i18n.default_locale = :fr
+  # config.i18n.default_locale = :en
 end
