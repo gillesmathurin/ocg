@@ -8,7 +8,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
   # config.gem 'carrierwave'
-  config.gem 'devise'
+  config.gem 'devise', :version '>= 1.0.1'
   config.gem 'warden'
   config.gem 'will_paginate', :lib => 'will_paginate', :version => '>= 2.3.12'
   config.gem 'webrat', :lib => false
