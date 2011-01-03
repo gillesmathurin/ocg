@@ -24,7 +24,7 @@ describe HomeController do
     end
     
     it "assigns the next 4 events as @events" do
-      Event.should_receive(:next_4).and_return([mock_event])
+      Event.should_receive(:next_10).and_return([mock_event])
       get 'index'
       response.should be_success
       assigns[:events].should == [mock_event]

@@ -1,9 +1,9 @@
 <div class="yui-g sliderfalse">
 	<h1 class="entete1"><%= @article.title %></h1>
 	<p>
-		Auteur : <%= @article.auteur %><br/>
+		Auteur : <%= @article.auteur if @article.auteur %><br/>
 		Publié le : <%= @article.date_pub %><br/>
-		Extrait de : <%= @article.provenance %>
+		Extrait de : <%= @article.provenance if @article.provenance %>
 	</p>
 	<div class="article">
 		<% if with_document?(@article) %>

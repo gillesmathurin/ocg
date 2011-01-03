@@ -16,9 +16,9 @@ describe Event do
   end
 end
 
-describe Event, ".next_4" do
+describe Event, ".next_10" do
   it "find the next 4 events" do
-    @events = Event.next_4
+    @events = Event.next_10
     @events.should have_at_most(4).records
   end
 end
