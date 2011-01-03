@@ -1,5 +1,8 @@
 every 1.day, :at => '2:30 am' do
   rake "backup_db"
+end
+
+every 7.day, :at => '2:30 am' do
   rake "log:clear"
 end
 
