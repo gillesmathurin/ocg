@@ -10,7 +10,7 @@
 			<p><%= link_to "Téléchargez le document associé (clic droit)", @article.document.url %></p>
 		<% end %>
 		<%= @article.content %>	
-		<p><%= image_tag(@article.photo.url(:thumb) unless @article.photo.url =~ /missing.png/) %></p>
+		<p><%= image_tag(@article.photo.url(:thumb)) unless(@article.photo.url =~ /missing.png/) %></p>
 		<% if !@article.paragraphs.blank? %>
 		  <% for paragraph in @article.paragraphs %>
 		    <div class="paragraph">				
