@@ -10,9 +10,9 @@
 				<p class="logo"><%= image_tag(p.logo.url(:medium))  if logo_present?(p)%></p>
 				<p>
 					<%= p.name %><br/>
+					<%= link_to p.weburl, p.weburl if p.weburl %><br/>
 					<%= p.adresse_complete %><br/>
 					<%= p.email if p.email %><br/>
-					<%= link_to p.weburl, p.weburl if p.weburl %><br/>
 					<% if user_signed_in? %>
 					<%= link_to "Modifier", edit_partenaire_path(p) %> | <%= link_to "Supprimer", partenaire_path(p), :method => :delete %>
 					<% end %>
