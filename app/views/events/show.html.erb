@@ -1,2 +1,16 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+<div class="yui-g sliderfalse">
+	<h1 class="entete1"><%= @event.title %></h1>
+
+  <div class="article">
+		<p><span class="date"><%= formatted_date(@event.start_date) %></span> :
+		<b> <%=h @event.title %></b><br/></p>
+		<%= @event.description %>
+		<% if user_signed_in? %>
+			<p>
+				<%= link_to "Modifier", edit_event_path(@event) %> | <%= link_to "Supprimer", event_path(@event), :method => :delete, :confirm => "Certain ?" %>
+			</p>
+		<% end %>
+	</div>
+	<hr/>
+
+</div>
