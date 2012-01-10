@@ -7,6 +7,9 @@ gem 'rails', '3.1.3'
 
 gem 'mysql2'
 gem 'devise'
+gem 'will_paginate'
+gem 'whenever'
+gem 'delayed_job'
 
 
 # Gems used only for assets and not required
@@ -37,10 +40,11 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'cucumber-rails'
   gem 'capybara'
+  gem 'database_cleaner'
   gem 'factory_girl_rails'
-  gem 'guard-rspec'
-  gem 'guard-cucumber'
-  gem 'rb-fsevent'
-  gem 'growl_notify'
-  gem 'spork'
+  # gem 'guard-rspec'
+  # gem 'guard-cucumber'
+  # gem 'rb-fsevent'
+  # gem 'growl_notify'
+  gem 'spork', '~>0.9.0.rc9'
 end
