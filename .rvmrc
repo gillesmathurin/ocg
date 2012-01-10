@@ -1,5 +1,5 @@
-if [[ -s "/Users/gillesmath/.rvm/environments/1.9.2-p290@ocg" ]] ; then
-  . "/Users/gillesmath/.rvm/environments/1.9.2-p290@ocg"
+if [[ -s "/Users/gillesmath/.rvm/environments/1.9.2-p290@cyberbus" ]] ; then
+  . "/Users/gillesmath/.rvm/environments/1.9.2-p290@cyberbus"
 else
-  rvm --create use  "1.9.2-p290@ocg"
+  rvm --create use  "1.9.2-p290@cyberbus"
 fi
