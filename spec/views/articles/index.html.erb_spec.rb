@@ -61,7 +61,7 @@ describe "/articles/index" do
     it "renders the will paginate links" do
       render
       response.should have_selector("div.pagination")
-      response.should contain("Précédent")
+      response.should contain(t(:precedent))
       response.should contain("Suivant")
     end
   end

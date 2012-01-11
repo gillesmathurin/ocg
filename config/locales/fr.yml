@@ -167,3 +167,6 @@ fr:
   gccrp: 'Groupement pour le Carnaval et la Culture Région Pointoise'
   kmk: 'Kolektif Mas Kiltirèl'
   ccmg: 'Comite du Carnaval de Marie-Galante'
+  precedent: "Précédent"
+  no_events_to_come: "Pas d'événements à venir pour le moment"
+  reserved_access: "Accès réservé"

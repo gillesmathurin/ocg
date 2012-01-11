@@ -17,12 +17,8 @@ module ApplicationHelper
     content_for(:head) { javascript_include_tag(*args) }
   end
   
-  def formatted_date(date)
-    if date.hour == 0
-      return date.strftime("%d/%m/%Y")
-    else
-      return date.strftime("%d/%m/%Y %H:%M")
-    end
+  def formatted_date(date)    
+    date.hour == 0 ? date.strftime("%d/%m/%Y") : date.strftime("%d/%m/%Y %H:%M")
   end
 
 end
