@@ -1,64 +1,72 @@
-<div class="yui-g slider"> 
-  	<div class="anythingSlider">
-  		<div class="wrapper">
-  			<ul>
-  				<li>
-  					<%= image_tag("slide-1.png") %>
-  				</li>
-  				<li>
-  					<%= image_tag("slide-2.jpg") %>
-  				</li>
-  				<li>
-  					<%= image_tag("slide-3.jpg") %>
-  				</li>
-  				<li>
-  					<%= image_tag("slide-4.jpg") %>
-  				</li>
-  			</ul>
-  		</div>
-  	</div>
-  </div> 
-
-<div class="yui-gb maincontent"> 
-    <div class="yui-u first">
-			<h1 class="entete1">Dernières Publications</h1>
-			<ul class="recent_articles">
-				<% if !@articles.blank? %>
-				  <% for article in @articles %>
-				    <li>
-						<span class="date"><%=h article.title %></span> <%= link_to "Lire …", article_path(article) %>
-					</li>
-				  <% end %>
-				<% else %>
-				  	<li class="article">Pas d'articles pour le moment</li>
-				<% end %>			
-			</ul>  		
-    </div> 
-
-    <div class="yui-u">
-			<h1 class="entete1">Prochains Evénements</h1>
-		 	<ul class="next_events">
-		 		<%- unless @events.empty? -%>
-					<%- @events.each do |event| -%>
-						<li class="event">
-							<span class="date"><%= formatted_date(event.start_date) %></span> :<b> <%= link_to(event.title, event_path(event.id)) %></b>  <%# truncate(event.description, :length => 50) %><br/> <%# link_to "+ d'infos …", event_path(event.id) %>
-						</li>
-					<%- end -%>
-				<%- else -%>
-					<li class="event">Pas d'événements à venir pour le moment</li>
-				<%- end -%>
-		 	</ul>
-	  		<ul class="next_events"><li><%= link_to "Voir les événements", events_path() %></li></ul>
-	  </div>
-	
-	  <div class="yui-u"> 
-			<h1 class="entete1">Dashboard</h1>
-			<p class="admin-login">
-				<%= link_to "Accès réservé", new_user_session_path() %>
-			</p>
-			<ul class="next_events">
-				<li><%= @galleries_count %> galeries de photos, <%= link_to "à découvrir", galleries_path() %></li>
-				<li><%= @videos_count %> vidéos, <%= link_to "à visionner", videos_path() %></li>
+<header id="photos-slider">
+  <div class="anythingSlider">
+		<div class="wrapper">
+			<ul>
+				<li>
+					<%= image_tag("slide-1.png") %>
+				</li>
+				<li>
+					<%= image_tag("slide-2.jpg") %>
+				</li>
+				<li>
+					<%= image_tag("slide-3.jpg") %>
+				</li>
+				<li>
+					<%= image_tag("slide-4.jpg") %>
+				</li>
 			</ul>
-    </div> 
-</div>
+		</div>
+	</div>
+</header>
+
+<article id="articles">
+  <header>Dernières Publications</header>
+  <ul class="recent_articles">
+		<% if !@articles.blank? %>
+		  <% for article in @articles %>
+		    <li><span class="date"><%=h article.title %></span> <%= link_to "Lire …", article_path(article) %></li>
+		  <% end %>
+		<% else %>
+		  	<li class="article">Pas d'articles pour le moment</li>
+		<% end %>			
+	</ul>
+</article>
+
+<article id="programmes">
+  <header>Programme</header>
+  
+  <p class="download-program">
+    Télécharger le programme de l'année <%= Date.today.year %>
+  </p>
+  
+ 	<ul class="next_events">
+ 		<%- unless @events.empty? -%>
+			<%- @events.each do |event| -%>
+				<li class="event">
+					<span class="date"><%= formatted_date(event.start_date) %></span> : 
+					<%= link_to(event.title, event_path(event.id)) %>
+				</li>
+			<%- end -%>
+		<%- else -%>
+			<li class="event">Pas d'événements à venir pour le moment</li>
+		<%- end -%>
+ 	</ul>
+ 	
+	<ul class="next_events">
+	  <li><%= link_to "Voir les événements", events_path() %></li>
+	</ul>
+</article>
+
+<article id="media">
+  <header>Photos / Videos / Audios</header>
+  
+  <ul class="next_events">
+		<li><%= @galleries_count %> galeries de photos, <%= link_to "à découvrir", galleries_path() %></li>
+		<li><%= @videos_count %> vidéos, <%= link_to "à visionner", videos_path() %></li>
+	</ul>
+</article>
+
+<footer id="content-footer">
+  Social links to come …
+</footer>
+

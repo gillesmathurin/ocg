@@ -170,3 +170,5 @@ fr:
   precedent: "Précédent"
   no_events_to_come: "Pas d'événements à venir pour le moment"
   reserved_access: "Accès réservé"
+  login: "Connexion"
+  logout: "Déconnexion"

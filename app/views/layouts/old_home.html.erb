@@ -8,17 +8,16 @@
 	<meta http-equiv="Decription" name="Description" content="L'office du carnaval de la Guadeloupe oeuvre à la promotion culturelle du Carnaval Guadeloupéen">
     <title><%= h(yield(:title) || "Office du Carnaval de la Guadeloupe") %></title>
 	<link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
-    <%= stylesheet_link_tag 'base', 'slider' %>
+    <%= stylesheet_link_tag "application" %>
     <%= yield(:head) %>
-	<%= javascript_include_tag 'jquery-1.4', 'jquery.lavalamp.js', 'jquery.easing.1.2.js', 'jquery.anythingslider.js' %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
 	<script type="text/javascript">
 	    $(function() { $(".lavaLamp").lavaLamp({ fx: "linear", speed: 300 })});
 	</script>
 	<script type="text/javascript">
     
-        function formatText(index, panel) {
-		  return index + "";
-	    }
+        function formatText(index, panel) { return index + ""; }
     
         $(function () {
         
@@ -42,7 +41,6 @@
             
         });
     </script>
-	<%= include_tiny_mce_if_needed %>
   </head>
   <body>
 	<div id="doc4" class="yui-t7"> 

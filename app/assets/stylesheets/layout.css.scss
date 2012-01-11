@@ -3,7 +3,74 @@ html {
 	height: 1000px;
 	margin-right: auto;
 	margin-left: auto;
-	background: #f6eb20 url(../images/fond.jpg) repeat-x;
+	background: #f6eb20 url(fond.jpg) repeat-x;
+}
+
+body {
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 10px;
+  padding:10px;
+  
+  #flash-messages {}
+  
+  header {
+    #logo {
+      float: left;
+    	height: 201px;
+    	width: 478px;
+    }
+    
+    #menus {
+      height: 201px;
+    	display: block;
+    	width: 500px;
+    	margin-left: 486px;
+    	
+    	ul.lavaLamp {
+    	  position: relative;
+      	overflow: hidden;
+      	padding-left: 8px;
+      	line-height: 60px;
+      	padding-top: 80px;
+      	
+      	li {
+      	  text-align: left;
+        	color: white;
+        	float: left;
+        	list-style: none;
+        	height: 76px;
+        	margin-right: -30px;
+      	}
+      	
+      	li.back {
+      	  width: 9px;
+        	height: 76px;
+        	z-index: 8;
+        	position: absolute;
+        	background: url(activenav.png) no-repeat right;
+      	}
+    	}
+    }
+    
+    .lavaLamp li a {
+    	position: relative;
+    	overflow: hidden;
+    	text-decoration: none;
+    	font-weight: bold;
+    	z-index: 10;
+    	display: block;
+    	float: left;
+    	letter-spacing: 0;
+    	height: 76px;
+    	top: 7px;
+    	text-align: center;
+    	width: 116px;
+    	margin-top: auto;
+    	margin-bottom: auto;
+    	font-size: 1.1em;
+    	color: white;
+    }
+  }
 }
 
 div#doc4.yui-t7 {
@@ -25,7 +92,7 @@ div#doc4.yui-t7 {
 
 #hd #menus {
 	height: 201px;
-	background: url(../images/layout_06.png) no-repeat left;
+	background: url(layout_06.png) no-repeat left;
 	display: block;
 	width: 500px;
 	margin-left: 486px;
@@ -53,13 +120,13 @@ div#doc4.yui-t7 {
 	height: 76px;
 	z-index: 8;
 	position: absolute;
-	background: url(../images/activenav.png) no-repeat right;
+	background: url(activenav.png) no-repeat right;
 }
 
 .lavaLamp li.back .left {
 	width: 30px;
 	margin-right: 9px;
-	background: url(../images/activenav.png) no-repeat left top;
+	background: url(.activenav.png) no-repeat left top;
 }
 
 .lavaLamp li a {
@@ -125,7 +192,7 @@ table.videos p.video-desc {
 	text-align: center;
 	margin-bottom: 20px;
 	font-weight: bold;
-	background: url(../images/bgh1-entete1.gif) no-repeat center top;
+	background: url(bgh1-entete1.gif) no-repeat center top;
 	height: 55px;
 	line-height: 55px;
 }
@@ -133,7 +200,7 @@ table.videos p.video-desc {
 div.yui-gb.maincontent ul.next_events li {
 	list-style-type: none;
 	list-style-position: inside;
-	list-style-image: url(../images/bullet.png);
+	list-style-image: url(bullet.png);
 	margin-top: 20px;
 	padding-left: 40px;
 	width: 245px;
@@ -142,7 +209,7 @@ div.yui-gb.maincontent ul.next_events li {
 div.yui-gb.maincontent ul.recent_articles li {
 	list-style-type: none;
 	list-style-position: inside;
-	list-style-image: url(../images/bullet.png);
+	list-style-image: url(bullet.png);
 	margin-top: 20px;
 	padding-left: 40px;
 	width: 245px;
@@ -155,14 +222,14 @@ div.yui-gb.maincontent ul.recent_articles li {
 }
 
 #bd div.yui-g.slider {
-	background: url(../images/layout_07.png) no-repeat;
+	background: url(layout_07.png) no-repeat;
 	width: 974px;
 	height: 251px;
 	padding-right: 40px;
 }
 
 #bd>div.yui-g.sliderfalse {
-	background: url(../images/bg-body_03.png) repeat-y -4px;
+	background: url(bg-body_03.png) repeat-y -4px;
 	width: 974px;
 	padding-right: 40px;
 	padding-left: 20px;
@@ -192,7 +259,7 @@ div.yui-g.sliderfalse div.article ul.articles {
 }
 
 ul.articles>li {
-	list-style-image: url(../images/bullet.png);
+	list-style-image: url(bullet.png);
 	list-style-position: inside;
 }
 
@@ -276,7 +343,7 @@ div.form span.mceEditor.defaultSimpleSkin {
 div.yui-g.sliderfalse ul.next_events li {
 	list-style-type: none;
 	list-style-position: inside;
-	list-style-image: url(../images/bullet.png);
+	list-style-image: url(bullet.png);
 	margin-top: 20px;
 	padding-left: 40px;
 	width: 245px;
@@ -314,7 +381,7 @@ div.yui-g.sliderfalse>div.tableform table p>label {
 	color: #1b5791;
 	height: auto;
 	min-height: 200px;
-	background: url(../images/bg-body_03.png) repeat-y scroll -1px -1px;
+	background: url(bg-body_03.png) repeat-y scroll -1px -1px;
 }
 
 #bd div.yui-gb.maincontent p {
@@ -323,7 +390,7 @@ div.yui-g.sliderfalse>div.tableform table p>label {
 }
 
 #bd div#subcontent {
-	background: url(../images/bg-subcontent_06.png) no-repeat -1px -1px;
+	background: url(bg-subcontent_06.png) no-repeat -1px -1px;
 	height: 50px;
 	width: 990px;
 	position: relative;
