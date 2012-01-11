@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :edit, :create, :destroy, :update]
-  uses_tiny_mce# :options => { :theme => 'advanced' }
+  # uses_tiny_mce# :options => { :theme => 'advanced' }
   
   def index
     @articles = Article.paginate(:page => params[:page], :per_page => 10, :order => "created_at desc")
@@ -27,7 +27,7 @@ class ArticlesController < ApplicationController
   
     respond_to do |format|
       if @article.save
-        flash[:notice] = 'Article crée avec succès.'
+        flash[:notice] = I18n.t(:good_created_article)
         format.html { redirect_to(@article) }
         format.xml { render :xml => @article, :status => :created, :location => @article }
       else
@@ -42,7 +42,7 @@ class ArticlesController < ApplicationController
     
     respond_to do |format|
       if @article.update_attributes(params[:article])
-        flash[:notice] = "Article modifié avec succès"
+        flash[:notice] = I18n.t(:good_modified_article)
         format.html { redirect_to(@article) }
         format.xml { render :xml => @article, :status => :updated, :location => @article }
       else

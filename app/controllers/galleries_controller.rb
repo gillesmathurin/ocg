@@ -23,7 +23,7 @@ class GalleriesController < ApplicationController
     
     respond_to do |format|
       if @gallery.save
-        flash[:notice] = 'Gallerie enregistrée.'
+        flash[:notice] = I18n.t(:good_created_gallery)
         format.html { redirect_to(@gallery) }
         format.xml { render :xml => @gallery, :status => :created, :location => @gallery }
       else
@@ -38,7 +38,7 @@ class GalleriesController < ApplicationController
     
     respond_to do |format|
       if @gallery.update_attributes(params[:gallery])
-        flash[:notice] = "Gallerie modifiée."
+        flash[:notice] = I18n.t(:good_modified_gallery)
         format.html { redirect_to(@gallery) }
       else
         format.html { render :action => "edit" }

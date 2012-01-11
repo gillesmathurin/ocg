@@ -12,21 +12,21 @@ describe EventsController do
   describe "GET 'index'" do
     it "assigns the FCFG events @events_fcfg" do
       Event.stub!(:fcfg).
-        and_return([mock_event(:federation => "Fédération du Carnaval et des Fêtes de la Guadeloupe")])
+        and_return([mock_event(:federation => I18n.t(:fcfg))])
       get :index
       assigns[:events_fcfg].should == ([mock_event])
     end
     
     it "assigns the GCCRP events @events_gccrp" do
       Event.stub!(:gccrp).
-        and_return([mock_event(:federation => "Groupement pour le Carnaval et la Culture Région Pointoise")])
+        and_return([mock_event(:federation => I18n.t(:gccrp))])
       get :index
       assigns[:events_gccrp].should == ([mock_event])
     end
     
     it "assigns the FCG events @events_fcg" do
       Event.stub!(:fcg).
-        and_return([mock_event(:federation => "Fédération Guadeloupéenne de Carnaval")])
+        and_return([mock_event(:federation => I18n.t(:fgc))])
       get :index
       assigns[:events_fcg].should == ([mock_event])
     end

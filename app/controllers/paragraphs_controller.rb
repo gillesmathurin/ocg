@@ -1,6 +1,6 @@
 class ParagraphsController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :edit, :create, :destroy, :update]
-  uses_tiny_mce# :options => { :theme => 'advanced' }
+  # uses_tiny_mce# :options => { :theme => 'advanced' }
   
   before_filter :find_article
   
@@ -25,7 +25,7 @@ class ParagraphsController < ApplicationController
     
     respond_to do |format|
       if @paragraph.save
-        flash[:notice] = "Paragraphe ajouté à l'article"
+        flash[:notice] = I18n.t(:successfully_added_paragraph)
         format.html { redirect_to(@article) }
         format.xml { render :xml => @paragraph, :status => :created, :location => @paragraph }
       else

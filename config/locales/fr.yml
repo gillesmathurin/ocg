@@ -150,3 +150,20 @@ fr:
         odd: "doit être impair"
         even: "doit être pair"
         record_invalid: "La validation a échoué : {{errors}}"
+        
+  good_created_article: 'Article crée avec succès.'
+  good_modified_article: "Article modifié avec succès"
+  good_recorded_event: 'Evenement enregistré.'
+  good_modified_event: "Evenement modifié"
+  good_created_gallery: 'Gallerie enregistrée.'
+  good_modified_gallery: "Gallerie modifiée."
+  successfully_added_paragraph: "Paragraphe ajouté à l'article"
+  successfully_added_partner: 'Partenaire enregistré.'
+  successfully_modified_partner: 'Partenaire was successfully updated.'
+  successfully_created_video: 'Video enregistrée.'
+  successfully_modified_video: 'Video modifiée correctement.'
+  fcfg: 'Fédération du Carnaval et des Fêtes de la Guadeloupe'
+  fcg: 'Fédération Guadeloupéenne de Carnaval'
+  gccrp: 'Groupement pour le Carnaval et la Culture Région Pointoise'
+  kmk: 'Kolektif Mas Kiltirèl'
+  ccmg: 'Comite du Carnaval de Marie-Galante'

@@ -2,13 +2,15 @@ class Event < ActiveRecord::Base
   
   has_attached_file :photo, :styles => { :thumb => "200x200>" }
   
-  named_scope :next_10, :conditions => ['end_date >= ?', Date.today], :limit => 10 
-  FEDERATIONS = ['Fédération du Carnaval et des Fêtes de la Guadeloupe', 'Fédération Guadeloupéenne de Carnaval', 'Groupement pour le Carnaval et la Culture Région Pointoise', 'Kolektif Mas Kiltirèl', 'Comite du Carnaval de Marie-Galante']
+  scope :next_10, :conditions => ['end_date >= ?', Date.today], :limit => 10 
+  FEDERATIONS = [ I18n.t(:fcfg), I18n.t(:fcg), I18n.t(:gccrp), I18n.t(:kmk), I18n.t(:ccmg) ]
   
-  named_scope :fcfg, :conditions => ['federation = ? AND start_date >= ?', "Fédération du Carnaval et des Fêtes de la Guadeloupe", Date.today]
-  named_scope :gccrp, :conditions => ['federation = ? AND start_date >= ?', "Groupement pour le Carnaval et la Culture Région Pointoise", Date.today]
-  named_scope :fcg, :conditions => ['federation = ? AND start_date >= ?', "Fédération Guadeloupéenne de Carnaval", Date.today]
-  named_scope :to_come, :conditions => ['end_date >= ?', Date.today]
+  scope :fcfg, :conditions => ['federation = ? AND start_date >= ?', I18n.t(:fcfg), Date.today]
+  scope :gccrp, :conditions => ['federation = ? AND start_date >= ?', I18n.t(:gccrp), Date.today]
+  scope :fcg, :conditions => ['federation = ? AND start_date >= ?', I18n.t(:fcg), Date.today]
+  scope :kmk, where('federation = ? AND start_date >= ?', I18n.t(:kmk), Date.today)
+  scope :ccmg, where('federation = ? AND start_date >= ?', I18n.t(:ccmg), Date.today)
+  scope :to_come, :conditions => ['end_date >= ?', Date.today]
   
   
   def to_param

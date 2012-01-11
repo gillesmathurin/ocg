@@ -45,7 +45,7 @@ class PartenairesController < ApplicationController
 
     respond_to do |format|
       if @partenaire.save
-        flash[:notice] = 'Partenaire was successfully created.'
+        flash[:notice] = I18n.t(:successfully_added_partner)
         format.html { redirect_to(partenaires_path()) }
         format.xml  { render :xml => @partenaire, :status => :created, :location => @partenaire }
       else
@@ -62,7 +62,7 @@ class PartenairesController < ApplicationController
 
     respond_to do |format|
       if @partenaire.update_attributes(params[:partenaire])
-        flash[:notice] = 'Partenaire was successfully updated.'
+        flash[:notice] = I18n.t(:successfully_modified_partner)
         format.html { redirect_to(partenaires_path()) }
         format.xml  { head :ok }
       else

@@ -6,4 +6,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require tinymce-jquery
 //= require_tree .
+
+$(function() {
+  $('textarea').tinymce({
+    theme: 'advanced'
+  });
+});

@@ -46,7 +46,7 @@ class VideosController < ApplicationController
 
     respond_to do |format|
       if @video.save
-        flash[:notice] = 'Video was successfully created.'
+        flash[:notice] = t(:successfully_created_video)
         format.html { redirect_to(@video) }
         format.xml  { render :xml => @video, :status => :created, :location => @video }
       else
@@ -63,7 +63,7 @@ class VideosController < ApplicationController
 
     respond_to do |format|
       if @video.update_attributes(params[:video])
-        flash[:notice] = 'Video was successfully updated.'
+        flash[:notice] = t(:successfully_modified_video)
         format.html { redirect_to(@video) }
         format.xml  { head :ok }
       else

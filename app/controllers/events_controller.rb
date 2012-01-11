@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :edit, :create, :destroy, :update]
-  uses_tiny_mce
+  # uses_tiny_mce
   
   def index
     # @events_fcfg = Event.fcfg
@@ -26,7 +26,7 @@ class EventsController < ApplicationController
     
     respond_to do |format|
       if @event.save
-        flash[:notice] = 'Evenement enregistré.'
+        flash[:notice] = I18n.t(:good_recorded_event)
         format.html { redirect_to(events_url) }
         format.xml { render :xml => @event, :status => :created, :location => @event }
       else
@@ -41,7 +41,7 @@ class EventsController < ApplicationController
     
     respond_to do |format|
        if @event.update_attributes(params[:event])
-         flash[:notice] = "Evenement modifié"
+         flash[:notice] = I18n.t(:good_modified_event)
          format.html { redirect_to(events_url) }
        else
          format.html { render :action => "edit" }

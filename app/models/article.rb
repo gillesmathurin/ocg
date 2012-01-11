@@ -4,7 +4,7 @@ class Article < ActiveRecord::Base
   has_attached_file :document
   accepts_nested_attributes_for :paragraphs, :allow_destroy => true
   
-  named_scope :recent_articles, :order => "created_at desc", :limit => 4  
+  scope :recent_articles, :order => "created_at desc", :limit => 4  
   
   def to_param
     "#{self.id}-#{self.title.parameterize}"

@@ -80,7 +80,7 @@ describe GalleriesController do
       it "assigns a newly created gallery as @gallery" do
         Gallery.should_receive(:new).with({'these' => 'params'}).and_return(mock_gallery(:save => true))
         post :create, :gallery => {:these => "params"}
-        flash[:notice].should == "Gallerie enregistrée."
+        flash[:notice].should == t(:good_created_gallery)
       end
       
       it "redirect to the gallery show page" do
