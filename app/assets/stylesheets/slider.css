@@ -8,7 +8,7 @@
 
 
 .anythingSlider                         { width: 886px; height: 197px; position: relative; margin: 0 auto 15px;
-	z-index: -10s;
+	z-index: -10;
 }
 .anythingSlider .wrapper                { width: 889px; overflow: hidden; height: 193px; position: absolute; top: 0; left: 0;
 	margin: 19px 40px 0 5px;

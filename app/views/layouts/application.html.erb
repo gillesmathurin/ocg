@@ -19,7 +19,7 @@
 	    <% if notice %><div id="notice"><%= notice %></div><% end %>
 	  </section>	  
 	  
-		<header>
+		<header id="page-header">
 		  <div id="logo"><%= image_tag("logo_ocg.png", :alt => "Logo OCG") %></div>
 		  
 		  <nav id="menus">
@@ -28,12 +28,12 @@
 					<li><%= link_to "Articles", articles_path() %></li>
 					<li><%= link_to "Galeries", galleries_path() %> </li>
 					<li><%= link_to "Liens", partenaires_path() %></li>
-					<li><a href="#">Missions</a></li>
 					<%- if user_signed_in? -%>
 					<li><%= link_to t(:logout), destroy_user_session_path %></li>
 					<%- else -%>
 					<li><%= link_to t(:login), new_user_session_path %></li>
 					<%- end -%>
+          <!-- <li><a href="#">Missions</a></li> -->
 				</ul>
 		  </nav>
 		</header>

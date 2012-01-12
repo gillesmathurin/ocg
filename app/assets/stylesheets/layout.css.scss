@@ -45,10 +45,10 @@ html {
 }
 
 body {
-  background-color: rgba(255,255,255,0.8);
-  @include rounded-corners(10px);
+//  background-color: rgba(255,255,255,0.8);
+//  @include rounded-corners(10px);
   padding:10px;
-  box-shadow: 0px 0px 10px rgb(50,50,50);
+  
   font: {
     family : Geneva, "Helvetica Neue", Arial, Helvetica, sans-serif;
     size: 0.8em;
@@ -57,51 +57,59 @@ body {
   #flash-messages {}
   
   /* Header styles */  
-  header {
+  #page-header {
+    background-color: rgba(255,255,255,0.6);
+    @include rounded-corners(10px);
+    box-shadow: 0px 0px 10px rgb(50,50,50);
     display:block;
-    width:992px;
+    height:201px;
     
     #logo {
       float: left;
     	height: 201px;
-    	width: 478px;
-    	margin-top: -20px;
+    	width: 420px;
     }
     
     #menus {
-      height: 201px;
     	display: block;
-    	width: 500px;
-    	margin-left: 486px;
+    	width: 520px;
+    	height:76px;
+    	margin-left: 466px;
     	
     	ul.lavaLamp {
     	  position: relative;
+    	  height:46px;
+    	  display: inline-block;
       	overflow: hidden;
-      	padding-left: 8px;
-      	line-height: 60px;
-      	padding-top: 80px;
+      	padding-left: 0px;
+      	padding-right: 8px;
+      	line-height: 35px;
+        margin-top: 100px;
+      	box-shadow: inset 0px 0px 5px 1px #5E5E5E;
+      	@include rounded-corners(10px);
+        background:rgba(#F00, 0.9);
+        width:460px;
       	
       	li {
       	  text-align: left;
-        	color: white;
         	float: left;
         	list-style: none;
-        	height: 76px;
+        	height: 46px;
         	margin-right: -30px;
       	}
       	
       	li.back {
       	  width: 9px;
-        	height: 76px;
-        	z-index: 8;
+//          height: 76px;
+          z-index: 8;
         	position: absolute;
-        	background: url(activenav.png) no-repeat right;
+        	background: url(activenav2.png) no-repeat right;
       	}
       	
       	li.back .left {
         	width: 30px;
         	margin-right: 9px;
-        	background: url(.activenav.png) no-repeat left top;
+        	background: url(activenav2.png) no-repeat left top;
         }
         
         li a {
@@ -113,15 +121,15 @@ body {
          display: block;
          float: left;
          letter-spacing: 0;
-         height: 76px;
+//         height: 76px;
          top: 7px;
          text-align: center;
          width: 116px;
          margin-top: auto;
          margin-bottom: auto;
-         font-size: 1.1em;
+         font-size: 1em;
          color: white;
-         &:hover { color: #41291b; }
+         &:hover { color: #4C372E; }
         }       
       }
     }    
@@ -129,8 +137,16 @@ body {
   
   /* Content styles */
   #content {
+    margin-top:20px;
+    background-color: rgba(255,255,255,0.6);
+    @include rounded-corners(10px);
+    box-shadow: 0px 0px 10px rgb(50,50,50);
     
     #photos-slider {
+      .anythingSlider {
+        @include rounded-corners(10px);
+        z-index:1;
+      }
       .slider {
       	width: 974px;
       	height: 251px;
@@ -160,7 +176,7 @@ body {
       @include three-columns-base(25px, 35px);      
       header {
         @include header-base;
-        @include custom-font('fonts/Dunkirk.otf', dunkirk, normal, 1.8em);
+        @include custom-font('fonts/Dunkirk.otf', dunkirk, bold, 1.8em);
       }
       ul.recent_articles {
         li {}
@@ -172,7 +188,7 @@ body {
       @include three-columns-base(25px, 25px);
       header {
         @include header-base;
-        @include custom-font('fonts/Dunkirk.otf', dunkirk, normal, 1.8em);
+        @include custom-font('fonts/Dunkirk.otf', dunkirk, bold, 1.8em);
       }
       p.download-program {
         display:block;
@@ -189,7 +205,7 @@ body {
       @include three-columns-base(25px, 25px);
       header {
         @include header-base;
-        @include custom-font('fonts/Dunkirk.otf', dunkirk, normal, 1.8em);
+        @include custom-font('fonts/Dunkirk.otf', dunkirk, bold, 1.8em);
       }
     }
     
