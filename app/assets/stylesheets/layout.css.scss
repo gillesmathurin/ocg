@@ -84,7 +84,7 @@ body {
       	padding-left: 0px;
       	padding-right: 8px;
       	line-height: 35px;
-        margin-top: 100px;
+        margin-top: 115px;
       	box-shadow: inset 0px 0px 5px 1px #5E5E5E;
       	@include rounded-corners(10px);
         background:rgba(#F00, 0.9);
@@ -100,7 +100,6 @@ body {
       	
       	li.back {
       	  width: 9px;
-//          height: 76px;
           z-index: 8;
         	position: absolute;
         	background: url(activenav2.png) no-repeat right;
@@ -113,22 +112,20 @@ body {
         }
         
         li a {
+         @include custom-font('fonts/Dunkirk.otf', dunkirk, bold, 1.4em);
          position: relative;
          overflow: hidden;
          text-decoration: none;
-         font-weight: bold;
          z-index: 10;
          display: block;
          float: left;
          letter-spacing: 0;
-//         height: 76px;
          top: 7px;
          text-align: center;
          width: 116px;
          margin-top: auto;
          margin-bottom: auto;
-         font-size: 1em;
-         color: white;
+         color:white;
          &:hover { color: #4C372E; }
         }       
       }
@@ -144,14 +141,66 @@ body {
     box-shadow: 0px 0px 10px rgb(50,50,50);
     
     #photos-slider {
+      margin-bottom:30px;
+      
       .anythingSlider {
-        @include rounded-corners(10px);
+        width: 889px;
+        height: 197px;
+        position: relative;
+        margin: 0 auto 15px;
         z-index:1;
-      }
-      .slider {
-      	width: 974px;
-      	height: 251px;
-      	padding-right: 40px;
+        
+        .wrapper { 
+          width: 886px;
+          overflow: hidden;
+          height: 193px;
+          position: absolute;
+          top: 0;
+          left: 0;
+        	margin: 20px 40px 0px 0px;
+        	z-index: -1000;
+        }
+        
+        .wrapper ul {
+          width: 99999px;
+          list-style: none;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: #eee;
+          margin: 0;
+        }
+        
+        ul li {
+          display: block;
+          float: left;
+          padding: 0;
+          height: 197px;
+          width: 886px;
+          margin: 0;
+          margin-left:-30px;
+        }
+        
+        .arrow {
+          display: block;
+          height: 200px;
+          width: 67px;
+          background: url(arrows.png) no-repeat 0 0;
+          position: absolute;
+          cursor: pointer;
+        	top: 22px;
+        	text-indent: -9999px;
+        }
+        
+        .forward {
+          background-position: 0 0;
+          right: -45px;
+        }
+        
+        .back {
+          background-position: -67px 0;
+        	left: -45px;
+        }
       }
     }
     
@@ -522,12 +571,12 @@ div.paragraph p.images {
 
 /* @group Footer */
 
-#ft {
-	padding-right: 40px;
-	padding-left: 40px;
-	margin-top: 20px;
-	text-align: center;
-}
+//#ft {
+//  padding-right: 40px;
+//  padding-left: 40px;
+//  margin-top: 20px;
+//  text-align: center;
+//}
 
 
 

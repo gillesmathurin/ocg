@@ -32,10 +32,10 @@ $(function() {
         animationTime: 600,             // How long the slide transition takes
         hashTags: true,                 // Should links change the hashtag in the URL?
         buildNavigation: false,          // If true, builds and list of anchor links to link to each slide
-		pauseOnHover: true,             // If true, and autoPlay is enabled, the show will pause on hover
-		startText: "Go",             // Start text
-    stopText: "Stop",               // Stop text
-    navigationFormatter: formatText       // Details at the top of the file on this use (advanced use)
+		    pauseOnHover: true,             // If true, and autoPlay is enabled, the show will pause on hover
+		    startText: "Go",             // Start text
+        stopText: "Stop",               // Stop text
+        navigationFormatter: formatText       // Details at the top of the file on this use (advanced use)
     });
     
     $("#slide-jump").click(function(){
