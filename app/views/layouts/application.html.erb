@@ -28,11 +28,11 @@
 					<li><%= link_to "Articles", articles_path() %></li>
 					<li><%= link_to "Galeries", galleries_path() %> </li>
 					<li><%= link_to "Liens", partenaires_path() %></li>
-					<%- if user_signed_in? -%>
-					<li><%= link_to t(:logout), destroy_user_session_path %></li>
-					<%- else -%>
-					<li><%= link_to t(:login), new_user_session_path %></li>
-					<%- end -%>
+					<%# if user_signed_in? %>
+          <!-- <li><%# link_to t(:logout), destroy_user_session_path %></li>
+          <%# else %>
+          <li><%# link_to t(:login), new_user_session_path %></li> -->
+					<%# end %>
           <!-- <li><a href="#">Missions</a></li> -->
 				</ul>
 		  </nav>
@@ -42,11 +42,10 @@
 		  <%= yield %>
 		</section>
 		
-		<footer>
+		<footer id="page-footer">
 		  <nav id="menus">
 	      <ul>
 					<li><a href="/">Accueil</a></li>
-					<li><a href="#">Missions</a></li>
 					<li><%= link_to "Articles", articles_path() %></li>
 					<li><%= link_to "Galeries", galleries_path() %> </li>
 					<li><%= link_to "Liens", partenaires_path() %></li>
@@ -55,11 +54,12 @@
 					<%- else -%>
 					<li><%= link_to t(:login), new_user_session_path %></li>
 					<%- end -%>
+          <!-- <li><a href="#">Missions</a></li> -->
 				</ul>
 	    </nav>
 	    <p>
 				Copyright © 2009-<%= Date.today.year if Date.today.year > 2009 %>
-				Conception : <%= link_to "GMWebAgency", "http://www.gmwebagency.com" %><br/>
+				Conception : <%= link_to "GMWebAgency", "http://www.gmwebagency.com" %><br/><br/>
 				<%= image_tag("logoCR.jpg", :size => "60x60") %>
 			</p>
 		</footer>
