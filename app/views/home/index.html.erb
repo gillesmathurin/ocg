@@ -20,7 +20,7 @@
 </header>
 
 <article id="articles">
-  <header>Dernières Publications</header>
+  <header>Derniers Articles</header>
   <ul class="recent_articles">
 		<% if !@articles.blank? %>
 		  <% for article in @articles %>
@@ -58,7 +58,7 @@
 </article>
 
 <article id="media">
-  <header>Photos / Videos / Audios</header>
+  <header>Multimédia</header>
   
   <ul class="next_events">
 		<li><%= @galleries_count %> galeries de photos, <%= link_to "à découvrir", galleries_path() %></li>
