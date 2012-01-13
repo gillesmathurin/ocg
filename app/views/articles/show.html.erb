@@ -1,17 +1,23 @@
-<div class="yui-g sliderfalse">
-	<h1 class="entete1"><%= @article.title %></h1>
-	<p>
-		<%- unless @article.auteur.blank? -%> Auteur : <%= @article.auteur %><br/><%- end -%>
-		Publié le : <%= @article.date_pub %><br/>
-		<%- unless @article.provenance.blank? -%> Extrait de : <%= @article.provenance %> <%- end -%>
-	</p>
-	<div class="article">
-		<% if with_document?(@article) %>
+<article id="article-content">
+  <header class="entete1">
+    <span class="title"><%= @article.title %></span>
+    <div id="article-credit">
+      <%- unless @article.auteur.blank? -%> Auteur : <span class="auteur"><%= @article.auteur %></span><br/><%- end -%>
+  		Publié le : <span class="date"><%= @article.date_pub.strftime("%d/%m/%Y") %></span><br/>
+  		<%- unless @article.provenance.blank? -%> Extrait de : <span class="provenance"><%= @article.provenance %></span><%- end -%>
+    </div>
+  </header>
+  
+  <div id="two-cols">		
+    <%=raw @article.content %>	
+    
+    <% if with_document?(@article) %>
 			<p><%= link_to "Téléchargez le document associé (clic droit)", @article.document.url %></p>
 		<% end %>
-		<%= @article.content %>	
+		
 		<p><%= image_tag(@article.photo.url(:thumb)) unless(@article.photo.url =~ /missing.png/) %></p>
-		<% if !@article.paragraphs.blank? %>
+		
+		<% unless @article.paragraphs.empty? %>
 		  <% for paragraph in @article.paragraphs %>
 		    <div class="paragraph">				
 		    	<p class="images">
@@ -19,20 +25,19 @@
 					<%= image_tag(paragraph.photo2.url(:thumb)) if photo2_not_missing(paragraph) %>
 					<%= image_tag(paragraph.photo3.url(:thumb)) if photo3_not_missing(paragraph)%>
 		    	</p>
-				<%= paragraph.content %>
+				<%=raw paragraph.content %>
 		    </div>
-		  <% end %>
-		<% else %>
-		  
-		<% end %>
-			
-	</div>
-	<%- if user_signed_in? -%>
-		<p>
-			<%= link_to "Ajouter Paragraphe", new_article_paragraph_path(@article) %>| <%= link_to "Modifier", edit_article_path(@article) %> | <%= link_to "Supprimer", article_path(@article), :method => :delete %> | <%= link_to "Tous les articles", articles_path() %>
-		</p>
-	<%- end -%>
-	<p>
-		<%= link_to "Retour", articles_path() %>
-	</p>
-</div>
+		  <% end %>		  
+		<% end %>		
+  </div>
+  
+  <footer class="admin-links">
+    <%- if user_signed_in? -%>	
+      <p>
+  			<%= link_to "Ajouter Paragraphe", new_article_paragraph_path(@article) %> | <%= link_to "Modifier", edit_article_path(@article) %> | <%= link_to "Supprimer", article_path(@article), :method => :delete %> | <%= link_to "Tous les articles", articles_path() %>
+  		</p>
+    <%- end -%>
+    <p><%= link_to "Retour", articles_path() %></p>	
+  </footer>
+	
+</article>

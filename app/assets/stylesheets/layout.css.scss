@@ -38,8 +38,9 @@
 
 $default-gray: #5E5E5E;
 $logo-marron: #4B372F;
+$default-blue: #145280;
 
-@mixin inset-col {
+@mixin outset-col {
   box-shadow: 0px 0px 5px 1px lighten($default-gray, 20%);
   padding-top:15px;
   padding-bottom:10px;
@@ -254,7 +255,7 @@ body {
         
     #articles {
       @include three-columns-base(38px, 25px);
-      @include inset-col;
+      @include outset-col;
             
       header {
         @include header-base;
@@ -268,7 +269,7 @@ body {
     
     #programmes {
       @include three-columns-base(25px, 25px);
-      @include inset-col;
+      @include outset-col;
       
       header {
         @include header-base;
@@ -301,7 +302,7 @@ body {
     
     #media {
       @include three-columns-base(25px, 25px);
-      @include inset-col;
+      @include outset-col;
       
       header {
         @include header-base;
@@ -323,6 +324,51 @@ body {
     	min-height: 416px;
     	display: block;
     	padding-bottom: 10px;
+    }
+    
+    /* Styling of an article */
+    #article-content {
+      .entete1 {
+        padding-top:20px;
+        text-align:center;
+        
+        span.title {
+          @include custom-font('fonts/TinselBoldit.otf', tinsel, bold, 2.4em);
+          text-shadow: 2px 2px 2px $default-gray;
+        }
+        
+        #article-credit {
+          margin-top:10px;
+          margin-bottom:20px;
+          @include custom-font('fonts/FlushItalic.otf', 'flush', bold, 1.8em);
+          .auteur { color: $default-blue; }
+          .provenance { color: $logo-marron; }
+        }
+      }
+      
+      #two-cols {
+        @include spacing(20px, 10px, 20px,10px);
+        @include outset-col;
+        padding:20px;
+        
+        -moz-column-count:2;
+        -webkit-column-count:2;
+        -moz-column-gap:20px;
+        -webkit-column-gap:20px;
+        -moz-column-rule:1px solid $default-gray;
+        -webkit-column-rule:1px solid $default-gray;
+        
+        .paragraph {
+          p.images {
+            
+          }
+        }
+      }
+      
+      .admin-links {
+        text-align:center;
+      }
+      
     }
   }
   
@@ -369,16 +415,16 @@ table.videos p.video-desc {
 	font-style: italic;
 }
 
-#bd h1.entete1 {
-	font-size: 1.2em;
-	color: #1c6791;
-	text-align: center;
-	margin-bottom: 20px;
-	font-weight: bold;
-	background: url(bgh1-entete1.gif) no-repeat center top;
-	height: 55px;
-	line-height: 55px;
-}
+//#bd h1.entete1 {
+//  font-size: 1.2em;
+//  color: #1c6791;
+//  text-align: center;
+//  margin-bottom: 20px;
+//  font-weight: bold;
+//  background: url(bgh1-entete1.gif) no-repeat center top;
+//  height: 55px;
+//  line-height: 55px;
+//}
 
 div.yui-gb.maincontent ul.next_events li {
 	list-style-type: none;
