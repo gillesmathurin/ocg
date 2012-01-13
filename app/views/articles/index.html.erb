@@ -1,33 +1,30 @@
-<div class="yui-g sliderfalse">
-	
-	<h1 class="entete1">Nos articles</h1>
-	
-	<div class="article">
-		<% if !@articles.blank? %>
-		<ul class="articles">
+<article id="article-content">
+  <header class="entete1">
+    <span class="title">Nos articles</span>
+  </header>
+  
+  <div id="two-cols">
+    <% unless @articles.empty? %>
+		<ul>
 			<% @articles.each do |article| %>
 				<li>
-				<span class="titre"><%= article.title %></span><br/>
-				<%= link_to "Voir", article_path(article) %>
-				<%- if user_signed_in? -%>
-				 | <%= link_to "Modifier", edit_article_path(article) %>
-				 | <%= link_to "Supprimer", article_path(article), :method => :delete %>
-				<%- end -%>
-				</li>
-			<% end %>
-			<% else %>
-				<li class="article">
-					Pas d'article pour l'instant
+  				<%= link_to article.title, article_path(article), :class => "list-elt" %>
+  				<%- if user_signed_in? -%>
+  				 | <%= link_to "Modifier", edit_article_path(article) %>
+  				 | <%= link_to "Supprimer", article_path(article), :method => :delete %>
+  				<%- end -%>
 				</li>
 			<% end %>
 		</ul>
-		<%= will_paginate @articles, :previous_label => "Précédent", :next_label => "Suivant" %>
-		
-		<p>
-			<% if user_signed_in? %>
-				<%= link_to "Ajouter un article", new_article_path() %>
-			<%- end -%>
-		</p>		
-	</div>
-	
-</div>
+		<% else %>
+			<p>Pas d'article pour l'instant</p>
+		<% end %>
+  </div>
+  
+  <footer class="admin-links">
+    <%= will_paginate @articles, :previous_label => "<< Précédent", :next_label => "Suivant >>" %>
+    <% if user_signed_in? %>
+		  <p><%= link_to "Ajouter un article", new_article_path() %></p>		
+		<%- end -%>
+  </footer>
+</article>

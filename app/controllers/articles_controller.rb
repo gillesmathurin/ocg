@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   # uses_tiny_mce# :options => { :theme => 'advanced' }
   
   def index
-    @articles = Article.paginate(:page => params[:page], :per_page => 10, :order => "created_at desc")
+    @articles = Article.paginate(:page => params[:page], :per_page => 25, :order => "created_at desc")
   end
 
   def show
