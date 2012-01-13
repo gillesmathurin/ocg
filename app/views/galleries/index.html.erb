@@ -1,41 +1,40 @@
-<div class="yui-g sliderfalse">
-	<h1 class="entete1">Galleries de Photos</h1>
-	<% if !@galleries.blank? %>
-	  <% for gallery in @galleries %>
-		    <p class="gallery-name">
-		    	<b><%= gallery.name %></b>
-		    </p>
-			<p>
-				<%= gallery.description %>			
-			</p>
-			<table class="galleryindex">
-				<%- gallery.images.in_groups_of(5, false) do |groups| -%>
-				<tr>
-					<%- groups.each do |image| -%>
-					<td><%= image_tag(image.photo.url(:thumb)) %></td>
-					<%- end -%>
-				</tr>
-				<%- end -%>
-			</table>
-			<p>
-				<%= link_to "Voir diaporama", gallery_path(gallery) %>
-				<% if user_signed_in? %>
-				| <%= link_to "Modifier", edit_gallery_path(gallery) %> | <%= link_to "Supprimer", gallery_path(gallery), :method => :delete %>
-				<% end %>
-			</p>
-	  <% end %>
-	<% else %>
-	  <p>Pas de galleries de photos enregistrer pour le moment</p>
-	<% end %>
-	<p class="gallery-name">
-		<%= will_paginate @galleries, :previous_label => "Précédent", :next_label => "Suivant"  %>
-	</p>
-	<p>
-		<%- if user_signed_in? -%>
-			<%= link_to "Ajouter une gallerie de photos", new_gallery_path() %>
+<article id="article-content">
+  <header class="entete1">
+    <span class="title">Galeries de Photos</span>
+  </header>
+  
+  <div id="two-cols">
+    <% unless @galleries.empty? %>
+  	  <% for gallery in @galleries %>
+  		  <p class="gallery-name"><b><%= gallery.name %></b></p>
+  		  
+  			<p><%= gallery.description %></p>
+  			
+  			<table class="galleryindex">
+  				<%- gallery.images.in_groups_of(5, false) do |groups| -%>
+  				<tr>
+  					<%- groups.each do |image| -%>
+  					<td><%= image_tag(image.photo.url(:sthumb), :class => "gal-prev", :size =>"80x65") %></td>
+  					<%- end -%>
+  				</tr>
+  				<%- end -%>
+  			</table>
+  			<p>
+  				<%= link_to "Voir diaporama", gallery_path(gallery) %>
+  				<% if user_signed_in? %>
+  				| <%= link_to "Modifier", edit_gallery_path(gallery) %> | <%= link_to "Supprimer", gallery_path(gallery), :method => :delete %>
+  				<% end %>
+  			</p>
+  	  <% end %>
+  	<% else %>
+  	  <p>Pas de galleries de photos enregistrer pour le moment</p>
+  	<% end %>
+  </div>
+  
+  <footer class="admin-links">
+    <%= will_paginate @galleries, :previous_label => "<< Précédent", :next_label => "Suivant >>"  %>
+    <%- if user_signed_in? -%>
+			<p><%= link_to "Ajouter une gallerie de photos", new_gallery_path() %></p>
 		<%- end -%>
-	</p>
-</div>
-<div class="yui-gb maincontent">
-	
-</div>
+  </footer>
+</article>
