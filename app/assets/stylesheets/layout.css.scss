@@ -37,6 +37,7 @@
 }
 
 $default-gray: #5E5E5E;
+$logo-marron: #4B372F;
 
 @mixin inset-col {
   box-shadow: 0px 0px 5px 1px lighten($default-gray, 20%);
@@ -67,7 +68,7 @@ body {
   font: {
     family : Geneva, "Helvetica Neue", Arial, Helvetica, sans-serif;
     size: 0.8em;
-  };
+  }
   
   #flash-messages {}
   
@@ -155,6 +156,11 @@ body {
     @include rounded-corners(10px);
     box-shadow: 0px 0px 10px rgb(50,50,50);
     
+    a {
+      text-decoration:none;
+      &:hover { text-decoration: underline; }
+    }
+    
     #photos-slider {
       margin-bottom:30px;
       
@@ -223,6 +229,12 @@ body {
       color: maroon;
     	font-weight: bold;
     }
+    
+    a.list-elt {
+      color: maroon;
+      font-size: 0.9em;
+      font-weight: bold;
+    }
 
     li {
       list-style-type: none;
@@ -233,6 +245,7 @@ body {
     	width: 245px;
     	padding-left:8px;
     	padding-right:8px;
+    	font-size:0.9em;
     }
 
     ul.next_events {
@@ -240,7 +253,7 @@ body {
     }
         
     #articles {
-      @include three-columns-base(25px, 35px);
+      @include three-columns-base(38px, 25px);
       @include inset-col;
             
       header {
@@ -261,17 +274,28 @@ body {
         @include header-base;
         @include custom-font('fonts/Dunkirk.otf', dunkirk, bold, 1.8em);
       }
-      p.download-program {
+      
+      #download-program {
         display:block;
-        background: white;
-        height: 50px;
+        background: rgba(255,0,0,0.6);
+        height: auto;
         padding:5px;
         margin-right:auto;
         margin-left:auto;
         text-align:center;
         @include rounded-corners(5px);
-        border: solid 1px black;
+        border: solid 1px $logo-marron;
         width:235px;
+        font-weight:bold;
+        color:white;
+        -webkit-animation-delay:2s;
+        -moz-animation-delay:2s;
+        -o-animation-delay:2s;
+        -ms-animation-delay:2s;
+        -webkit-animation-iteration-count:3;
+        -moz-animation-iteration-count:3;
+        -p-animation-iteration-count:3;
+        -ms-animation-iteration-count:3;
       }
     }
     

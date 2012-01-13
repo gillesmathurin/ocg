@@ -24,7 +24,7 @@
   <ul class="recent_articles">
 		<% if !@articles.blank? %>
 		  <% for article in @articles %>
-		    <li><span class="date"><%=h article.title %></span> <%= link_to "Lire …", article_path(article) %></li>
+		    <li><%= link_to article.title, article_path(article), :class => "list-elt"%></li>
 		  <% end %>
 		<% else %>
 		  	<li class="article">Pas d'articles pour le moment</li>
@@ -35,7 +35,7 @@
 <article id="programmes">
   <header>Programme</header>
   
-  <p class="download-program">
+  <p class="animated wobble" id="download-program">
     Télécharger le programme de l'année <%= Date.today.year %>
   </p>
   
@@ -67,6 +67,6 @@
 </article>
 
 <footer id="content-footer">
-  Social links to come …
+  <!-- Social links to come … -->
 </footer>
 
