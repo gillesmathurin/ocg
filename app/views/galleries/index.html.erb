@@ -6,9 +6,12 @@
   <div id="two-cols">
     <% unless @galleries.empty? %>
   	  <% for gallery in @galleries %>
-  		  <p class="gallery-name"><b><%= gallery.name %></b></p>
-  		  
-  			<p><%= gallery.description %></p>
+  	    <%- unless gallery.name.blank? -%>
+    		  <p class="gallery-name"><b><%= gallery.name %></b></p>
+    		<%- end -%>
+  		  <%- unless gallery.description.blank? -%>
+  			  <p><%= gallery.description %></p>
+  			<%- end -%>
   			
   			<table class="galleryindex">
   				<%- gallery.images.in_groups_of(5, false) do |groups| -%>
