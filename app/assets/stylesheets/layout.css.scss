@@ -414,6 +414,20 @@ body {
       #two-cols.larger {
         padding-top:30px;
       }
+      
+      #one-col {
+        @include spacing(20px, 10px, 20px,10px);
+        @include outset-col;
+        padding:20px;
+        text-align:center;
+        
+        form.user_new {          
+          line-height:2;
+          label {
+            font-weight:bold;
+          }
+        }
+      }
             
     }
   

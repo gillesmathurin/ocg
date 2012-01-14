@@ -29,10 +29,14 @@ en:
       updated: 'Your password was changed successfully. You are now signed in.'
       updated_not_active: 'Your password was changed successfully.'
       send_paranoid_instructions: "If your e-mail exists on our database, you will receive a password recovery link on your e-mail"
+      forgot_password: "Forgot your password?"
+      send_reset_instructions: "Send me reset password instructions"
     confirmations:
       send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
       send_paranoid_instructions: 'If your e-mail exists on our database, you will receive an email with instructions about how to confirm your account in a few minutes.'
       confirmed: 'Your account was successfully confirmed. You are now signed in.'
+      confirmation_not_received: "Didn't receive confirmation instructions?"
+      resend_confirmation_instructions: "Resend confirmation instructions"
     registrations:
       signed_up: 'Welcome! You have signed up successfully.'
       inactive_signed_up: 'You have signed up successfully. However, we could not sign you in because your account is %{reason}.'
@@ -56,3 +60,5 @@ en:
         subject: 'Reset password instructions'
       unlock_instructions:
         subject: 'Unlock Instructions'
+    sign_in: "Sign in"
+    remember_me: "Remember me"

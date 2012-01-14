@@ -1,0 +1,20 @@
+<article id="article-content">
+  <header class="entete1">
+    <span class="title">
+      <%= t(:forgot_password, :scope => [:devise, :passwords]) %>
+    </span>
+  </header>
+  
+  <div id="one-col">
+    <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div><%= f.label :email %><br />
+      <%= f.email_field :email %></div>
+
+      <div><%= f.submit t(:send_reset_instructions, :scope => [:devise, :passwords]) %></div>
+    <% end %>
+
+    <%= render :partial => "users/shared/links" %>
+  </div>
+</article>

@@ -9,9 +9,9 @@ Ocg::Application.routes.draw do
   
   resources :events
   
-  resource  :user
-  
   devise_for :users
+  resource  :users
+  
   
   resources :galleries do
     resources :images

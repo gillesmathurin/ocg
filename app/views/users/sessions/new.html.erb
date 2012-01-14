@@ -1,0 +1,22 @@
+<article id="article-content">
+  <header class="entete1">
+    <span class="title"><%= t(:login) %></span>
+  </header>
+
+  <div id="one-col">
+    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+      <div>
+        <%= f.label :email %> : <%= f.email_field :email %> <%= f.label :password %> :
+        <%= f.password_field :password %> <%= f.submit t(:sign_in, :scope => [:devise]) %>
+      </div>
+
+      <% if devise_mapping.rememberable? -%>
+        <div><%= f.check_box :remember_me %> <%= f.label t(:remember_me, :scope => [:devise]) %></div>
+      <% end -%>
+
+      <div></div>
+    <% end %>
+
+    <%= render :partial => "users/shared/links" %>
+  </div>
+</article>

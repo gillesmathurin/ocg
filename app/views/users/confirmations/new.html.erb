@@ -1,0 +1,18 @@
+<article id="article-content">
+  <header class="entete1">
+    <span class="title"><%= t(:resend_confirmation_instructions, :scope => [:devise, :confirmations]) %></span>
+  </header>
+  
+  <div id="one-col">
+    <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div><%= f.label :email %><br />
+      <%= f.email_field :email %></div>
+
+      <div><%= f.submit t(:resend_confirmation_instructions, :scope => [:devise, :confirmations]) %></div>
+    <% end %>
+
+    <%= render :partial => "users/shared/links" %>
+  </div>
+</article>

@@ -3,7 +3,9 @@
     <span class="title"><%= @article.title %></span>
     <div id="article-credit">
       <%- unless @article.auteur.blank? -%> Auteur : <span class="auteur"><%= @article.auteur %></span><br/><%- end -%>
+      <%- unless @article.date_pub.nil? -%>
   		Publié le : <span class="date"><%= @article.date_pub.strftime("%d/%m/%Y") %></span><br/>
+  		<%- end -%>
   		<%- unless @article.provenance.blank? -%> Extrait de : <span class="provenance"><%= @article.provenance %></span><%- end -%>
     </div>
   </header>
