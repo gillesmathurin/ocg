@@ -1,37 +1,22 @@
 <%- content_for(:head) do -%>
-	<%= stylesheet_link_tag 'screen' %>
-	<%= javascript_include_tag 'easySlider1.7.js' %>
-	 <script type="text/javascript">
-		$(document).ready(function(){	
-			$("#slider").easySlider({
-				auto: true, 
-				continuous: true,
-				prevText: '< Précédent',
-				nextText: 'Suivant >',
-				pause: 5000
-			});
-		});
-	 </script>
 <%- end -%>
 
-<div class="yui-g sliderfalse">
-	<h1 class="entete1"><%= @gallery.name %></h1>
+<article id="diaporama">
+  <header class="entete1">
+    <span class="title"></span>
+  </header>
+  
+  <div id="slider">
+    <%- @gallery.images.each do |image| -%>
+			<%= image_tag(image.photo.url(:large), :alt => image.photo.original_filename) %>
+		<%- end -%>
+  </div>
+  
+  <footer class="admin-links">
+    <p><%= link_to "Retour", galleries_path() %></p>	
+  </footer>
+</article>
 
-	<div id="slider" class="gallery">
-		<ul>
-			<% @gallery.images.each do |image| %>
-				<li>
-					<%= image_tag(image.photo.url(:large)) %>
-				</li>
-			<%- end -%>
-		</ul>
-	</div>
-	<!-- <p class="gallery-description">
-		<%# @gallery.description %>
-	</p> -->
-	<p align="center">
-		<%= link_to "Retour", galleries_path() %>
-	</p>
 	
 	<script type="text/javascript"> 
 	var clickmessage= "Image protégée" 
@@ -54,9 +39,3 @@
 	else if (document.layers) 
 	associateimages() 
 	</script>
-	
-</div>
-
-<div class="yui-gb maincontent">
-	
-</div>

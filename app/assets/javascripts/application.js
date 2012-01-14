@@ -48,3 +48,9 @@ $(function() {
 $(function () {
   $($(".gallery-name")[2]).css("margin-top","50px");
 })
+
+$(function(){
+    window.myFlux = new flux.slider('#slider', {
+      pagination:false
+    });
+});
