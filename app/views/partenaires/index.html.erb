@@ -1,35 +1,34 @@
-<div class="yui-g sliderfalse">
-	<h1 class="entete1">Nos partenaires</h1>
-	
-	<% unless @partenaires.empty? %>
-	<table class="partenaires">
-	<% @partenaires.in_groups_of(5, false) do |group| %>
-		<tr>
-			<% group.each do |p| %>
-			<td>
-				<p class="logo"><%= image_tag(p.logo.url(:medium))  if logo_present?(p)%></p>
-				<p>
-					<%= p.name %><br/>
-					<%= link_to p.weburl, p.weburl if p.weburl %><br/>
-					<%= p.adresse_complete %><br/>
-					<%= p.email if p.email %><br/>
-					<% if user_signed_in? %>
-					<%= link_to "Modifier", edit_partenaire_path(p) %> | <%= link_to "Supprimer", partenaire_path(p), :method => :delete %>
-					<% end %>
-				</p>				
-			</td>
-			<% end %>
-		</tr>
-	<% end %>
-	</table>
-	<%- end -%>
-	
-	<p>
-		<%- if user_signed_in? -%>
-			<%= link_to 'Ajouter un partenaire', new_partenaire_path %>		
-		<%- end -%>
-	</p>
-</div>
-<div class="yui-gb maincontent">
-	
-</div>
+<article id="article-content">
+  <header class="entete1">
+    <span class="title">Nos partenaires</span>
+  </header>
+  
+  <div id="two-cols">
+    <% unless @partenaires.empty? %>
+      <ul>
+        <% @partenaires.each do |p| %>
+          <li>
+            <p class="logo"><%= image_tag(p.logo.url(:medium)) if logo_present?(p)%></p>
+    				<p>
+    					<%= p.name %><br/>
+    					<%= link_to p.weburl, p.weburl if p.weburl %><br/>
+    					<%= p.adresse_complete %><br/>
+    					<%= p.email if p.email %><br/>
+    					<% if user_signed_in? %>
+    					  <%= link_to "Modifier", edit_partenaire_path(p) %> | <%= link_to "Supprimer", partenaire_path(p), :method => :delete %>
+    					<% end %>
+    				</p>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>Soyez le premier à figurer dans notre liste de partenaires</p>
+    <% end %>
+  </div>
+  
+  <footer class="admin-links">
+  	<%- if user_signed_in? -%>
+      <p><%= link_to 'Ajouter un partenaire', new_partenaire_path %></p>
+  	<%- end -%>
+  </footer>
+</article>
