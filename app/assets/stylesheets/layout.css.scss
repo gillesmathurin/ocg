@@ -392,6 +392,23 @@ body {
           margin-bottom:0px;
           margin-top:0px;
         }
+        
+        p.logo {
+          outline: $default-blue solid 2px;
+        }
+        p.partenaire-infos {
+          margin-top:0px;
+          span.partenaire-name {
+            font: {
+              weight:bold;
+              size:1.2em;
+            };
+          }
+          span.addon-infos { 
+            display:block;
+            padding-left:25px;
+          }
+        }
       }
       
       #two-cols.larger {

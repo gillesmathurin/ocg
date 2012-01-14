@@ -8,12 +8,18 @@
       <ul>
         <% @partenaires.each do |p| %>
           <li>
-            <p class="logo"><%= image_tag(p.logo.url(:medium)) if logo_present?(p)%></p>
-    				<p>
-    					<%= p.name %><br/>
-    					<%= link_to p.weburl, p.weburl if p.weburl %><br/>
-    					<%= p.adresse_complete %><br/>
-    					<%= p.email if p.email %><br/>
+            <%- if logo_present?(p) -%>
+              <p class="logo"><%= image_tag(p.logo.url(:medium))%></p>
+            <%- end -%>
+    				<p class="partenaire-infos">
+    					<span class="partenaire-name"><%= p.name %></span><br/>
+    					<span class="addon-infos">
+    					  <%-  unless p.weburl.blank? -%>
+    					    <%= link_to p.weburl, p.weburl %><br/>
+    					  <%- end -%>
+    					  <%= p.adresse_complete %><br/>
+    					  <%= p.email if p.email %><br/>
+    					</span>
     					<% if user_signed_in? %>
     					  <%= link_to "Modifier", edit_partenaire_path(p) %> | <%= link_to "Supprimer", partenaire_path(p), :method => :delete %>
     					<% end %>
