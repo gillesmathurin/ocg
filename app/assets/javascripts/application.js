@@ -43,3 +43,8 @@ $(function() {
     });
     
 });
+
+// Little function to correctly layout the galleries multicolumns index page
+$(function () {
+  $($(".gallery-name")[2]).css("margin-top","50px");
+})
