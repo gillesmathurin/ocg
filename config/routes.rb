@@ -16,6 +16,7 @@ Ocg::Application.routes.draw do
   resources :galleries do
     resources :images
   end
+  resources :images
   
   root :to => 'home#index'
   # The priority is based upon order of creation:

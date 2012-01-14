@@ -1,7 +1,44 @@
 <article id="diaporama">
   <header class="entete1">
-    <span class="title"></span>
+    <span class="title"><%= @gallery.name unless @gallery.name.blank? %></span>
   </header>
+  
+  <%- if user_signed_in? -%>
+    <div id="file-uploader">
+      <noscript>
+		    <p>Please enable Javascript to use file uploader</p>
+		  </noscript>
+    </div>
+    
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function() {
+        var uploader = new qq.FileUploader({
+          element: document.getElementById('file-uploader'),
+          action: '/images',
+          csrf: true,
+          params: {
+            gallery_id: '<%= @gallery.id %>',
+          },
+          allowedExtensions: ['jpg', 'jpeg', 'png', 'gif', 'bmp'],
+          sizeLimit: 2224000, // max size 2MB in bytes
+          minSizeLimit: 0,
+
+          onComplete: function(id, fileName, responseJSON){
+            if (responseJSON.success) {
+              $('.qq-upload-failed-text').first().html('Téléchargement réussi!');
+              $('.qq-upload-failed-text').first().show();
+              $('#back-link').show();
+            }
+            else
+            {
+              $('.qq-upload-failed-text').first().html('Hmm .. le téléchargement a échoué.');
+              $('.qq-upload-failed-text').first().show();
+            }
+          }
+        });
+      });  
+    </script>
+  <%- end -%>
   
   <div id="slider">
     <%- @gallery.images.each do |image| -%>

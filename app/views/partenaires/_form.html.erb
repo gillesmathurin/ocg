@@ -1,5 +1,15 @@
-<% form_for(partenaire, :html => { :multipart => true }) do |f| %>
-  <%= f.error_messages %>
+<%= form_for(partenaire) do |f| %>
+  <% if partenaire.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(partenaire.errors.count, "error") %> prohibited this partenaire from being saved:</h2>
+
+      <ul>
+      <% partenaire.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <p>
     <%= f.label :name, "Nom" %><br />

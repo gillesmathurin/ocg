@@ -49,8 +49,21 @@ $(function () {
   $($(".gallery-name")[2]).css("margin-top","50px");
 })
 
+// Photos Gallery Slider function
 $(function(){
     window.myFlux = new flux.slider('#slider', {
       pagination:false
     });
+});
+
+// animate the displaying of the flash messages
+$(function() {
+  $('div.alert').slideDown(400, 'linear');
+  $('div.notice').slideDown(400, 'linear');
+  // close the flash box
+  $('.close-it').click(function(){
+    $(this).parent().slideUp('fast');
+    return false;
+  });
+  return false;
 });

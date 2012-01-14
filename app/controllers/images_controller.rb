@@ -1,14 +1,37 @@
 class ImagesController < ApplicationController
-  def index
+  respond_to :json, :html, :js
+  before_filter :find_gallery
+    
+  def create
+    @image = Image.new()
+    @image.gallery_id = @gallery.id
+    @image.photo = params[:file]
+    
+    respond_to do |format|
+      if @image.save
+        format.xml { render :json => "{success:true}" }
+      else
+        format.html { redirect_to @gallery }
+      end
+    end
   end
-
-  def show
+  
+  def destroy
+    @image = Image.find(params[:id])
+    @image.destroy
+    flash[:notice] = "Photo efface"
+    respond_to do |format|
+      if @gallery
+        format.html { redirect_to gallery_url(@gallery) }
+      else
+        format.html { redirect_to images_url }
+      end
+    end    
   end
-
-  def new
+  
+  private
+  
+  def find_gallery
+    @gallery = Gallery.find(params[:gallery_id]) if params[:gallery_id]
   end
-
-  def edit
-  end
-
 end

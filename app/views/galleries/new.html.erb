@@ -1,9 +1,23 @@
-<div class="yui-g sliderfalse">
-	<h1 class="entete1">Créer une Gallerie</h1>
-	<div class="tableform">
-		<%= render :partial => 'form', :locals => {:gallery => @gallery} %>
-	</div>
-</div>
-<div class="yui-gb maincontent">
-
-</div>
+<article id="article-content">
+  <header class="entete1">
+    <span class="title">Créer une Galerie de photos</span>
+    <div id="steps">
+      <span class="etape">
+        1-Entrez les informations concernant la galerie (titre, description) puis validez.<br/>
+        2-Vous serez redirigé vers une page permettant le téléchargement multiple des photos par glisser-déposer.
+      </span>
+    </div>
+  </header>
+  
+  <div id="one-col">
+    <div class="form">
+      <%= render :partial => 'form', :locals => {:gallery => @gallery} %>
+  	</div>    
+  </div>
+  
+  <footer class="admin-links">
+    <p>
+  		<%= link_to "Toutes les galeries", galleries_path() %>
+  	</p>
+  </footer>
+</article>

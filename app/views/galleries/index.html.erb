@@ -10,7 +10,7 @@
     		  <p class="gallery-name"><b><%= gallery.name %></b></p>
     		<%- end -%>
   		  <%- unless gallery.description.blank? -%>
-  			  <p><%= gallery.description %></p>
+  			  <p><%=raw gallery.description %></p>
   			<%- end -%>
   			
   			<table class="galleryindex">

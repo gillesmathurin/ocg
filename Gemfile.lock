@@ -106,6 +106,8 @@ GEM
       rack (>= 0.4)
     rack-mount (0.8.3)
       rack (>= 1.0.0)
+    rack-raw-upload (1.0.11)
+      json
     rack-ssl (1.3.2)
       rack
     rack-test (0.6.1)
@@ -195,6 +197,7 @@ DEPENDENCIES
   jquery-rails
   mysql2
   paperclip
+  rack-raw-upload
   rails (= 3.1.3)
   rspec-rails
   sass-rails (~> 3.1.5)

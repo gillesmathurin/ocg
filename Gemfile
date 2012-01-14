@@ -12,7 +12,7 @@ gem 'whenever'
 gem 'delayed_job'
 gem 'paperclip'
 gem 'tinymce-rails'
-
+gem 'rack-raw-upload'#, :git => 'git://github.com/newbamboo/rack-raw-upload.git' # necessary for multiple file uploads
 
 # Gems used only for assets and not required
 # in production environments by default.
