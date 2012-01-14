@@ -3,7 +3,7 @@
     <span class="title">Galeries de Photos</span>
   </header>
   
-  <div id="two-cols">
+  <div id="two-cols" class="larger">
     <% unless @galleries.empty? %>
   	  <% for gallery in @galleries %>
   	    <%- unless gallery.name.blank? -%>
@@ -17,13 +17,13 @@
   				<%- gallery.images.in_groups_of(5, false) do |groups| -%>
   				<tr>
   					<%- groups.each do |image| -%>
-  					<td><%= image_tag(image.photo.url(:sthumb), :class => "gal-prev", :size =>"80x65") %></td>
+  					<td><%= image_tag(image.photo.url(:sthumb), :class => "gal-prev", :size =>"80x65") unless image.photo.url =~ /missing.png/ %></td>
   					<%- end -%>
   				</tr>
   				<%- end -%>
   			</table>
   			<p>
-  				<%= link_to "Voir diaporama", gallery_path(gallery) %>
+  				<%= link_to "Voir ce diaporama", gallery_path(gallery), :class => "list-elt" %>
   				<% if user_signed_in? %>
   				| <%= link_to "Modifier", edit_gallery_path(gallery) %> | <%= link_to "Supprimer", gallery_path(gallery), :method => :delete %>
   				<% end %>
