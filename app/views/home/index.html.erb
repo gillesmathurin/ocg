@@ -36,7 +36,7 @@
   <header>Programme</header>
   
   <p class="animated wobble" id="download-program">
-    Télécharger le programme de l'année <%= Date.today.year %>
+    <%= link_to "Télécharger le programme de l'année #{Date.today.year}", download_programme_programme_path(@programme) %>
   </p>
   
  	<ul class="next_events">

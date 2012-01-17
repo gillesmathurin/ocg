@@ -1,0 +1,21 @@
+<article id="article-content">
+  <header class="entete1">
+    <span class="title">Les programmes</span>
+  </header>
+  
+  <div id="two-cols">
+    <% unless @programmes.empty? %>
+      <ul>
+        <% @programmes.each do |p| %>
+          <li>Année : <%= p.annee %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+  
+  <footer class="admin-links">
+    <%- if user_signed_in? -%>
+      <p><%= link_to "Ajouter un programme", new_programme_path() %></p>
+    <%- end -%>
+  </footer>
+</article>

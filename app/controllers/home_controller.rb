@@ -4,5 +4,6 @@ class HomeController < ApplicationController
     @events = Event.next_10
     @galleries_count = Gallery.count
     @videos_count = Video.count
+    @programme = Programme.current.first
   end
 end

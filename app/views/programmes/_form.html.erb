@@ -1,0 +1,6 @@
+<%= form_for @programme do |f| -%>
+  <p><%= f.label :annee %> : <%= f.date_select :annee, { :discard_day => true, :discard_month => true } %></p>
+  <p><%= f.label :fichier, "Fichier" %> : <%= f.file_field :fichier %></p>
+  
+  <p><%= f.submit "Enregistrer" %></p>
+<% end -%>

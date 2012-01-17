@@ -1,4 +1,10 @@
 Ocg::Application.routes.draw do
+  resources :programmes do
+    member do
+      get 'download_programme'
+    end
+  end
+
   resources :videos
   
   resources :partenaires
