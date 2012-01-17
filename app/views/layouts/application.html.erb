@@ -29,7 +29,7 @@
 					<li><%= link_to "Galeries", galleries_path() %> </li>
 					<li><%= link_to "Liens", partenaires_path() %></li>
 					<%- if user_signed_in? -%>
-          <li><%= link_to t(:logout), destroy_user_session_path, :class => "small" %></li>
+          <li><%= link_to t(:logout), destroy_user_session_path, :class => "small", :method => :delete %></li>
           <%- else -%>
           <li><%= link_to t(:login), new_user_session_path, :class => "small" %></li>
           <%- end -%>
