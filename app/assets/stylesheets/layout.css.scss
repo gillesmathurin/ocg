@@ -36,6 +36,18 @@
   }
 }
 
+@mixin page-header {
+  .entete1 {
+    padding-top:20px;
+    text-align:center;
+    
+    span.title {
+      @include custom-font('fonts/TinselBoldit.otf', tinsel, bold, 2.4em);
+      text-shadow: 2px 2px 2px $default-gray;
+    }
+  }
+}
+
 $default-gray: #5E5E5E;
 $logo-marron: #4B372F;
 $default-blue: #145280;
@@ -372,16 +384,8 @@ body {
         -webkit-column-gap:20px;
         -moz-column-rule:1px solid $default-gray;
         -webkit-column-rule:1px solid $default-gray;        
-        
-        .paragraph {
-          p.images {
-            
-          }
-        }
-        
-        ul li {
-          width: 100%;
-        }
+                
+        ul li { width: 100%; }
         
         .gal-prev {
           border: 1px double $logo-marron;
@@ -452,6 +456,7 @@ body {
     }
   
     #diaporama {
+      @include page-header;
       
       #slider {
         width:500px;
@@ -468,6 +473,54 @@ body {
             background-color: rgba(255,255,255,0.6);
           }
         }
+      }
+      
+      #one-col {
+        @include spacing(20px, 10px, 20px,10px);
+        @include outset-col;
+        padding:20px;
+        text-align:center;
+      }
+    }
+    
+    #file-uploader {
+      display:block;
+      
+      .qq-upload-drop-area {
+        display:inline-block;
+        margin-right:20px;
+        @include rounded-corners(10px);
+        width:200px;
+        height:35px;
+        line-height:35px;
+        box-shadow: 0px 0px 2px 2px rgba(50,50,50, 0.5);
+        border:2px solid darken($logo-marron, 5%);
+        background-image: -webkit-gradient(linear,
+          right top,
+          right bottom,
+          from(white),
+          to(rgba(#BEBEBE, 0.5))
+        );
+      }
+      
+      .qq-upload-button {
+        display:inline-block;
+        @include rounded-corners(10px);
+        width:200px;
+        height:35px;
+        line-height:35px;
+        box-shadow: 0px 0px 2px 2px rgba(50,50,50, 0.5);
+        border:2px solid darken($logo-marron, 5%);
+        background-image: -webkit-gradient(linear,
+          right top,
+          right bottom,
+          from(white),
+          to(rgba(#BEBEBE, 0.5))
+        );
+      }
+      
+      ul.qq-upload-list {
+        
       }
     }
   }

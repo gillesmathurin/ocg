@@ -488,8 +488,8 @@ qq.FileUploader = function(o){
         listElement: null,
                 
         template: '<div class="qq-uploader">' + 
-                '<div class="qq-upload-drop-area"><span>Drop files here to upload</span></div>' +
-                '<div class="qq-upload-button">Upload a file</div>' +
+                '<div class="qq-upload-drop-area"><span>Télécharger plusieurs fichiers</span></div>' +
+                '<div class="qq-upload-button">Télécharger un fichier</div>' +
                 '<ul class="qq-upload-list"></ul>' + 
              '</div>',
 
@@ -578,7 +578,7 @@ qq.extend(qq.FileUploader.prototype, {
         qq.attach(document, 'dragenter', function(e){     
             if (!dz._isValidFileDrag(e)) return; 
             
-            dropArea.style.display = 'block';            
+            dropArea.style.display = 'inline-block';            
         });                 
         qq.attach(document, 'dragleave', function(e){
             if (!dz._isValidFileDrag(e)) return;            

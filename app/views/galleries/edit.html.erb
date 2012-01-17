@@ -1,9 +1,56 @@
-<div class="yui-g sliderfalse">
-	<h1 class="entete1">Modifier Gallerie</h1>
-	<div class="tableform">
-		<%= render :partial => 'form', :locals => {:gallery => @gallery} %>
-	</div>
-</div>
-<div class="yui-gb maincontent">
-	
+<div id="article-content">
+  <header class="entete1">
+    <span class="title">Modifier la Galerie</span>
+  </header>
+  
+  <div id="one-col">
+    <div class="form">
+  		<%= render :partial => 'form', :locals => {:gallery => @gallery} %>
+  	</div>
+  	
+  	<%- if user_signed_in? -%>
+      <p>
+        Télécharger les photos de la galerie en cliquant sur le bouton ci-dessous <br/>
+        ou en glissant-déposant plusieurs photos sur le bouton ci-dessous.
+      </p>
+      <div id="file-uploader">
+        <noscript>
+  		    <p>Please enable Javascript to use file uploader</p>
+  		  </noscript>
+      </div>
+
+      <script type="text/javascript" charset="utf-8">
+        $(document).ready(function() {
+          var uploader = new qq.FileUploader({
+            element: document.getElementById('file-uploader'),
+            action: '/images',
+            csrf: true,
+            params: {
+              gallery_id: '<%= @gallery.id %>',
+            },
+            allowedExtensions: ['jpg', 'jpeg', 'png', 'gif', 'bmp'],
+            sizeLimit: 2224000, // max size 2MB in bytes
+            minSizeLimit: 0,
+
+            onComplete: function(id, fileName, responseJSON){
+              if (responseJSON.success) {
+                $('.qq-upload-failed-text').first().html('Téléchargement réussi!');
+                $('.qq-upload-failed-text').first().show();
+                $('#back-link').show();
+              }
+              else
+              {
+                $('.qq-upload-failed-text').first().html('Hmm .. le téléchargement a échoué.');
+                $('.qq-upload-failed-text').first().show();
+              }
+            }
+          });
+        });  
+      </script>
+    <%- end -%>
+  </div>
+  
+  <footer class="admin-links">
+    <p><%= link_to "Retour", galleries_path() %></p>
+  </footer>
 </div>
