@@ -3,11 +3,11 @@
     <span class="title">Les programmes</span>
   </header>
   
-  <div id="two-cols">
+  <div id="one-col">
     <% unless @programmes.empty? %>
       <ul>
         <% @programmes.each do |p| %>
-          <li>Année : <%= p.annee %></li>
+          <li>Année : <%= p.annee.strftime("%Y") %> | <%= link_to "Télécharger", download_programme_programme_path(p) %></li>
         <% end %>
       </ul>
     <% end %>
