@@ -305,6 +305,8 @@ body {
         -moz-animation-iteration-count:3;
         -p-animation-iteration-count:3;
         -ms-animation-iteration-count:3;
+        
+        a { color:white; }
       }
     }
     
@@ -373,7 +375,6 @@ body {
       }
       
       #two-cols {
-//        min-height:550px;
         @include spacing(20px, 10px, 20px,10px);
         @include outset-col;
         padding:20px;
