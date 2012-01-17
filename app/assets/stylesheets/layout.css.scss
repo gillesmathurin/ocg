@@ -373,7 +373,7 @@ body {
       }
       
       #two-cols {
-        height:550px;
+//        min-height:550px;
         @include spacing(20px, 10px, 20px,10px);
         @include outset-col;
         padding:20px;

@@ -10,8 +10,6 @@
   </div>
   
   <footer class="admin-links">
-    <p>
-  		<%= link_to "Tous les articles", articles_path() %>
-  	</p>
+    <p><%= link_to "Retour à l'article", article_path(@article) %> | <%= link_to "Tous les articles", articles_path() %></p>
   </footer>
 </article>

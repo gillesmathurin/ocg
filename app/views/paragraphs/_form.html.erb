@@ -1,5 +1,15 @@
-		<% form_for :paragraph, :url => article_paragraphs_path(@article), :html => {:multipart => true} do |f| -%>
-			<%= f.error_messages %>
+		<%= form_for :paragraph, :url => article_paragraphs_path(@article) do |f| -%>
+			<% if @paragraph.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@paragraph.errors.count, "error") %> empêchèrent ce paragraph d'être enregistré:</h2>
+
+          <ul>
+          <% @paragraph.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
 		  <p>
 		  	<%= f.label :photo1, "Photo1" %> : <%= f.file_field :photo1 %>
 		  </p>
