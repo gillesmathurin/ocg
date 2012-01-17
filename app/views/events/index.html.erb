@@ -1,68 +1,10 @@
-<%- content_for(:head) do -%>
-	<%= stylesheet_link_tag 'screen' %>
-	<%= javascript_include_tag 'easySlider1.7.js' %>
-	 <script type="text/javascript">
-		$(document).ready(function(){	
-			$("#slider").easySlider(
-				{
-				auto: false, 
-				continuous: true,
-				prevText: '< Précédent',
-				nextText: 'Suivant >' 
-				}
-			);
-		});
-	 </script>
-<%- end -%>
-
-<div class="yui-g sliderfalse">
-	<h1 class="entete1">Evénements à venir</h1>
-	
-	<%# unless @events_fcfg.empty? && @events_fcg.empty? && @events_gccrp.empty? %>
-	<!-- <div id="slider">
-		<ul>
-			<li>
-				<%# unless @events_fcfg.empty? %>
-					<p class="fede">FCFG</p>
-				<%# @events_fcfg.each do |event| %>
-					<p>
-						<span class="date"><%# formatted_date(event.start_date) %></span> :
-						<b> <%#h event.title %></b> <%# event.description %> <%# event.place %> 
-					</p>
-					<hr>
-				<%# end %>					
-				<%# end %>
-			</li>
-			
-			<li>
-				<%# unless @events_fcg.empty? %>
-					<p class="fede">FCG</p>
-				<%# @events_fcg.each do |event| %>
-					<p>
-						<span class="date"><%# formatted_date(event.start_date) %></span> :
-						<b><%#h event.title %></b> <%# event.description %> <%# event.place %><br/> 
-					</p>
-					<hr>
-				<%# end %>					
-				<%# end %>
-			</li>
-			
-			<li>
-				<%# unless @events_gccrp.empty? %>
-					<p class="fede">GCCRP</p>
-				<%# @events_gccrp.each do |event| %>
-					<p>
-						<span class="date"><%# formatted_date(event.start_date) %></span> :
-						<b><%#h event.title %></b> <%# event.description %> <%# event.place %><br/> 
-					</p>
-					<hr>
-				<%# end %>					
-				<%# end %>
-			</li>
-		</ul>
-	</div> -->
-	<%# else %>
-		<%- unless @events.empty? -%>
+<article id="article-content">
+  <header class="entete1">
+    <span class="title">Evénements à venir</span>
+  </header>
+  
+  <div id="one-col">
+    <%- unless @events.empty? -%>
 			<%- @events.each do |event| -%>
 			<div class="article">
 				<p><span class="date"><%= formatted_date(event.start_date) %></span> :
@@ -78,9 +20,12 @@
 			<%- end -%>
 		<%- else -%>
 			<p class="event">Pas d'événements à venir pour le moment</p>
-		<%- end -%>
-	<%# end %>
-	<% if user_signed_in? %>
-		<p><%= link_to "Ajouter un événement", new_event_path() %></p>
-	<% end %>
-</div>
+		<%- end -%>	  
+  </div>
+  
+  <div class="admin-links">
+    <% if user_signed_in? %>
+		  <p><%= link_to "Ajouter un événement", new_event_path() %></p>
+	  <% end %>
+  </div>
+</article>

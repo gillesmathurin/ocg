@@ -1,10 +1,15 @@
-<div class="yui-g sliderfalse">
-	<h1 class="entete1">Enregistrez Evenement</h1>
-	<div class="form">
-		<%= render :partial => 'form', :locals => { :event => @event } %>
-	</div>
-
-</div>
-<div class="yui-gb maincontent">
-
-</div>
+<article id="article-content">
+  <header class="entete1">
+    <span class="title">Créer Evenement</span>
+  </header>
+  
+  <div id="one-col">
+    <div class="form">
+  		<%= render :partial => 'form', :locals => { :event => @event } %>
+  	</div>
+  </div>
+  
+  <footer class="admin-links">
+    <p><%= link_to "Retour", event_path(@event) %></p>
+  </footer>
+</article>

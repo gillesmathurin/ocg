@@ -10,12 +10,12 @@ Ocg::Application.routes.draw do
   resources :events
   
   devise_for :users
-  resource  :users
-  
+  resource  :users  
   
   resources :galleries do
     resources :images
   end
+  
   resources :images
   
   root :to => 'home#index'
