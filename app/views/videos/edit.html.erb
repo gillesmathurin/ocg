@@ -1,20 +1,30 @@
-<div class="yui-g sliderfalse">
-	<h1 class="entete1">Modifier une fiche video</h1>
-	
-	<div class="form">
-		<% form_for(@video) do |f| %>
-		  <%= f.error_messages %>
-			<%= render :partial => 'form', :locals => {:f => f} %>	  
-		  <p>
-		    <%= f.submit 'Mettre à jour' %>
-		  </p>
-		<% end %>
+<article id="article-content">
+  <header class="entete1">
+    <span class="title">Modifier une fiche video</span>
+  </header>
+  
+  <div id="one-col">
+    <div class="form">
+  		<%= form_for(@video) do |f| %>
+  		  <% if @video.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@video.errors.count, "error") %> prohibited this video from being saved:</h2>
 
-		<%= link_to 'Voir', @video %> |
+            <ul>
+            <% @video.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+  			<%= render :partial => 'form', :locals => {:f => f} %>	  
+  		  <p><%= f.submit 'Mettre à jour' %></p>
+  		<% end %>		
+  	</div>
+  </div>
+  
+  <footer class="admin-links">
+    <%= link_to 'Voir', @video %> |
 		<%= link_to 'Retour', videos_path %>
-	</div>
-
-</div>
-<div class="yui-gb maincontent">
-	
-</div>
+  </footer>
+</article>

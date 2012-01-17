@@ -1,29 +1,30 @@
-<div class="yui-g sliderfalse">
-	<h1 class="entete1">Listing des videos</h1>
-	
-	
-	<table class="videos">
-	<% @videos.each do |video| %>
-	  <tr>
-	    <td>
-					<%= video.youtube_url %>
-					<p class="video-desc"><%= video.description %></p>
-					<p>
-						<% if user_signed_in? %>
-					    <%= link_to 'Modifier', edit_video_path(video) %> |
-					    <%= link_to 'Supprimer', video, :confirm => 'En êtes vous sur?', :method => :delete %>
-						<% end %>
-					</p>
-			</td>		
-	  </tr>
-	<% end %>	
-	</table>
-
-	<br />
-	<% if user_signed_in? %>
-		<%= link_to 'Ajouter une video', new_video_path %>
-	<% end %>
-</div>
-<div class="yui-gb maincontent">
-	
-</div>
+<article id="article-content">
+  <header class="entete1">
+    <span class="title">Listing des videos</span>
+  </header>
+  
+  <div id="one-col">
+    <table class="videos">
+  	<% @videos.each do |video| %>
+  	  <tr>
+  	    <td>
+  					<%=raw video.youtube_url %>
+  					<p class="video-desc"><%= video.description %></p>
+  					<p>
+  						<% if user_signed_in? %>
+  					    <%= link_to 'Modifier', edit_video_path(video) %> |
+  					    <%= link_to 'Supprimer', video, :confirm => 'En êtes vous sur?', :method => :delete %>
+  						<% end %>
+  					</p>
+  			</td>		
+  	  </tr>
+  	<% end %>	
+  	</table>
+  </div>
+  
+  <footer class="admin-links">
+    <% if user_signed_in? %>
+      <p><%= link_to 'Ajouter une video', new_video_path %></p>
+  	<% end %>
+  </footer>
+</article>
