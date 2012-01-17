@@ -21,7 +21,7 @@ class ProgrammesController < ApplicationController
       if @programme.save
         format.html { redirect_to programme_url(@programme) }
       else
-        format.html { render action: "new" }
+        format.html { render :action => "new" }
       end
     end
   end
@@ -32,7 +32,7 @@ class ProgrammesController < ApplicationController
       if @programme.update_attributes(params[:programme])
         format.html { redirect_to programme_url(@programme) }
       else
-        format.html { render action: "edit" }
+        format.html { render :action => "edit" }
       end
     end
   end
