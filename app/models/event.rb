@@ -2,7 +2,7 @@ class Event < ActiveRecord::Base
   
   has_attached_file :photo, :styles => { :thumb => "200x200>" }
   
-  scope :next_10, :conditions => ['end_date >= ?', Date.today], :limit => 10 
+  scope :next_5, :conditions => ['end_date >= ?', Date.today], :limit => 5 
   FEDERATIONS = [ I18n.t(:fcfg), I18n.t(:fcg), I18n.t(:gccrp), I18n.t(:kmk), I18n.t(:ccmg) ]
   
   scope :fcfg, :conditions => ['federation = ? AND start_date >= ?', I18n.t(:fcfg), Date.today]
