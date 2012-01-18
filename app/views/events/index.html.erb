@@ -9,7 +9,7 @@
 			<div class="article">
 				<p><span class="date"><%= formatted_date(event.start_date) %></span> :
 				<b> <%=h event.title %></b><br/></p>
-				<%= event.description %>
+				<%=raw event.description %>
 				<% if user_signed_in? %>
 					<p>
 						<%= link_to "Modifier", edit_event_path(event) %> | <%= link_to "Supprimer", event_path(event), :method => :delete, :confirm => "Certain ?" %>
