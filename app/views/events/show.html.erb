@@ -1,16 +1,22 @@
-<div class="yui-g sliderfalse">
-	<h1 class="entete1"><%= @event.title %></h1>
-
-  <div class="article">
-		<p><span class="date"><%= formatted_date(@event.start_date) %></span> :
+<article id="article-content">
+  <header class="entete1">
+    <span class="title">
+      <%= @event.title %>
+    </span>
+  </header>
+  
+  <div id="one-col">
+    <p><span class="date"><%= formatted_date(@event.start_date) %></span> :
 		<b> <%=h @event.title %></b><br/></p>
-		<%= @event.description %>
-		<% if user_signed_in? %>
+		<%=raw @event.description %>
+  </div>
+  
+  <footer class="admin-links">
+    <%= link_to "Retour Liste Evenements", events_path() %>
+    <% if user_signed_in? %>
 			<p>
 				<%= link_to "Modifier", edit_event_path(@event) %> | <%= link_to "Supprimer", event_path(@event), :method => :delete, :confirm => "Certain ?" %>
 			</p>
 		<% end %>
-	</div>
-	<hr/>
-
-</div>
+  </footer>
+</article>
