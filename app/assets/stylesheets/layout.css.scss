@@ -308,6 +308,10 @@ body {
         
         a { color:white; }
       }
+            
+      .next_events li.event a {
+        color:lighten($default-blue, 5%);
+      }
     }
     
     #media {
@@ -317,6 +321,10 @@ body {
       header {
         @include header-base;
         @include custom-font('fonts/Dunkirk.otf', dunkirk, bold, 1.8em);
+      }
+      
+      .next_events li a {
+        color:lighten($default-blue, 5%);
       }
     }
     
