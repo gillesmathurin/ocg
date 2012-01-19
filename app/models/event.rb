@@ -14,6 +14,6 @@ class Event < ActiveRecord::Base
   
   
   def to_param
-    "#{id}-#{title.parameterize}"
+    "#{self.id}-#{self.title.parameterize}"
   end
 end

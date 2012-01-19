@@ -44,7 +44,7 @@
 			<%- @events.each do |event| -%>
 				<li class="event">
 					<span class="date"><%= formatted_date(event.start_date) %></span> : 
-					<%= link_to(event.title, event_path(event.id)) %>
+					<%= link_to(event.title, event_path(event)) %>
 				</li>
 			<%- end -%>
 		<%- else -%>
