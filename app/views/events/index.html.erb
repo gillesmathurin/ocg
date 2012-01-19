@@ -3,6 +3,12 @@
     <span class="title">Evénements à venir</span>
   </header>
   
+  <% if user_signed_in? %>
+    <div class="admin-links">
+  		  <p><%= link_to "Ajouter un événement", new_event_path() %></p>
+    </div>
+  <% end %>
+  
   <div id="one-col">
     <%- unless @events.empty? -%>
 			<%- @events.each do |event| -%>
@@ -23,9 +29,9 @@
 		<%- end -%>	  
   </div>
   
-  <div class="admin-links">
-    <% if user_signed_in? %>
-		  <p><%= link_to "Ajouter un événement", new_event_path() %></p>
-	  <% end %>
-  </div>
+  <% if user_signed_in? %>
+    <div class="admin-links">
+  		  <p><%= link_to "Ajouter un événement", new_event_path() %></p>
+    </div>
+  <% end %>
 </article>
