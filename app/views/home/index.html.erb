@@ -70,3 +70,8 @@
   <!-- Social links to come … -->
 </footer>
 
+<% content_for :bottom_footer do %>
+  <% if @visitors_count && @visitors_count > 1000 %>
+	  <p class="visit-count"><%= @visitors_count %> visites</p>
+	<% end %>
+<% end %>

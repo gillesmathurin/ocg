@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120117161955) do
+ActiveRecord::Schema.define(:version => 20120119133021) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -140,6 +140,12 @@ ActiveRecord::Schema.define(:version => 20120117161955) do
     t.text     "vimeo_url"
     t.string   "titre"
     t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "visitors", :force => true do |t|
+    t.string   "ip"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
