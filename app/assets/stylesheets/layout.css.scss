@@ -83,7 +83,27 @@ body {
     size: 0.8em;
   }
   
-  #flash-messages {}
+  #flash-messages {
+    #notice {
+      width:930px;
+      border: 4px green solid;
+      background:white;
+      text-color:green;
+      border-radius:5px;
+      padding:10px;
+      margin-bottom:10px;
+    }
+    
+    #alert {
+      width:930px;
+      border: 4px red solid;
+      background:white;
+      text-color:white;
+      border-radius:5px;
+      padding:10px;
+      margin-bottom:10px;
+    }
+  }
   
   /* Header styles */  
   #page-header {

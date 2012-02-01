@@ -23,7 +23,6 @@ function formatText(index, panel) { return index + ""; }
 
 // call of the anythingSlider plugin
 $(function() {
-
     $('.anythingSlider').anythingSlider({
         easing: "easeInOutExpo",        // Anything other than "linear" or "swing" requires the easing plugin
         autoPlay: true,                 // This turns off the entire FUNCTIONALY, not just if it starts running or not.
@@ -40,8 +39,7 @@ $(function() {
     
     $("#slide-jump").click(function(){
         $('.anythingSlider').anythingSlider(6);
-    });
-    
+    });    
 });
 
 // Little function to correctly layout the galleries multicolumns index page
@@ -58,8 +56,12 @@ $(function(){
 
 // animate the displaying of the flash messages
 $(function() {
-  $('div.alert').slideDown(400, 'linear');
-  $('div.notice').slideDown(400, 'linear');
+  $('div#alert').slideDown(400, 'linear', function() {
+    $(this).delay(2000).slideUp("normal");
+  });
+  $('div#notice').slideDown(400, 'linear', function() {
+    $(this).delay(2000).slideUp("normal");
+  });
   // close the flash box
   $('.close-it').click(function(){
     $(this).parent().slideUp('fast');
