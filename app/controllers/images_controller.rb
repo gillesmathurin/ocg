@@ -9,7 +9,7 @@ class ImagesController < ApplicationController
     
     respond_to do |format|
       if @image.save
-        format.xml { render :json => "{success:true}" }
+        format.js { render :json => "{success:true}" }
       else
         format.html { redirect_to @gallery }
       end

@@ -58,3 +58,6 @@ group :development, :test do
   # gem 'growl_notify'
   gem 'spork', '~>0.9.0.rc9'
 end
+# Deploy with Capistrano
+gem 'capistrano'
+gem 'rvm-capistrano'

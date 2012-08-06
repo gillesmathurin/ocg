@@ -47,7 +47,6 @@ $(function () {
   $($(".gallery-name")[2]).css("margin-top","50px");
 })
 
-// Photos Gallery Slider function
 $(function(){
     window.myFlux = new flux.slider('#slider', {
       pagination:false
