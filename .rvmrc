@@ -1,5 +1,5 @@
 if [[ -s "/Users/gillesmath/.rvm/environments/1.9.2-p320@ocg" ]] ; then
   . "/Users/gillesmath/.rvm/environments/1.9.2-p320@ocg"
 else
-  rvm --create use  "1.9.2-p320@ocg"
+  rvm --create use "1.9.2-p320@ocg"
 fi
